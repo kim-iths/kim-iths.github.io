@@ -1,0 +1,24 @@
+.movieCategory {
+    margin: 0;
+    padding: 0;
+    background-color: #eae7f1;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+    grid-gap: 16px;
+}
+
+.categories {
+    background-color: #b5bfe2;
+    font-family: 'fantasy';
+}
+
+.suggestion {
+    background-color: #cfcfcf;
+    height: 400px;
+    width: 200px;
+}
