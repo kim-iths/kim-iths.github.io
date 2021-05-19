@@ -53,7 +53,7 @@ function App() {
 
       </header>
       <main>
-        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQQt0kUCWldIeDC3LgW98DLQ0qBWgfprfeiFdQzDMtdtwSzwxeNOivQWFqoUvLYlNYnF716-PiaHTTKdTVv0hxvytbmvR6VCvrY_YSPvrkwDCVbwlAMejXx5g&usqp=CAE" alt="dog" />
+        <img src="https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg" alt="dog" />
        
        
 
