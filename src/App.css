@@ -24,13 +24,52 @@
   background-color: transparent;
   border: transparent;
   
+  
 }
-#nav-button-home{
+#nav-btn-home{
+  justify-content: flex-start;
   font-size: 30px;
+  margin-right: 10px;
+
+  
+  
+}
+#nav-btn-movies{
+  margin-left: 20px;
+  font-size: 18px;
+
+}
+
+#nav-btn-categories{
+  margin-left: 20px;
+  font-size: 18px;
+
+}
+#nav-btn-favorites{
+  margin-left: 20px;
+  font-size: 18px;
+}
+.search-field{
+  margin-left: 20px;
+}
+
+#nav-btn-register{
+  margin-left: 20px;
+  font-size: 18px;
+
+}
+#nav-btn-login{
+  margin-left: 125px;
+  font-size: 18px;
+  
+
 }
 #nav-symbol-shopcart{
-  height: 51px;
-  width: 90px;
+  margin-left: 20px;
+  height: 46px;
+  width: 85px;
+  position: absolute;
+  margin-right: 30px;
 }
 
 .App-link {
@@ -43,5 +82,10 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media/*mobile*/(min-width:769px){
+  .App-header{
+    font-size: 30px;
   }
 }

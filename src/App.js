@@ -37,14 +37,14 @@ function App() {
            
             <Router basename={process.env.PUBLIC_URL}>
             <Route path="/" exact><StartScreen/></Route>
-            <Link to="/StartScreen"><button className="nav-button"id="nav-button-home">Movieblock</button></Link>
-            <Link to="/Filminfo"><button className="nav-button">Filminfo</button></Link>
-            <Link to="/Favorites"><button className="nav-button">Favoriter</button></Link>
-            <Link to="/FilmCategory"><button className="nav-button">Kategorier</button></Link>
-            <Link to="/Login"><button className="nav-button">Logga in</button></Link>
-            <Link to="/Register"><button className="nav-button">Registrera</button></Link>
-            <Link to="/Checkout"><button className="nav-button">Köp</button></Link>
+            <Link to="/StartScreen"><button className="nav-button"id="nav-btn-home">Movieblock</button></Link>
+            <Link to="/Filminfo"><button className="nav-button"id="nav-btn-movies">Filmer</button></Link>
+            
+            <Link to="/FilmCategory"><button className="nav-button"id="nav-btn-categories">Kategorier</button></Link>
+            <Link to="/Favorites"><button className="nav-button"id="nav-btn-favorites">Favoriter</button></Link>
+            <input type="text" className="search-field" placeholder="Sök"></input>
             <Link to="/Shoppingcart"><img className="nav-img"id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
+            <Link to="/Login"><button className="nav-button"id="nav-btn-login">Logga in</button></Link>
             </Router>
 
 
@@ -53,6 +53,14 @@ function App() {
 
       </header>
       <main>
+        <footer id="footer">
+          <div className="empty-container"></div>
+          <div className="container">
+            
+
+          </div>
+
+        </footer>
         <img src="https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg" alt="dog" />
        
        
