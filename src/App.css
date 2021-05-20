@@ -8,13 +8,29 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background:linear-gradient(rgba(0, 100, 250, 0.74),transparent);
+  background-color: #b672f5b2;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+
+.nav-button{
+  background-color: transparent;
+  border: transparent;
+  
+}
+#nav-button-home{
+  font-size: 30px;
+}
+#nav-symbol-shopcart{
+  height: 51px;
+  width: 90px;
 }
 
 .App-link {

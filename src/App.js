@@ -34,17 +34,17 @@ function App() {
        
 
         <div className="nav-bar"id="nav-container">
-            <h1 classname="Title">Movieblock</h1>
+           
             <Router basename={process.env.PUBLIC_URL}>
             <Route path="/" exact><StartScreen/></Route>
-            <Link to="/StartScreen"><button className="nav-button">Hem</button></Link>
+            <Link to="/StartScreen"><button className="nav-button"id="nav-button-home">Movieblock</button></Link>
             <Link to="/Filminfo"><button className="nav-button">Filminfo</button></Link>
             <Link to="/Favorites"><button className="nav-button">Favoriter</button></Link>
             <Link to="/FilmCategory"><button className="nav-button">Kategorier</button></Link>
             <Link to="/Login"><button className="nav-button">Logga in</button></Link>
             <Link to="/Register"><button className="nav-button">Registrera</button></Link>
             <Link to="/Checkout"><button className="nav-button">Köp</button></Link>
-            <Link to="/Shoppingcart"><button className="nav-button">Varukorg</button></Link>
+            <Link to="/Shoppingcart"><img className="nav-img"id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
             </Router>
 
 
