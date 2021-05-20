@@ -1,24 +1,81 @@
-.movieCategory {
-    margin: 0;
-    padding: 0;
+.category-content {
     background-color: #eae7f1;
     height: 100%;
+    padding-bottom: 10%;
 }
 
-.grid {
+.movie-category {
+    padding: 5% 10% 5% 10%;
+}
+
+.categories-h1 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.category-grid {
     display: grid;
-    align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 16px;
+    align-items: center;
+    justify-content: center;
 }
 
-.categories {
+.category-button {
     background-color: #b5bfe2;
-    font-family: 'fantasy';
+    border: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px;
 }
 
-.suggestion {
+.category-button:hover {
+    background-color: #7c88b4;
+}
+
+.category-button:active {
+    transform: translateY(-1px);
+    border-radius: 5px;
+    box-shadow: 0 5px 5px;
+}
+
+.all-movies-container {
+    overflow: scroll;
+    padding: 0% 20% 5% 20%;
+    height: 500px;
+}
+
+.all-movies-container::-webkit-scrollbar {
+    width: 1em;
+}
+
+.all-movies-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.all-movies {
     background-color: #cfcfcf;
-    height: 400px;
+    height: 350px;
     width: 200px;
 }
+
+@media only screen and (max-width: 768px) {
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 16px;
+        align-items: center;
+        justify-content: center;
+    }
+    .all-movies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
