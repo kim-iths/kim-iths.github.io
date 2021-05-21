@@ -1,0 +1,77 @@
+.movie-banner {
+    display: flex;
+}
+
+.banner-image {
+    width: 100vw;
+}
+
+.movie-name {
+    color: white;
+    text-shadow: black 2px 2px 1px;
+    position: absolute;
+    font-size: 32pt;
+    justify-self: flex-end;
+    align-self: flex-end;
+    right: 8px;
+    margin-bottom: 28px;
+}
+
+.movie-year-time {
+    font-size: 16pt;
+    color: white;
+    text-shadow: black 2px 2px 1px;
+    position: absolute;
+    justify-self: flex-end;
+    align-self: flex-end;
+    right: 8px;
+    margin-bottom: 8px;
+}
+
+.movie-info-content {
+    margin: 8px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 8px;
+}
+
+.buy {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 16pt;
+}
+
+.buy-button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: none;
+    height: 2em;
+    width: 5em;
+    margin: 8px;
+    margin-left: 16px;
+    font-size: 15pt;
+}
+
+.related-movies {
+    margin: 8px;
+    text-align: left;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.movie-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+}
+
+.related-movie {
+    background-color: gray;
+    height: 300px;
+}
+
+
+.bold {
+    font-weight: bold;
+}
