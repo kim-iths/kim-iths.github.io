@@ -8,11 +8,6 @@
     padding: 5% 10% 5% 10%;
 }
 
-.categories-h1 {
-    display: flex;
-    justify-content: flex-start;
-}
-
 .category-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -67,14 +62,14 @@
 @media only screen and (max-width: 768px) {
     .category-grid {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 16px;
         align-items: center;
         justify-content: center;
     }
     .all-categories-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-gap: 16px;
         align-items: center;
         justify-content: center;
