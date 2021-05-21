@@ -4,13 +4,13 @@ const FilmCategory = () => {
 
     function categoryClick(e) {
     e.preventDefault();
-    console.log('The link was clicked.');
+    console.log('The button was clicked.');
     }
 
         return (
 
         <section className="category-content">
-            
+
             <div className="movie-category">
 
                 <h1 className="categories-h1">Kategorier</h1>
@@ -42,7 +42,7 @@ const FilmCategory = () => {
                             <h3>Fantasy</h3>
                         </button>
                         <button className ="category-button col" onClick={categoryClick}>
-                            <h3>Sci-Fi</h3>
+                            <h3>Science Fiction</h3>
                         </button>
                         <button className ="category-button col" onClick={categoryClick}>
                             <h3>Äventyr</h3>
@@ -59,18 +59,28 @@ const FilmCategory = () => {
 
             <h3 className="all-movies-h3">Alla filmer</h3>
 
-            <div className="all-movies-container">
-                <div className="all-movies-grid">
-                    <div className="col all-movies"></div>
-                    <div className="col all-movies"></div>
-                    <div className="col all-movies"></div>
-                    <div className="col all-movies"></div>
-                    <div className="col all-movies"></div>
-                    <div className="col all-movies"></div>
-                    <div className="col all-movies"></div>
-                    <div className="col all-movies"></div>
-                    <div className="col all-movies"></div>
-                    <div className="col all-movies"></div>
+            <div className="all-categories-container">
+                <div className="all-categories-grid">
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
+                    <div className="col all-categories"><p>Titel</p>
+                    </div>
                 </div>
             </div>
         </section>
