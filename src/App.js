@@ -44,7 +44,7 @@ function App() {
             <Link to="/FilmCategory"><button className="nav-button"id="nav-btn-movies">Kommande</button></Link>
             <Link to="/Favorites"><button className="nav-button"id="nav-btn-favorites">Favoriter</button></Link>
             <input type="text" className="search-field" placeholder="Sök"></input>
-            <img className="search-field"id="magnify-glass" src="assets/magnify_glass.png"></img>
+            <Link to="/Filminfo"><img className="nav-img"id="magnify-glass" src="assets/magnify_glass.png"></img></Link>
             <Link to="/Shoppingcart"><img className="nav-img"id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
             <Link to="/Login"><button className="nav-button"id="nav-btn-login">Logga in</button></Link>
             </Router>

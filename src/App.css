@@ -80,6 +80,10 @@
   
 
 }
+#magnify-glass:hover{
+  color: white;
+  transform: scale(1.1);
+}
 #nav-btn-login:hover{
   color: white;
   transform: scale(1.1);
