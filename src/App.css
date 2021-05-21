@@ -59,7 +59,7 @@
   margin-left: 4px;
   position: 60px;
   height: 32px;
-  width: 30px;
+  width: 34px;
   border-radius:2px;
   
 
@@ -101,6 +101,10 @@
 }
 @media/*mobile*/(min-width:769px){
   .App-header{
-    font-size: 30px;
+    display: block;
+        position: sticky;
+        height: 20%;
+        width: 70%;
+       
   }
 }

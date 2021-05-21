@@ -38,9 +38,9 @@ function App() {
             <Router basename={process.env.PUBLIC_URL}>
             <Route path="/" exact><StartScreen/></Route>
             <Link to="/StartScreen"><button className="nav-button"id="nav-btn-home">Movieblock</button></Link>
-            <Link to="/Filminfo"><button className="nav-button"id="nav-btn-movies">Filminfo</button></Link>
-            
-            <Link to="/FilmCategory"><button className="nav-button"id="nav-btn-categories">Filmer</button></Link>
+            <Link to="/FilmCategory"><button className="nav-button"id="nav-btn-categories">Kategorier</button></Link>
+            <Link to="/FilmCategory"><button className="nav-button"id="nav-btn-movies">Barnfilmer</button></Link>
+            <Link to="/FilmCategory"><button className="nav-button"id="nav-btn-movies">Kommande</button></Link>
             <Link to="/Favorites"><button className="nav-button"id="nav-btn-favorites">Favoriter</button></Link>
             <input type="text" className="search-field" placeholder="Sök"></input>
             <img className="search-field"id="magnify-glass" src="assets/magnify_glass.png"></img>
