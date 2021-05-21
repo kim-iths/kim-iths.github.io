@@ -47,12 +47,52 @@ const StartScreen = () => {
 
             <section id="movie-slider">
                 <h3 className="title-new-movies">Nya filmer</h3>
-                <Carousel slides={slides} autoplay={false} interval={5000} />
+                <Carousel slides={slides} autoplay={true} interval={5000} />
             </section>
-            <section id="all-movies">
-                <h3 className="title-all-movies">Alla filmer</h3>
-                <div className="grids-all-movies">
-                    <div className="all-movies-div">
+            <section id="popular-movies">
+                <h3 className="title-popular-movies">Alla filmer</h3>
+                <div className="grids-popular-movies">
+                    <div className="popular-movies-div">
+                        <img src="img/black_panther.png" alt="title" />
+                        <p>Black Panther</p>
+                        <aside className="movie-heart">&#x2665;</aside>
+                    </div>
+                    <div className="popular-movies-div">
+                        <img src="img/the_lego_movie.png" alt="title" />
+                        <p>The Lego Movie</p>
+                        <aside className="movie-heart">&#x2665;</aside>
+                    </div>
+                    <div className="popular-movies-div">
+                        <img src="img/black_panther.png" alt="title" />
+                        <p>Black Panther</p>
+                        <aside className="movie-heart">&#x2665;</aside>
+                    </div>
+                    <div className="popular-movies-div">
+                        <img src="img/the_lego_movie.png" alt="title" />
+                        <p>The Lego Movie</p>
+                        <aside className="movie-heart">&#x2665;</aside>
+                    </div>
+                    <div className="popular-movies-div">
+                        <img src="img/black_panther.png" alt="title" />
+                        <p>Black Panther</p>
+                        <aside className="movie-heart">&#x2665;</aside>
+                    </div>
+                    <div className="popular-movies-div">
+                        <img src="img/the_lego_movie.png" alt="title" />
+                        <p>The Lego Movie</p>
+                        <aside className="movie-heart">&#x2665;</aside>
+                    </div>
+                    <div className="popular-movies-div">
+                        <img src="img/black_panther.png" alt="title" />
+                        <p>Black Panther</p>
+                        <aside className="movie-heart">&#x2665;</aside>
+                    </div>
+                    <div className="popular-movies-div">
+                        <img src="img/the_lego_movie.png" alt="title" />
+                        <p>The Lego Movie</p>
+                        <aside className="movie-heart">&#x2665;</aside>
+                    </div>
+                    <div className="popular-movies-div">
                         <img src="img/black_panther.png" alt="title" />
                         <p>Black Panther</p>
                         <aside className="movie-heart">&#x2665;</aside>
@@ -62,52 +102,12 @@ const StartScreen = () => {
                         <p>The Lego Movie</p>
                         <aside className="movie-heart">&#x2665;</aside>
                     </div>
-                    <div className="all-movies-div">
+                    <div className="popular-movies-div">
                         <img src="img/black_panther.png" alt="title" />
                         <p>Black Panther</p>
                         <aside className="movie-heart">&#x2665;</aside>
                     </div>
-                    <div className="all-movies-div">
-                        <img src="img/the_lego_movie.png" alt="title" />
-                        <p>The Lego Movie</p>
-                        <aside className="movie-heart">&#x2665;</aside>
-                    </div>
-                    <div className="all-movies-div">
-                        <img src="img/black_panther.png" alt="title" />
-                        <p>Black Panther</p>
-                        <aside className="movie-heart">&#x2665;</aside>
-                    </div>
-                    <div className="all-movies-div">
-                        <img src="img/the_lego_movie.png" alt="title" />
-                        <p>The Lego Movie</p>
-                        <aside className="movie-heart">&#x2665;</aside>
-                    </div>
-                    <div className="all-movies-div">
-                        <img src="img/black_panther.png" alt="title" />
-                        <p>Black Panther</p>
-                        <aside className="movie-heart">&#x2665;</aside>
-                    </div>
-                    <div className="all-movies-div">
-                        <img src="img/the_lego_movie.png" alt="title" />
-                        <p>The Lego Movie</p>
-                        <aside className="movie-heart">&#x2665;</aside>
-                    </div>
-                    <div className="all-movies-div">
-                        <img src="img/black_panther.png" alt="title" />
-                        <p>Black Panther</p>
-                        <aside className="movie-heart">&#x2665;</aside>
-                    </div>
-                    <div className="all-movies-div">
-                        <img src="img/the_lego_movie.png" alt="title" />
-                        <p>The Lego Movie</p>
-                        <aside className="movie-heart">&#x2665;</aside>
-                    </div>
-                    <div className="all-movies-div">
-                        <img src="img/black_panther.png" alt="title" />
-                        <p>Black Panther</p>
-                        <aside className="movie-heart">&#x2665;</aside>
-                    </div>
-                    <div className="all-movies-div">
+                    <div className="popular-movies-div">
                         <img src="img/the_lego_movie.png" alt="title" />
                         <p>The Lego Movie</p>
                         <aside className="movie-heart">&#x2665;</aside>
