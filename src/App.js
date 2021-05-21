@@ -13,6 +13,7 @@ import Shoppingcart from './components/Shoppingcart';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
 import Favorites from './components/Favorites';
+import Footer from './components/Footer'
 
 
 function App() {
@@ -54,14 +55,10 @@ function App() {
 
       </header>
       <main>
-        <footer id="footer">
-          <div className="empty-container"></div>
-          <div className="container">
-            
-
-          </div>
-
-        </footer>
+      <div className="App">
+           <h1>Hello React</h1>
+           <Footer/>
+       </div>
         <img src="https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg" alt="dog" />
        
        
