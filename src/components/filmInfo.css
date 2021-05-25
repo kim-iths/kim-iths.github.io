@@ -1,9 +1,16 @@
+section {
+    background: #EAE7F1;
+}
+
 .movie-banner {
+    width: 100vw;
     display: flex;
 }
 
 .banner-image {
-    width: 100vw;
+    /* width: 100vw; */
+    height: 40vh;
+    object-fit: contain;
 }
 
 .movie-name {
@@ -71,6 +78,11 @@
     height: 300px;
 }
 
+.column {
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
 
 .bold {
     font-weight: bold;
