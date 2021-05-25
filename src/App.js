@@ -13,10 +13,31 @@ import Shoppingcart from './components/Shoppingcart';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
 import Favorites from './components/Favorites';
+import Api from './Api';
+import { useEffect } from 'react';
 
 
 
 function App() {
+
+  useEffect(() => {
+    async function getData() {
+ 
+      const movieApi = "popular"
+      let url = `https://api.themoviedb.org/3/movie/${movieApi}?api_key=86f237d170416093156de7affa43927e`;
+      
+      try {
+      let resp = await fetch(url);
+      let data = await resp.json();
+      
+      return data;
+      }
+      catch(error) {
+      console.log(error);
+      }
+    }
+  }, []);
+
   var firebaseConfig = {
     apiKey: "AIzaSyCzeIBnMI6pKUlgD6WuQ7Aq2gfOBJH5diE",
     authDomain: "movieblock-ef82a.firebaseapp.com",

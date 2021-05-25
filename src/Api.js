@@ -3,7 +3,8 @@ const Api = () => {
 
 async function getData() {
  
-    let url = `https://api.themoviedb.org/3/movie/550?api_key=86f237d170416093156de7affa43927e`;
+    const movieApi = "popular"
+    let url = `https://api.themoviedb.org/3/movie/${movieApi}?api_key=86f237d170416093156de7affa43927e`;
     
     try {
     let resp = await fetch(url);
