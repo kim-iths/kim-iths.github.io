@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    background-color: #EAE7F1;
 }
 
 .startscreen-wrap h3 {
@@ -73,10 +74,30 @@
     display: grid;
     grid-gap: 1.5em;
     grid-template-columns: repeat(6, 11em);
-    grid-template-rows: repeat(2, 20em);
+    /* grid-template-rows: repeat(2, 20em); */
 }
 
-@media only screen and (max-width: 1000px) {
+.grids-popular-movies img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.popular-movies-div {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.movie-heart {
+    position: absolute;
+    top: 1.5%;
+    right: 2%;
+    font-size: 1.5em;
+    color: white;
+}
+
+@media only screen and (max-width: 1200px) {
     .movie-slide-div {
         position: relative;
         text-align: center;
@@ -95,7 +116,6 @@
         display: grid;
         grid-gap: 1.5em;
         grid-template-columns: repeat(4, 11em);
-        
     }
 }
 
@@ -122,7 +142,7 @@
     }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 400px) {
     .movie-slide-div {
         position: relative;
         text-align: center;
@@ -139,28 +159,8 @@
     .grids-popular-movies {
         justify-content: center;
         display: grid;
-        grid-gap: 1.5em;
+        grid-gap: 1em;
         grid-template-columns: repeat(1, 11em);
         
     }
-}
-
-.grids-popular-movies img {
-    width: 100%;
-    height: 80%;
-    object-fit: cover;
-}
-
-.popular-movies-div {
-    position: relative;
-    text-align: center;
-    width: 100%;
-}
-
-.movie-heart {
-    position: absolute;
-    top: 1.5%;
-    right: 2%;
-    font-size: 1.5em;
-    color: white;
 }
