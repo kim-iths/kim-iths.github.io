@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Route, HashRouter as Router, Link, Switch } from "react-router-dom"
+import { Route, HashRouter as Router, Link, Switch } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -13,7 +13,7 @@ import Shoppingcart from './components/Shoppingcart';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
 import Favorites from './components/Favorites';
-import Footer from './components/Footer'
+
 
 
 function App() {
@@ -28,52 +28,85 @@ function App() {
   };
 
   return (
-   
+
     <div className="App">
       <header className="App-header">
 
-       
 
-        <div className="nav-bar"id="nav-container">
-           
-            <Router basename={process.env.PUBLIC_URL}>
-            <Route path="/" exact><StartScreen/></Route>
-            <Link to="/StartScreen"><button className="nav-button"id="nav-btn-home">Movieblock</button></Link>
-            <Link to="/FilmCategory"><button className="nav-button"id="nav-btn-categories">Kategorier</button></Link>
-            <Link to="/FilmCategory"><button className="nav-button"id="nav-btn-movies">Barnfilmer</button></Link>
-            <Link to="/FilmCategory"><button className="nav-button"id="nav-btn-movies">Kommande</button></Link>
-            <Link to="/Favorites"><button className="nav-button"id="nav-btn-favorites">Favoriter</button></Link>
+
+        <div className="nav-bar" id="nav-container">
+
+          <Router basename={process.env.PUBLIC_URL}>
+            <Link to="/startScreen"><button className="nav-button" id="nav-btn-home">Movieblock</button></Link>
+            <Link to="/filmCategory"><button className="nav-button" id="nav-btn-categories">Kategorier</button></Link>
+            <Link to="/filmCategory"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
+            <Link to="/filmCategory"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
+            <Link to="/favorites"><button className="nav-button" id="nav-btn-favorites">Favoriter</button></Link>
             <input type="text" className="search-field" placeholder="Sök"></input>
-            <Link to="/Filminfo"><img className="nav-img"id="magnify-glass" src="assets/magnify_glass.png"></img></Link>
-            <Link to="/Shoppingcart"><img className="nav-img"id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
-            <Link to="/Login"><button className="nav-button"id="nav-btn-login">Logga in</button></Link>
-            </Router>
+            <Link to="/filminfo"><img className="nav-img" id="magnify-glass" src="assets/magnify_glass.png"></img></Link>
+            <Link to="/shoppingcart"><img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
+            <Link to="/login"><button className="nav-button" id="nav-btn-login">Logga in</button></Link>
+          </Router>
 
 
 
-            </div>
+        </div>
 
       </header>
       <main>
-      <div className="App">
-           
-           <Footer/>
-       </div>
-        <img src="https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg" alt="dog" />
-       
-       
+        <div className="App">
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <StartScreen />
+              </Route>
+              <Route path="/startscreen">
+                <StartScreen />
+              </Route>
+              <Route path="/filmcategory">
+                <FilmCategory />
+              </Route>
+              <Route path="/filmcategory">
+                {/* Barnfilmer */}
+              </Route>
+              <Route path="/filmcategory">
+                {/* Kommande */}
+              </Route>
+              <Route path="/favorites">
+                <Favorites />
+              </Route>
+              <Route path="/filmcategory">
+                {/* Sökta filmer */}
+              </Route>
+              <Route path="/shoppingcart">
+                <Shoppingcart/>
+              </Route>
+              <Route path="/login">
+                <Login/>
+              </Route>
+            </Switch>
+          </Router>
 
-      <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+        </div>
 
-      <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
 
-      <script>
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+        <script>
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
       </script>
       </main>
+      <footer>
+        <div className="footer" id="footer-text">
+          <p> © Movieblock AB 2021 support@movieblock.se</p>
+        </div>
+      </footer>
     </div>
-    
+
   );
 }
 

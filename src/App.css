@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background:linear-gradient(rgba(0, 100, 250, 0.74),transparent);
   background-color: #b672f5b2;
@@ -19,115 +14,109 @@
   color: white;
 }
 
-
-.nav-button{
+.nav-button {
   background-color: transparent;
   border: transparent;
-  
-  
+
 }
-#nav-btn-home{
+
+#nav-btn-home {
   justify-content: flex-start;
   font-size: 30px;
   margin-right: 10px;
+}
 
-  
-  
-}
-#nav-btn-home:hover{
-  color: white;
-  transform: scale(1.1);
-}
-#nav-btn-movies{
-  margin-left: 20px;
-  font-size: 18px;
-
-}
-#nav-btn-movies:hover{
+#nav-btn-home:hover {
   color: white;
   transform: scale(1.1);
 }
 
-#nav-btn-categories{
-  margin-left: 20px;
-  font-size: 18px;
-
-}
-#nav-btn-categories:hover{
-  color: white;
-  transform: scale(1.1);
-}
-#nav-btn-favorites{
+#nav-btn-movies {
   margin-left: 20px;
   font-size: 18px;
 }
-#nav-btn-favorites:hover{
+
+#nav-btn-movies:hover {
   color: white;
   transform: scale(1.1);
 }
-.search-field{
+
+#nav-btn-categories {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+#nav-btn-categories:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+#nav-btn-favorites {
+  margin-left: 20px;
+  font-size: 18px;
+}
+#nav-btn-favorites:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.search-field {
   height: 28px;
   margin-left: 20px;
 }
-#magnify-glass{
+
+#magnify-glass {
   margin-bottom: -12px;
   margin-left: 4px;
   position: 60px;
   height: 32px;
   width: 34px;
   border-radius:3px;
-  
+}
 
-}
-#magnify-glass:hover{
-  color: white;
-  transform: scale(1.1);
-}
-#nav-btn-login:hover{
+#magnify-glass:hover {
   color: white;
   transform: scale(1.1);
 }
 
-#nav-btn-register{
+#nav-btn-login:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+#nav-btn-register {
   margin-left: 20px;
   font-size: 18px;
-
-
 }
-#nav-btn-register:hover{
+
+#nav-btn-register:hover {
   color: white;
   transform: scale(1.1);
 }
+
 #nav-btn-login{
   margin-left: 60px;
   font-size: 18px;
 }
-#nav-btn-login:hover{
+
+#nav-btn-login:hover {
   color: white;
   transform: scale(1.1);
 }
-#nav-symbol-shopcart{
+
+#nav-symbol-shopcart {
   margin-bottom: -12px;
   margin-left: 30px;
   height: 34px;
   width: 75px;
-  
-  
 }
-#nav-symbol-shopcart:hover{
+
+#nav-symbol-shopcart:hover {
   color: white;
   transform: scale(1.1);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  display: flex;
+  align-content: flex-start;
 }
