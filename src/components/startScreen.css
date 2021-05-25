@@ -1,0 +1,164 @@
+.startscreen-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #EAE7F1;
+}
+
+.startscreen-wrap h3 {
+    font-size: 2vw;
+}
+
+/* MOVIE SLIDER */
+
+#movie-slider {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5em;
+}
+
+.movie-slide-div {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-height: 30em;
+}
+
+.movie-slide-title {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #B5BFE2;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.movie-slide-heart {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 2em;
+    color: white;
+}
+
+.react-3d-carousel img {
+    width: 100%;
+    height: 30em;
+    object-fit: cover;
+}
+
+.fa-arrow-left {
+    color: black;
+}
+
+.fa-arrow-right {
+    color: black;
+}
+
+/* POPULAR MOVIES */
+
+#popular-movies {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.grids-popular-movies {
+    justify-content: center;
+    display: grid;
+    grid-gap: 1.5em;
+    grid-template-columns: repeat(6, 11em);
+    /* grid-template-rows: repeat(2, 20em); */
+}
+
+.grids-popular-movies img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.popular-movies-div {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.movie-heart {
+    position: absolute;
+    top: 1.5%;
+    right: 2%;
+    font-size: 1.5em;
+    color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+    .movie-slide-div {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        max-height: 20em;
+    }
+
+    .react-3d-carousel img {
+        width: 100%;
+        height: 20em;
+        object-fit: cover;
+    }
+
+    .grids-popular-movies {
+        justify-content: center;
+        display: grid;
+        grid-gap: 1.5em;
+        grid-template-columns: repeat(4, 11em);
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .movie-slide-div {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        max-height: 15em;
+    }
+
+    .react-3d-carousel img {
+        width: 100%;
+        height: 15em;
+        object-fit: cover;
+    }
+
+    .grids-popular-movies {
+        justify-content: center;
+        display: grid;
+        grid-gap: 1.5em;
+        grid-template-columns: repeat(2, 11em);
+        
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .movie-slide-div {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        max-height: 10em;
+    }
+
+    .react-3d-carousel img {
+        width: 100%;
+        height: 10em;
+        object-fit: cover;
+    }
+
+    .grids-popular-movies {
+        justify-content: center;
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: repeat(1, 11em);
+        
+    }
+}
