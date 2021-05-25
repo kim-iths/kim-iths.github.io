@@ -1,4 +1,6 @@
 import './filmInfo.css'
+import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 const Filminfo = () => {
     
@@ -38,8 +40,6 @@ const Filminfo = () => {
                     <div className="related-movie"></div>
                     <div className="related-movie"></div>
                 </div>
-
-
             </div>
         </section>
     )
