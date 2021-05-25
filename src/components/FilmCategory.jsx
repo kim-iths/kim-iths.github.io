@@ -63,28 +63,49 @@ const FilmCategory = () => {
 
             <div className="all-categories-container">
                 <div className="all-categories-grid">
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
-                    <div className="col all-categories"><p>Titel</p>
+                    <div className="col all-categories">
+                        <p>Titel</p>
+                    <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
                 </div>
             </div>
+
         </section>
         )
 }

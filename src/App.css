@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background:linear-gradient(rgba(0, 100, 250, 0.74),transparent);
+  background:linear-gradient(#0064fabd, transparent);
   background-color: #b672f5b2;
   padding: 15px;
   display: flex;
