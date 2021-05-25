@@ -32,8 +32,6 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-
-
         <div className="nav-bar" id="nav-container">
 
           <Router basename={process.env.PUBLIC_URL}>
@@ -47,9 +45,6 @@ function App() {
             <Link to="/shoppingcart"><img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
             <Link to="/login"><button className="nav-button" id="nav-btn-login">Logga in</button></Link>
           </Router>
-
-
-
         </div>
 
       </header>
@@ -86,7 +81,6 @@ function App() {
               </Route>
             </Switch>
           </Router>
-
         </div>
 
 
@@ -100,6 +94,7 @@ function App() {
           firebase.analytics();
       </script>
       </main>
+
       <footer>
         <div className="footer" id="footer-text">
           <p> © Movieblock AB 2021 support@movieblock.se</p>
