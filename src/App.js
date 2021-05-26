@@ -72,7 +72,7 @@ function App() {
                 {/* Sökta filmer */}
               </Route>
               <Route path="/shoppingcart">
-                <Shoppingcart/>
+                <Checkout/>
               </Route>
               <Route path="/login">
                 <Login/>

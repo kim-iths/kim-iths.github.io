@@ -50,7 +50,7 @@ const StartScreen = () => {
                 <Carousel slides={slides} autoplay={false} interval={5000} />
             </section>
             <section id="popular-movies">
-                <h3 className="title-popular-movies">Alla filmer</h3>
+                <h3 className="title-popular-movies">Populära filmer</h3>
                 <div className="grids-popular-movies">
                     <div className="popular-movies-div">
                         <img src="img/black_panther.png" alt="title" />
