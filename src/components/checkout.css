@@ -1,0 +1,45 @@
+.checkout-content {
+    background-color: #eae7f1;
+    height: 100%;
+    padding-bottom: 10%;
+}
+
+.checkout-container {
+    padding: 5% 10% 5% 10%;
+}
+
+.checkout-row {
+    display: grid;
+    grid-gap: 1.5em;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+}
+
+.checkout-row img {
+    height: 60%;
+    width: 60%;
+    object-fit: contain;
+}
+
+.checkout-row DeleteIcon {
+    background-color: #000000;
+}
+
+.checkout-finish-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.checkout-finish-row p {
+    margin-left: 80%;
+}
+
+.checkout-pay {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: inherit;
+    height: 2em;
+    width: 5em;
+    margin-right: 40%;
+}
