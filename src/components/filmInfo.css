@@ -3,17 +3,17 @@ section {
 }
 
 .movie-banner {
-    width: 100vw;
+    
     height: 40vh;
     display: flex;
     overflow: hidden;
+    justify-items: flex-start;
 }
 
 .banner-image {
     display: flex;
-    /* width: 100vw; */
-    width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding-left: 2%;
 }
 
 .movie-name {
@@ -23,7 +23,7 @@ section {
     font-size: 32pt;
     justify-self: flex-end;
     align-self: flex-end;
-    right: 8px;
+    right: 2%;
     margin-bottom: 28px;
 }
 
@@ -34,12 +34,12 @@ section {
     position: absolute;
     justify-self: flex-end;
     align-self: flex-end;
-    right: 8px;
+    right: 2%;
     margin-bottom: 8px;
 }
 
 .movie-info-content {
-    margin: 8px;
+    padding: 8px;
     display: grid;
     grid-template-columns: 2fr 2fr 1fr;
     gap: 8px;
@@ -64,7 +64,7 @@ section {
 }
 
 .related-movies {
-    margin: 8px;
+    padding: 8px;
     text-align: left;
     font-size: 18pt;
     font-weight: bold;
