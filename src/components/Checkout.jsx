@@ -1,9 +1,8 @@
 import './checkout.css'
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
-//import IconButton from '@material-ui/core/IconButton';
-//import DeleteIcon from '@material-ui/icons/Delete';
-// <aside><IconButton aria-label="delete"><DeleteIcon /></IconButton></aside>
+import IconButton from '@material-ui/core/IconButton';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 const Checkout = () => {
 
@@ -17,14 +16,14 @@ const Checkout = () => {
                 <img src="img/black_panther.png" alt="title" />
                 <p>Black Panther</p>
                 <div className="checkout-price">199 kr</div>
-                <aside><button className="delete-button">Delete</button></aside>
+                <aside><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
             </div>
 
             <div className="checkout-row">
                 <img src="img/the_lego_movie.png" alt="title" />
                 <p>The Lego Movie</p>
                 <div className="checkout-price">149 kr</div>
-                <aside><button>Delete</button></aside>
+                <aside><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
             </div>
 
             <div className="checkout-finish-row">

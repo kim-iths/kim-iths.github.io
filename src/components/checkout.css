@@ -21,6 +21,10 @@
     object-fit: contain;
 }
 
+.checkout-row DeleteIcon {
+    background-color: #000000;
+}
+
 .checkout-finish-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
