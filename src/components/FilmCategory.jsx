@@ -1,8 +1,16 @@
 import './filmCategory.css' 
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import { useEffect } from 'react';
+import GetData from './GetData'
 
 const FilmCategory = () => {
+
+    useEffect(async () => {
+        let url = "https://api.themoviedb.org/3/movie/popular?api_key=86f237d170416093156de7affa43927e";
+        let popularMovies = await GetData(url);
+        console.log('3. Got data in filmcat', popularMovies);
+    },[])
 
     function categoryClick(e) {
     e.preventDefault();
