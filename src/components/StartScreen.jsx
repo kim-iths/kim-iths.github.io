@@ -51,10 +51,7 @@ const StartScreen = () => {
         </div>,
     ];
 
-    let allMovies = [
 
-
-    ];
 
 
     return (

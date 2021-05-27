@@ -69,7 +69,7 @@ function App() {
                 {/* Kommande */}
               </Route>
               <Route path="/favorites">
-                <Favorites />
+                <Register />
               </Route>
               <Route path="/filmcategory">
                 {/* Sökta filmer */}
