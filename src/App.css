@@ -123,4 +123,13 @@
 .footer {
   display: flex;
   align-content: flex-start;
+  position: relative;
+  width: auto;
+  margin-top: 0px;
+}
+
+#footer-text {
+  font-size: 0.8em;
+  margin-bottom: 0px;
+  padding-right: 0%;
 }
