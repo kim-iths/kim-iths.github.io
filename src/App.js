@@ -19,6 +19,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 
 function App() {
+
   var firebaseConfig = {
     apiKey: "AIzaSyCzeIBnMI6pKUlgD6WuQ7Aq2gfOBJH5diE",
     authDomain: "movieblock-ef82a.firebaseapp.com",
