@@ -1,0 +1,108 @@
+section {
+    background: #EAE7F1;
+}
+
+.movie-banner {
+    
+    height: 40vh;
+    display: flex;
+    overflow: hidden;
+    justify-items: flex-start;
+}
+
+.banner-image {
+    display: flex;
+    object-fit: contain;
+    padding-left: 2%;
+}
+
+.movie-name {
+    color: white;
+    text-shadow: black 2px 2px 1px;
+    position: absolute;
+    font-size: 32pt;
+    justify-self: flex-end;
+    align-self: flex-end;
+    right: 2%;
+    margin-bottom: 28px;
+}
+
+.movie-year-time {
+    font-size: 16pt;
+    color: white;
+    text-shadow: black 2px 2px 1px;
+    position: absolute;
+    justify-self: flex-end;
+    align-self: flex-end;
+    right: 2%;
+    margin-bottom: 8px;
+}
+
+.movie-info-content {
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 8px;
+}
+
+.buy {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 16pt;
+}
+
+.buy-button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: none;
+    height: 2em;
+    width: 5em;
+    margin: 8px;
+    margin-left: 16px;
+    font-size: 15pt;
+}
+
+.related-movies {
+    padding: 8px;
+    text-align: left;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.movie-row {
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+}
+
+.related-movie {
+    background-color: gray;
+    height: 300px;
+    width: 200px;
+}
+
+.column {
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .movie-info-content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 2fr 1fr;
+    }
+    .movie-banner {
+        height: 20vh;
+    }
+
+    .movie-name {
+        font-size: 22pt;
+    }
+}
