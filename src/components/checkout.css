@@ -38,6 +38,8 @@
 .checkout-pay {
     background-color: #000000;
     color: #ffffff;
+    border: solid #000000;
+    border-radius: 5px;
     font-size: inherit;
     height: 2em;
     width: 5em;

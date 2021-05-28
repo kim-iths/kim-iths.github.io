@@ -1,5 +1,4 @@
 .category-content {
-    background-color: #eae7f1;
     height: 100%;
     padding-bottom: 10%;
 }
@@ -45,6 +44,7 @@
     display: none;
 }
 
+/* Hides scrollbar for Internet Explorer, Edge and Firefox */
 .all-categories-container {
     -ms-overflow-style: none;  /* Internet Explorer and Edge */
     scrollbar-width: none;  /* Firefox */
