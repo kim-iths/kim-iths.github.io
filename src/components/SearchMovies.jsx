@@ -4,7 +4,7 @@ import GetData from './GetData';
 import { Link } from "react-router-dom";
 
 
-const Search = () => {
+const SearchMovies = () => {
 
     const [search, setSearch] = useState([]);
 
@@ -18,7 +18,7 @@ const Search = () => {
     return (
         <div className="startscreen-wrap">
             <section id="popular-movies">
-                <h2 className="title-popular-movies">Sökresultat: XXX</h2>
+                <h2 className="title-popular-movies">Sökresultat: Black Panther</h2>
                 <div className="grids-popular-movies">
                     <Link to="/filminfo">
                         <div className="popular-movies-div">
@@ -88,4 +88,4 @@ const Search = () => {
     )
 }
 
-export default Search;
+export default SearchMovies;

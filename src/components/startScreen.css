@@ -10,8 +10,8 @@
 
 #movie-slider {
     width: 100%;
-    height: auto;
-    margin-bottom: 5em;
+    height: 100%;
+    margin-bottom: 30px;
 }
 
 .movie-slide-div {

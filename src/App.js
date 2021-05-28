@@ -13,7 +13,9 @@ import Shoppingcart from './components/Shoppingcart';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
 import Favorites from './components/Favorites';
-import Search from './components/Search';
+import SearchMovies from './components/SearchMovies';
+import UpcomingMovies from './components/UpcomingMovies';
+import KidsMovies from './components/KidsMovies'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -40,8 +42,8 @@ function App() {
             <Router basename={process.env.PUBLIC_URL}>
               <Link to="/startScreen"><button className="nav-button" id="nav-btn-home">Movieblock</button></Link>
               <Link to="/filmCategory"><button className="nav-button" id="nav-btn-categories">Kategorier</button></Link>
-              <Link to="/filmCategory"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
-              <Link to="/filmCategory"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
+              <Link to="/kidsmovies"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
+              <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
               <Link to="/favorites"><button className="nav-button" id="nav-btn-favorites">Favoriter</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
               <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
@@ -63,23 +65,20 @@ function App() {
                 <Route path="/filmcategory">
                   <FilmCategory />
                 </Route>
-                <Route path="/filmcategory">
-                  {/* Barnfilmer */}
+                <Route path="/kidsmovies">
+                  <KidsMovies />
                 </Route>
-                <Route path="/filmcategory">
-                  {/* Kommande */}
+                <Route path="/upcoming">
+                  <UpcomingMovies />
                 </Route>
                 <Route path="/favorites">
                   <Favorites />
-                </Route>
-                <Route path="/filmcategory">
-                  {/* Sökta filmer */}
                 </Route>
                 <Route path="/filminfo">
                   <Filminfo />
                 </Route>
                 <Route path="/search">
-                  <Search />
+                  <SearchMovies />
                 </Route>
                 <Route path="/shoppingcart">
                   <Checkout/>
