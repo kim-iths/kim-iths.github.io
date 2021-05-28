@@ -22,7 +22,7 @@ const Login = () => {
                             <a href="">Glömt lösenord?</a>
                         </div>
                         <div className="create-acc">
-                            <a href="">Skapa konto</a>
+                            <Link to="/register"> <a href="">Skapa konto</a> </Link>
                         </div>
                 </div>
 

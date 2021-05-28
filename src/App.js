@@ -74,11 +74,17 @@ function App() {
                 <Route path="/filmcategory">
                   {/* Sökta filmer */}
                 </Route>
+                <Route path="/filminfo">
+                  <Filminfo />
+                </Route>
                 <Route path="/shoppingcart">
                   <Checkout/>
                 </Route>
                 <Route path="/login">
                   <Login/>
+                </Route>
+                <Route path="/register">
+                  <Register />
                 </Route>
               </Switch>
             </Router>
