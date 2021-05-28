@@ -110,6 +110,14 @@ const FilmCategory = () => {
                         <p>Titel</p>
                         <aside className="all-categories-heart">&#x2665;</aside>
                     </div>
+                    <div className="all-categories">
+                        <p>Titel</p>
+                        <aside className="all-categories-heart">&#x2665;</aside>
+                    </div>
+                    <div className="all-categories">
+                        <p>Titel</p>
+                        <aside className="all-categories-heart">&#x2665;</aside>
+                    </div>
                 </div>
             </div>
 
