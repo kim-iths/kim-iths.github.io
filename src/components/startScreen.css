@@ -32,7 +32,8 @@
     font-size: 2rem;
     font-weight: bold;
     color: white;
-    background-color: #B5BFE2;
+    background-color: #00000094;
+    border-radius: 5px;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
