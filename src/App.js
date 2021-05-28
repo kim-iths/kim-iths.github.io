@@ -49,7 +49,6 @@ function App() {
             </Router>
           </div>
         </header>
-
         <main>
           <div className="App">
             <Router>
