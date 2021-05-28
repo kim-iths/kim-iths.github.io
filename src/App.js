@@ -13,6 +13,7 @@ import Shoppingcart from './components/Shoppingcart';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
 import Favorites from './components/Favorites';
+import Search from './components/Search';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -43,7 +44,7 @@ function App() {
               <Link to="/filmCategory"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
               <Link to="/favorites"><button className="nav-button" id="nav-btn-favorites">Favoriter</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
-              <Link to="/filminfo"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
+              <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
               <Link to="/shoppingcart"><img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
               <Link to="/login"><button className="nav-button" id="nav-btn-login">Logga in</button></Link>
             </Router>
@@ -76,6 +77,9 @@ function App() {
                 </Route>
                 <Route path="/filminfo">
                   <Filminfo />
+                </Route>
+                <Route path="/search">
+                  <Search />
                 </Route>
                 <Route path="/shoppingcart">
                   <Checkout/>
