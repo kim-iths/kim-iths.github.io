@@ -28,7 +28,7 @@ const Filminfo = () => {
                 </div>
             </div>
             <div className="buy">
-                <span>199kr</span>
+                <span>199 kr</span>
                 <button className="buy-button">Köp</button>
             </div>
             <div className="related-movies">
