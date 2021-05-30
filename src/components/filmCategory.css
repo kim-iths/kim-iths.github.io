@@ -77,6 +77,10 @@
     color: white;
 }
 
+.category-poster {
+    height: 250px;
+}
+
 @media only screen and (max-width: 768px) {
     .category-grid {
         display: grid;
