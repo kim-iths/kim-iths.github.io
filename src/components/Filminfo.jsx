@@ -9,7 +9,7 @@ const Filminfo = () => {
     const [info, setInfo] = useState({title: "name", year: "", playtime: 0, overview: "", bannerImage: "", cast: "", genres: ""})
     
     useEffect(async () => {
-        const placeholderIdString = "552"
+        const placeholderIdString = "550"
         const url = "https://api.themoviedb.org/3/movie/" + placeholderIdString + "?api_key=86f237d170416093156de7affa43927e&language=en-US"
     
         const creditsUrl = "https://api.themoviedb.org/3/movie/" + placeholderIdString + "/credits?api_key=86f237d170416093156de7affa43927e&language=en-US"
@@ -83,6 +83,9 @@ const Filminfo = () => {
     return(
         <section>
             <div className="movie-banner">
+                <div className="background-wrapper">
+                    <img className="banner-image-background" src={info.bannerImage} alt="movie" />
+                </div>
                 <img className="banner-image" src={info.bannerImage} alt="movie" />
                 <span className="movie-name">{info.title}</span>
                 <span className="movie-year-time">{info.year} / {info.playtime}</span>
