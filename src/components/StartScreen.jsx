@@ -10,21 +10,21 @@ const StartScreen = () => {
 
     const [newMovies, setNewMovies] = useState([]);
     const [popularMovies, setPopularMovies] = useState([]);
-    const [totalPages, setTotalPages] = useState(0);
     const [slides, setSlides] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
 
     useEffect(async () => {
         let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=86f237d170416093156de7affa43927e`;
         let data = await GetData(url);
-        console.log('3. Got data in startscreen', data.results);
+        //console.log('3. Got data in startscreen', data.results);
         setNewMovies(data.results);
     }, [])
 
     useEffect(async () => {
         let url = `https://api.themoviedb.org/3/movie/popular?api_key=86f237d170416093156de7affa43927e&page=${currentPage}`;
         let data = await GetData(url);
-        console.log('4. Got data in startscreen', data.results);
+        //console.log('4. Got data in startscreen', data.results);
         setPopularMovies(data.results);
         setTotalPages(data.total_pages);
     }, [currentPage])
@@ -44,16 +44,15 @@ const StartScreen = () => {
             </div>
         ));
         setSlides(slide);
-
     }
-    console.log("slides:", slides)
+    //console.log("5. slides with data:", slides)
 
     if (slides.length > 0) {
         return (
             <div className="startscreen-wrap">
                 <section id="movie-slider">
                     <h2 className="title-new-movies">Nya filmer</h2>
-                    <Carousel slides={slides} autoplay={true} interval={5000} />
+                    <Carousel slides={slides} autoplay={false} interval={5000} />
                 </section>
                 <section id="popular-movies">
                     <h3 className="title-popular-movies">Populära filmer</h3>
