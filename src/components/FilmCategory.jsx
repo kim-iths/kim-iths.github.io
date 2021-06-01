@@ -11,14 +11,17 @@ const FilmCategory = () => {
     const [categoryList, setCategoryList] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
     const [categoryId, setCategoryId] = useState(35);
+
+    let previousPage = () => {
+        if (pageNumber >1) { 
+            setPageNumber(pageNumber-1)
+        }
+    }
     useEffect(() => {
         loadCategory(categoryId)
     }, [pageNumber, categoryId])
 
     let loadCategory = async (genreId) => {
-        {/*if (categoryId != categoryList.with_genres) {
-            setPageNumber(1)
-        }*/}
         console.log('Kategori', pageNumber);
         let url = `https://api.themoviedb.org/3/discover/movie?api_key=86f237d170416093156de7affa43927e&sort_by=vote_count.desc&include_adult=false&include_video=false&page=${pageNumber}&with_genres=${genreId}`;
         let categoryMovies = await GetData(url);
@@ -55,40 +58,40 @@ const FilmCategory = () => {
                 <h1 className="categories-h1">Kategorier</h1>
 
                 <div className="category-grid">
-                    <button className="category-button" onClick={() => setCategoryId(28)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(28)}}>
                         <h3>Action</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(16)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(16)}}>
                         <h3>Animerat</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(10751)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(10751)}}>
                         <h3>Barnfilm</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(35)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(35)}}>
                         <h3>Komedi</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(18)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(18)}}>
                         <h3>Drama</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(10749)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(10749)}}>
                         <h3>Romantik</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(27)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(27)}}>
                         <h3>Skräck</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(14)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(14)}}>
                         <h3>Fantasy</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(878)}>
-                        <h3>Science Fiction</h3>
+                    <button className="category-button" onClick={() => {setPageNumber(1);setCategoryId(878)}}>
+                        <h3>Sci-Fi</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(12)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(12)}}>
                         <h3>Äventyr</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(53)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(53)}}>
                         <h3>Thriller</h3>
                     </button>
-                    <button className="category-button" onClick={() => setCategoryId(99)}>
+                    <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(99)}}>
                         <h3>Dokumentär</h3>
                     </button>
                 </div>
@@ -101,10 +104,20 @@ const FilmCategory = () => {
                     {moviesCategoryList}
                 </div>
             </div>
-                <button className="next-page-button" onClick={() => 
-                    setPageNumber(pageNumber+1)}>
-                    NÄSTA SIDA
-                </button>
+            <div className="categories-change-page">
+                <div className="category-change">
+                    <button className="categories-change-button" onClick={() => 
+                        previousPage()}>
+                        {"< Föregående sida"}
+                    </button>
+                </div>
+                <div className="category-change">
+                    <button className="categories-change-button" onClick={() => 
+                        setPageNumber(pageNumber+1)}>
+                        {"Nästa sida >"}
+                    </button>
+                </div>
+            </div>
         </section>
     )
 }
