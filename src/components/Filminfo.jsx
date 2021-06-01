@@ -77,9 +77,6 @@ const Filminfo = () => {
             genres: genresString})
     }, [])
 
-
-
-
     return(
         <section>
             <div className="movie-banner">
@@ -96,11 +93,11 @@ const Filminfo = () => {
                     <p className="movie-synopsis">{info.overview}</p>
                 </div>
                 <div className="actors-div column">
-                    <p className="bold">Cast</p>
+                    <p className="bold">Skådespelare</p>
                     <p className="movie-actors">{info.cast}</p>
                 </div>
                 <div className="genres-div column">
-                    <p className="bold">Genres</p>
+                    <p className="bold">Kategorier</p>
                     <p className="movie-genres">{info.genres}</p>
                 </div>
             </div>
