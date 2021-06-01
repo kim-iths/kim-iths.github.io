@@ -116,15 +116,11 @@
     justify-content: center;
 }
 
-#next-page-div {
+.change-page-div {
     padding: 1em;
 }
 
-#previous-page-div {
-    padding: 1em;
-}
-
-#previous-page-button {
+.change-page-button {
     padding: 0.5em;
     background-color: transparent;
     border: transparent;
@@ -132,20 +128,7 @@
     font-weight: bold;
 }
 
-#previous-page-button:hover {
-    color: #7287F5;
-    transform: scale(1.1);
-}
-
-#next-page-button {
-    padding: 0.5em;
-    background-color: transparent;
-    border: transparent;
-    font-size: 1em;
-    font-weight: bold;
-}
-
-#next-page-button:hover {
+.change-page-button:hover {
     color: #7287F5;
     transform: scale(1.1);
 }
