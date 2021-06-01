@@ -37,6 +37,7 @@ main {
 #nav-btn-home {
   justify-content: flex-start;
   font-size: 30px;
+  font-weight: bolder;
   margin-right: 10px;
 }
 
