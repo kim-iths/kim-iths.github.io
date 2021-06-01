@@ -68,9 +68,9 @@ const StartScreen = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="page-buttons">
-                        <div id="previous-page-button"><h4 id="previous-page-text"> {"< Föregående sida"} </h4></div>
-                        <div id="next-page-button"><h4 id="next-page-text"> {"Nästa sida >"} </h4></div>
+                    <div className="start-screen-buttons">
+                        <div id="previous-page-div"><button id="previous-page-button"> {"< Föregående sida"}</button></div>
+                        <div id="next-page-div"><button id="next-page-button"> {"Nästa sida >"} </button></div>
                     </div>
                 </section>
             </div>

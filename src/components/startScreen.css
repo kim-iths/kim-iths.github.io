@@ -111,17 +111,43 @@
     color: white;
 }
 
-.page-buttons {
+.start-screen-buttons {
     display: flex;
     justify-content: center;
 }
 
-#next-page-button {
+#next-page-div {
+    padding: 1em;
+}
+
+#previous-page-div {
     padding: 1em;
 }
 
 #previous-page-button {
-    padding: 1em;
+    padding: 0.5em;
+    background-color: transparent;
+    border: transparent;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#previous-page-button:hover {
+    color: #7287F5;
+    transform: scale(1.1);
+}
+
+#next-page-button {
+    padding: 0.5em;
+    background-color: transparent;
+    border: transparent;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#next-page-button:hover {
+    color: #7287F5;
+    transform: scale(1.1);
 }
 
 .loading-text {
