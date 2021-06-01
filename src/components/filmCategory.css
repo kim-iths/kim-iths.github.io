@@ -64,7 +64,7 @@
     flex-direction: column;
     position: relative;
     text-align: center;
-    background-color: #cfcfcf;
+    background-color: #ffffff94;
     height: 350px;
     width: 200px;
 }
@@ -72,13 +72,26 @@
 .all-categories-heart {
     position: absolute;
     top: 2%;
-    right: 10%;
+    right: 2%;
     font-size: 2em;
-    color: white;
 }
 
 .category-poster {
     height: 250px;
+}
+
+.next-page-button {
+    display: flex;
+    text-align: center;
+    display: table-cell;
+    font-size: inherit;
+    height: 35px;
+    width: 150px;
+    border: solid #000000da;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #ffffff;
+    margin-top: 2%;
 }
 
 @media only screen and (max-width: 768px) {
