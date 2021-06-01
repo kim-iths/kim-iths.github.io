@@ -15,8 +15,12 @@ const FilmCategory = () => {
         loadCategory(categoryId)
     }, [pageNumber, categoryId])
 
-    let loadCategory = async (categoryId) => {
-        let url = `https://api.themoviedb.org/3/discover/movie?api_key=86f237d170416093156de7affa43927e&sort_by=vote_count.desc&include_adult=false&include_video=false&page=${pageNumber}&with_genres=${categoryId}`;
+    let loadCategory = async (genreId) => {
+        {/*if (categoryId != categoryList.with_genres) {
+            setPageNumber(1)
+        }*/}
+        console.log('Kategori', pageNumber);
+        let url = `https://api.themoviedb.org/3/discover/movie?api_key=86f237d170416093156de7affa43927e&sort_by=vote_count.desc&include_adult=false&include_video=false&page=${pageNumber}&with_genres=${genreId}`;
         let categoryMovies = await GetData(url);
         if(categoryMovies != null) {
             setCategoryList(
@@ -90,7 +94,7 @@ const FilmCategory = () => {
                 </div>
             </div>
 
-            <h3 className="all-movies-h3">Alla filmer</h3>
+            {/*<h3 className="all-movies-h3">Alla filmer</h3>*/}
 
             <div className="all-categories-container">
                 <div className="all-categories-grid">

@@ -52,7 +52,7 @@
 
 .all-categories-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 16px;
     align-items: center;
     justify-content: center;
@@ -87,11 +87,21 @@
     font-size: inherit;
     height: 35px;
     width: 150px;
-    border: solid #000000da;
+    border: transparent;
     border-radius: 5px;
-    background-color: #000000;
-    color: #ffffff;
+    box-shadow: 0px 5px 5px;
+    background-color: #b5bfe2;
     margin-top: 2%;
+}
+
+.next-page-button:hover {
+    background-color: #7c88b4;
+}
+
+.next-page-button:active {
+    transform: translateY(-1px);
+    border-radius: 5px;
+    box-shadow: 0 5px 5px;
 }
 
 @media only screen and (max-width: 768px) {
