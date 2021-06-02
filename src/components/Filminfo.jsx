@@ -6,7 +6,15 @@ import GetData from './GetData';
 const Filminfo = () => {
 
     const [title, setTitle] = useState("")
-    const [info, setInfo] = useState({title: "name", year: "", playtime: 0, overview: "", bannerImage: "", cast: "", genres: ""})
+    const [info, setInfo] = useState({
+        title: "name", 
+         year: "", 
+         playtime: 0, 
+         overview: "", 
+         bannerImage: "", 
+         cast: "", 
+         genres: "", 
+         similarMovies: []})
     
     useEffect(async () => {
         const placeholderIdString = "550"
@@ -14,9 +22,13 @@ const Filminfo = () => {
     
         const creditsUrl = "https://api.themoviedb.org/3/movie/" + placeholderIdString + "/credits?api_key=86f237d170416093156de7affa43927e&language=en-US"
 
+        const similarUrl = "https://api.themoviedb.org/3/movie/" + placeholderIdString + "/similar?api_key=86f237d170416093156de7affa43927e&language=en-US&page=1"
+
         const data = await GetData(url)
         const creditsData = await GetData(creditsUrl)
+        const similarData = await GetData(similarUrl)
         
+        //movie
         let title = data.title
         let year = data.release_date
         let playtime = data.runtime
@@ -26,6 +38,26 @@ const Filminfo = () => {
 
         //credits
         let cast = creditsData.cast
+
+        //similar movies
+        let similarMovies = similarData.results
+        let amountSimilarMovies = 10
+
+        let elements = []
+
+        for(let i = 0; i < amountSimilarMovies; i++){
+
+            let currentTitle = similarMovies[i].title
+
+            let currentImage = similarMovies[i].poster_path
+            currentImage = "https://image.tmdb.org/t/p/w500" + currentImage
+
+            elements.push(
+            <div className="similar-movie">
+                <img src={currentImage} alt={currentTitle} className="movie-poster"/>
+                <p>{currentTitle}</p>
+            </div>)
+        }
 
         //convert variables to their correct values
 
@@ -74,7 +106,8 @@ const Filminfo = () => {
             overview: synopsis, 
             bannerImage: bannerImage, 
             cast: castString, 
-            genres: genresString})
+            genres: genresString, 
+            similarMovies: elements})
     }, [])
 
     return(
@@ -105,14 +138,15 @@ const Filminfo = () => {
                 <span>199 kr</span>
                 <button className="buy-button">Köp</button>
             </div>
-            <div className="related-movies">
+            <div className="similar-movies">
                 <p>Liknande filmer</p>
                 <div className="movie-row">
+                    {info.similarMovies}
+                    {/* <div className="related-movie"></div>
                     <div className="related-movie"></div>
                     <div className="related-movie"></div>
                     <div className="related-movie"></div>
-                    <div className="related-movie"></div>
-                    <div className="related-movie"></div>
+                    <div className="related-movie"></div> */}
                 </div>
             </div>
         </section>

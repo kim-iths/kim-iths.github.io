@@ -75,12 +75,13 @@ section {
     border: none;
     height: 2em;
     width: 5em;
-    margin: 8px;
+    margin: 2%;
     margin-left: 16px;
     font-size: 15pt;
 }
 
-.related-movies {
+.similar-movies {
+    margin: 2%;
     padding: 8px;
     text-align: left;
     font-size: 18pt;
@@ -90,14 +91,22 @@ section {
 .movie-row {
     overflow: scroll;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 24px;
 }
 
-.related-movie {
-    background-color: gray;
-    height: 300px;
-    width: 200px;
+.similar-movie {
+    flex-direction: column;
+    display: flex;
+    font-size: 15pt;
+    font-weight: normal;
+    text-align: center;
+}
+
+.movie-poster {
+    object-fit: contain;
+    height: 250px;
+    width: 166px;
 }
 
 .column {
