@@ -26,7 +26,7 @@
     bottom: 0%;
     left: 50%;
     transform: translate(-50%);
-    font-size: 2rem;
+    font-size: 200%;
     font-weight: bold;
     color: white;
     background-color: #00000094;
@@ -63,13 +63,31 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-bottom: 3em;
 }
+
+.popular-movies-container {
+    overflow: scroll;
+    padding: 0% 20% 5% 20%;
+    height: 500px;
+}
+
+/* Hides scrollbar for Chrome, Safari and Opera */
+.popular-movies-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hides scrollbar for Internet Explorer, Edge and Firefox */
+.popular-movies-container {
+    -ms-overflow-style: none;  /* Internet Explorer and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 
 .grids-popular-movies {
     justify-content: center;
     display: grid;
     grid-gap: 1.5em;
-    grid-template-columns: repeat(6, 11em);
+    grid-template-columns: repeat(5, 11em);
     /* grid-template-rows: repeat(2, 20em); */
 }
 
@@ -91,6 +109,32 @@
     right: 2%;
     font-size: 1.5em;
     color: white;
+}
+
+.start-screen-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.change-page-div {
+    padding: 1em;
+}
+
+.change-page-button {
+    padding: 0.5em;
+    background-color: transparent;
+    border: transparent;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.change-page-button:hover {
+    color: #7287F5;
+    transform: scale(1.1);
+}
+
+.loading-text {
+    padding-top: 3em;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -129,6 +173,10 @@
         object-fit: cover;
     }
 
+    .movie-slide-title {
+        font-size: 120%;
+    }
+
     .grids-popular-movies {
         justify-content: center;
         display: grid;
@@ -150,6 +198,10 @@
         width: 100%;
         height: 10em;
         object-fit: cover;
+    }
+
+    .movie-slide-title {
+        font-size: 100%;
     }
 
     .grids-popular-movies {
