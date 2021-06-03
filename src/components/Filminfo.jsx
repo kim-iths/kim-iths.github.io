@@ -16,7 +16,7 @@ const Filminfo = () => {
     const [id, setId] = useState(movieId)
     const [title, setTitle] = useState("")
     const [info, setInfo] = useState({
-        title: "name", 
+        title: "", 
         year: "", 
         playtime: 0, 
         overview: "", 
@@ -44,6 +44,7 @@ const Filminfo = () => {
         let playtime = data.runtime
         let synopsis = data.overview
         let bannerImage = data.backdrop_path
+        let posterImage = data.poster_path
         let genres = data.genres
 
         //credits
@@ -81,10 +82,16 @@ const Filminfo = () => {
         
         //cast -> "name, name, name..."
         
-        let amountActors = 4
         let castString = ""
+        let amountActors = 4
+        if(cast.length < amountActors){
+            amountActors = cast.length
+        }
+
+        console.log(cast.length)
 
         for(let i = 0; i < amountActors; i++){
+
             if(i > 0 && i != amountActors){
                 castString += ", "
             }
@@ -106,7 +113,11 @@ const Filminfo = () => {
         playtime = hours + "h " + minutes + "m"
 
         // /aösldköaldsk.jpg -> https://image.tmdb.org/t/p/w500/aösldköaldsk.jpg
-        bannerImage = "https://image.tmdb.org/t/p/w500" + bannerImage
+        if(bannerImage != null){
+            bannerImage = "https://image.tmdb.org/t/p/w500" + bannerImage
+        } else {
+            bannerImage = "https://image.tmdb.org/t/p/w500" + posterImage
+        }
 
         //genres -> action, adventure, whatever
         let genresString = ""
@@ -132,9 +143,9 @@ const Filminfo = () => {
         <section>
             <div className="movie-banner">
                 <div className="background-wrapper">
-                    <img className="banner-image-background" src={info.bannerImage} alt="movie" />
+                    <img className="banner-image-background" src={info.bannerImage} alt="movie banner background" />
                 </div>
-                <img className="banner-image" src={info.bannerImage} alt="movie" />
+                <img className="banner-image" src={info.bannerImage} alt="movie banner" />
                 <span className="movie-name">{info.title}</span>
                 <span className="movie-year-time">{info.year} / {info.playtime}</span>
             </div>
