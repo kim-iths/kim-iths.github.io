@@ -10,7 +10,7 @@ const KidsMovies = () => {
 
     const [kidscategoryList, setKidsCategoryList] = useState([]);
     const [kidspageNumber, setKidsPageNumber] = useState(1);
-    const [kidscategoryId, setKidsCategoryId] = useState(35);
+    const [kidscategoryId, setKidsCategoryId] = useState(10751);
 
     let previousPage = () => {
         if (kidspageNumber >1) { 
@@ -36,14 +36,14 @@ const KidsMovies = () => {
     let kidsmoviesCategoryList = kidscategoryList.map((category, index) => {
         return (
             kidscategoryList != [] ?
-            <div key={index} className="all-categories">
+            <div key={index} className="kids-categories">
                 {category.poster_path ? 
-                    <img src={`https://image.tmdb.org/t/p/w500${category.poster_path}`} className="category-poster" alt="" />
+                    <img src={`https://image.tmdb.org/t/p/w500${category.poster_path}`} className="kids-category-poster" alt="" />
                 :
                 <img src="img/no-poster.png" alt="" />
             }
                 <p>{category.title}</p>
-                <aside className="all-categories-heart"><IconButton aria-label="favorite"><FavoriteIcon style={{ backgroundColor:'#25252594', borderRadius: '20%', fill: '#ffffff' }} /></IconButton></aside> 
+                <aside className="kids-categories-heart"><IconButton aria-label="favorite"><FavoriteIcon style={{ backgroundColor:'#25252594', borderRadius: '20%', fill: '#ffffff' }} /></IconButton></aside> 
             </div>
             :
             <p key={index}>No data</p>
@@ -51,13 +51,13 @@ const KidsMovies = () => {
         })
 
     return (
-        <section className="category-content">
+        <section className="kids-category-content">
 
-            <div className="movie-category">
+            <div className="kids-movie-category">
 
-                <h1 className="categories-h1">Barnfilmer</h1>
+                <h1 className="kids-categories-h1">Barnfilmer</h1>
 
-                <div className="category-grid">
+                <div className="kids-category-grid">
                     <button className="kids-category-button" onClick={() => {setKidsPageNumber(1); setKidsCategoryId(10751)}}>
                         
                     </button>
@@ -68,20 +68,20 @@ const KidsMovies = () => {
 
             {/*<h3 className="all-movies-h3">Alla filmer</h3>*/}
 
-            <div className="all-categories-container">
-                <div className="all-categories-grid">
+            <div className="kids-categories-container">
+                <div className="kids-categories-grid">
                     {kidsmoviesCategoryList}
                 </div>
             </div>
-            <div className="categories-change-page">
-                <div className="category-change">
-                    <button className="categories-change-button" onClick={() => 
+            <div className="-kids-categories-change-page">
+                <div className="kids-category-change">
+                    <button className="kids-categories-change-button" onClick={() => 
                         previousPage()}>
                         {"< Föregående sida"}
                     </button>
                 </div>
-                <div className="category-change">
-                    <button className="categories-change-button" onClick={() => 
+                <div className="kids-category-change">
+                    <button className="kids-categories-change-button" onClick={() => 
                         setKidsPageNumber(kidspageNumber+1)}>
                         {"Nästa sida >"}
                     </button>
