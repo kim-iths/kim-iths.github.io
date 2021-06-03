@@ -9,6 +9,11 @@
 .kids-movie-category {
     padding: 5% 10% 5% 10%;
 }
+.kids-categories-h1{
+    top: ;
+    left: 43%;
+    position: absolute;
+}
 
 .kids-category-grid {
     display: grid;
@@ -69,6 +74,7 @@
 }
 
 .kids-categories-heart {
+    visibility: hidden;
     position: absolute;
     top: 2%;
     right: 2%;
@@ -79,7 +85,11 @@
     height: 250px;
 }
 
-.kids-categories-change-page {
+.kids-categories-change-page-button-previous {
+    display: flex;
+    justify-content: center;
+}
+.kids-categories-change-page-button-next {
     display: flex;
     justify-content: center;
 }
@@ -88,7 +98,21 @@
     padding: 1em;
 }
 
-.kids-categories-change-button {
+.kids-categories-change-button-previous {
+    left: 35%;
+    top: 94%;
+    position: absolute;
+    padding: 0.5em;
+    background-color: transparent;
+    border: transparent;
+    font-size: 1em;
+    font-weight: bold;
+}
+.kids-categories-change-button-next {
+    
+    left: 50%;
+    top: 94%;
+    position: absolute;
     padding: 0.5em;
     background-color: transparent;
     border: transparent;
@@ -96,7 +120,13 @@
     font-weight: bold;
 }
 
-.kids-categories-change-button:hover {
+
+.kids-categories-change-button-previous:hover {
+    color: #7287F5;
+    transform: scale(1.1);
+}
+
+.kids-categories-change-button-next:hover {
     color: #7287F5;
     transform: scale(1.1);
 }

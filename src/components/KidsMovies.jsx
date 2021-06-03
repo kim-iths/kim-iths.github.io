@@ -75,13 +75,13 @@ const KidsMovies = () => {
             </div>
             <div className="-kids-categories-change-page">
                 <div className="kids-category-change">
-                    <button className="kids-categories-change-button" onClick={() => 
+                    <button className="kids-categories-change-button-previous" onClick={() => 
                         previousPage()}>
                         {"< Föregående sida"}
                     </button>
                 </div>
                 <div className="kids-category-change">
-                    <button className="kids-categories-change-button" onClick={() => 
+                    <button className="kids-categories-change-button-next" onClick={() => 
                         setKidsPageNumber(kidspageNumber+1)}>
                         {"Nästa sida >"}
                     </button>
