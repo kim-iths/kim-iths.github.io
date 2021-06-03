@@ -20,6 +20,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import MenuIcon from '@material-ui/icons/Menu';
+import { useState } from 'react';
 
 
 
@@ -35,25 +36,40 @@ function App() {
     measurementId: "G-TLZGPF5L59"
   };
 
+  const [navbarOpen, setNavbarOpen] = useState(false)
+
+  const handleToggle = () => {
+    setNavbarOpen(prev => !prev)
+  }
+
+  const closeMenu = () => {
+    setNavbarOpen(false)
+  }
+
   return (
 
     <div className="App">
       <div className="app-wrap">
         <header className="App-header">
           <div className="nav-bar" id="nav-container">
+          <div className="burger-icon" onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}
+          <IconButton aria-label="shop"><MenuIcon style={{ fill: '#000000' }} /></IconButton>
+          </div>
             <Router basename={process.env.PUBLIC_URL}>
-              <Link to="/startScreen"><button className="nav-home-button" id="nav-btn-home">Movieblock</button></Link>
-              <Link to="/filmCategory"><button className="nav-button" id="nav-btn-categories">Kategorier</button></Link>
-              <Link to="/kidsmovies"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
-              <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
+              {/*<Link to="/startScreen"><button className="nav-home-button" id="nav-btn-home">Movieblock</button></Link>*/}
+              <Link to="/filmCategory"><button className="nav-button menuNav" id="nav-btn-categories" className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                Kategorier</button></Link>
+              <Link to="/kidsmovies" activeclassname="active-link" onClick={() => closeMenu()}>
+                <button className="nav-button menuNav" id="nav-btn-movies" className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                Barnfilmer</button></Link>
+              <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies" className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                Kommande</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
               <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
               <Link to="/shoppingcart"><IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} /></IconButton></Link>
             </Router>
           </div>
-          <a href="javascript:void(0);" class="burger-icon" onclick="myFunction()">
-          <IconButton aria-label="shop"><MenuIcon style={{ fill: '#000000' }} /></IconButton>
-          </a>
+         
         </header>
         <main>
           <div className="App">
