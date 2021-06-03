@@ -3,7 +3,6 @@ import { Carousel } from '3d-react-carousal';
 import { useState, useEffect } from 'react';
 import GetData from './GetData';
 import { Link } from "react-router-dom";
-import { colors } from '@material-ui/core';
 
 
 const StartScreen = () => {
