@@ -60,6 +60,14 @@ section {
     display: grid;
     grid-template-columns: 2fr 2fr 1fr;
     gap: 8px;
+    height: 10em;
+}
+
+.column {
+    overflow: scroll;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
 }
 
 .buy {
@@ -109,11 +117,12 @@ section {
     width: 166px;
 }
 
-.column {
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
+.no-movies {
+    font-weight: normal;
+    font-size: 16pt;
+    text-align: center;
 }
+
 
 .bold {
     font-weight: bold;
