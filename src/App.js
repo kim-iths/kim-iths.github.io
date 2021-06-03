@@ -77,7 +77,7 @@ function App() {
                 <Route path="/favorites">
                   <Favorites />
                 </Route>
-                <Route path="/filminfo">
+                <Route path="/filminfo/:id">
                   <Filminfo />
                 </Route>
                 <Route path="/search">

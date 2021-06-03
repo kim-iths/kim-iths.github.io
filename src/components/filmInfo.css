@@ -3,17 +3,34 @@ section {
 }
 
 .movie-banner {
-    
     height: 40vh;
     display: flex;
     overflow: hidden;
-    justify-items: flex-start;
+    justify-items: center;
+    align-items: center;
+}
+
+.background-wrapper {
+    position: absolute;
+    height: 40vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+.banner-image-background {
+    z-index: 0;
+    transform: scale(1.03);
+    filter: blur(6px);
+    width: 100%;
+    object-fit: cover;
 }
 
 .banner-image {
+    height: 40vh;
+    z-index: 0;
     display: flex;
     object-fit: contain;
-    padding-left: 2%;
+    width: 100%;
 }
 
 .movie-name {
@@ -39,10 +56,18 @@ section {
 }
 
 .movie-info-content {
-    padding: 8px;
+    padding: 2%;
     display: grid;
     grid-template-columns: 2fr 2fr 1fr;
     gap: 8px;
+    height: 10em;
+}
+
+.column {
+    overflow: scroll;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
 }
 
 .buy {
@@ -58,12 +83,13 @@ section {
     border: none;
     height: 2em;
     width: 5em;
-    margin: 8px;
+    margin: 2%;
     margin-left: 16px;
     font-size: 15pt;
 }
 
-.related-movies {
+.similar-movies {
+    margin: 2%;
     padding: 8px;
     text-align: left;
     font-size: 18pt;
@@ -73,21 +99,30 @@ section {
 .movie-row {
     overflow: scroll;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 24px;
 }
 
-.related-movie {
-    background-color: gray;
-    height: 300px;
-    width: 200px;
+.similar-movie {
+    flex-direction: column;
+    display: flex;
+    font-size: 15pt;
+    font-weight: normal;
+    text-align: center;
 }
 
-.column {
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
+.movie-poster {
+    object-fit: contain;
+    height: 250px;
+    width: 166px;
 }
+
+.no-movies {
+    font-weight: normal;
+    font-size: 16pt;
+    text-align: center;
+}
+
 
 .bold {
     font-weight: bold;

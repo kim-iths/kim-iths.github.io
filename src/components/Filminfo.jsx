@@ -1,44 +1,176 @@
 import './filmInfo.css'
-import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import React, { Component, useEffect, useState } from 'react'
+import { Link, useParams } from "react-router-dom";
+import GetData from './GetData';
 
 const Filminfo = () => {
+
+    let params = useParams();
+
+    let movieId = 550
+
+    if ('id' in params) {
+        movieId = params.id;
+    }
     
+    const [id, setId] = useState(movieId)
+    const [title, setTitle] = useState("")
+    const [info, setInfo] = useState({
+        title: "", 
+        year: "", 
+        playtime: 0, 
+        overview: "", 
+        bannerImage: "", 
+        cast: "", 
+        genres: "", 
+        similarMovies: []})
+
+    useEffect(async () => {
+        window.scrollTo(0, 0)
+
+        const url = "https://api.themoviedb.org/3/movie/" + id + "?api_key=86f237d170416093156de7affa43927e&language=en-US"
+    
+        const creditsUrl = "https://api.themoviedb.org/3/movie/" + id + "/credits?api_key=86f237d170416093156de7affa43927e&language=en-US"
+
+        const similarUrl = "https://api.themoviedb.org/3/movie/" + id + "/similar?api_key=86f237d170416093156de7affa43927e&language=en-US&page=1"
+
+        const data = await GetData(url)
+        const creditsData = await GetData(creditsUrl)
+        const similarData = await GetData(similarUrl)
+        
+        //movie
+        let title = data.title
+        let year = data.release_date
+        let playtime = data.runtime
+        let synopsis = data.overview
+        let bannerImage = data.backdrop_path
+        let posterImage = data.poster_path
+        let genres = data.genres
+
+        //credits
+        let cast = creditsData.cast
+
+        //similar movies
+        let similarMovies = similarData.results
+        let amountSimilarMovies = 10
+
+        let elements = []
+        
+        if(similarMovies.length){
+            
+            for(let i = 0; i < amountSimilarMovies; i++){
+
+                let currentTitle = similarMovies[i].title
+                
+                let currentImage = similarMovies[i].poster_path
+                currentImage = "https://image.tmdb.org/t/p/w500" + currentImage
+
+                elements.push(
+            <div className="similar-movie">
+                <Link to={`/filminfo/${similarMovies[i].id}`} onClick={() => setId(similarMovies[i].id)}>
+                    <img src={currentImage} alt={currentTitle} className="movie-poster"/>
+                </Link>
+                <p>{currentTitle}</p>
+            </div>)
+        }
+    } else {
+        elements.push(
+                <p className="no-movies">Det finns inga liknande titlar.</p>)
+    }
+        
+        //convert variables to their correct values
+        
+        //cast -> "name, name, name..."
+        
+        let castString = ""
+        let amountActors = 4
+        if(cast.length < amountActors){
+            amountActors = cast.length
+        }
+
+        console.log(cast.length)
+
+        for(let i = 0; i < amountActors; i++){
+
+            if(i > 0 && i != amountActors){
+                castString += ", "
+            }
+
+            castString += cast[i].name
+
+            if(i == amountActors-1){
+                castString += "..."
+            }
+
+        }
+        
+        //1999-05-16 -> 1999
+        year = year.substring(0,4)
+
+        //139 -> 2h 19m
+        const hours = Math.floor(playtime / 60)
+        const minutes = playtime % 60
+        playtime = hours + "h " + minutes + "m"
+
+        // /aösldköaldsk.jpg -> https://image.tmdb.org/t/p/w500/aösldköaldsk.jpg
+        if(bannerImage != null){
+            bannerImage = "https://image.tmdb.org/t/p/w500" + bannerImage
+        } else {
+            bannerImage = "https://image.tmdb.org/t/p/w500" + posterImage
+        }
+
+        //genres -> action, adventure, whatever
+        let genresString = ""
+
+        genres.forEach((e, i) => {
+            if(i != 0 && i != genres.length){
+                genresString += ", "
+            }
+            genresString += e.name
+        });
+
+        setInfo({title: title, 
+            year: year, 
+            playtime: playtime, 
+            overview: synopsis, 
+            bannerImage: bannerImage, 
+            cast: castString, 
+            genres: genresString, 
+            similarMovies: elements})
+    }, [id])
 
     return(
         <section>
             <div className="movie-banner">
-                <img className="banner-image" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/5bd88a57235929.59d46e946a25b.jpg" alt="movie" />
-                <span className="movie-name">Film 2: Den Andra Filmen</span>
-                <span className="movie-year-time">2017 / 2h 41m</span>
+                <div className="background-wrapper">
+                    <img className="banner-image-background" src={info.bannerImage} alt="movie banner background" />
+                </div>
+                <img className="banner-image" src={info.bannerImage} alt="movie banner" />
+                <span className="movie-name">{info.title}</span>
+                <span className="movie-year-time">{info.year} / {info.playtime}</span>
             </div>
             <div className="movie-info-content">
                 <div className="synopsis-div column">
                     <p className="bold">Handling</p>
-                    <p className="movie-synopsis">Synopsis för filmen som antingen kan vara kort eller lång, kanske med en “visa mer”-knapp vid slutet ifall den långa inte får pla...</p>
-                    <span className="show-full-synopsis"><a href="">Visa mer</a></span>
+                    <p className="movie-synopsis">{info.overview}</p>
                 </div>
                 <div className="actors-div column">
-                    <p className="bold">Actors</p>
-                    <p className="movie-actors">Kim Hellman, David Sävenmark, Emmeline Mutka, Minja Cheng, Wenjing Zhang</p>
+                    <p className="bold">Skådespelare</p>
+                    <p className="movie-actors">{info.cast}</p>
                 </div>
                 <div className="genres-div column">
-                    <p className="bold">Genres</p>
-                    <p className="movie-genres">Action, Sci-Fi, Äventyr</p>
+                    <p className="bold">Kategorier</p>
+                    <p className="movie-genres">{info.genres}</p>
                 </div>
             </div>
             <div className="buy">
                 <span>199 kr</span>
                 <button className="buy-button">Köp</button>
             </div>
-            <div className="related-movies">
+            <div className="similar-movies">
                 <p>Liknande filmer</p>
                 <div className="movie-row">
-                    <div className="related-movie"></div>
-                    <div className="related-movie"></div>
-                    <div className="related-movie"></div>
-                    <div className="related-movie"></div>
-                    <div className="related-movie"></div>
+                    {info.similarMovies}
                 </div>
             </div>
         </section>
