@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import GetData from './GetData'
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const FilmCategory = () => {
 
@@ -110,15 +112,15 @@ const FilmCategory = () => {
             </div>
             <div className="categories-change-page">
                 <div className="category-change">
-                    <button className="categories-change-button" onClick={() => 
+                    <button className="categories-change-button"  onClick={() => 
                         previousPage()}>
-                        {"< Föregående sida"}
+                        <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
                     </button>
                 </div>
                 <div className="category-change">
                     <button className="categories-change-button" onClick={() => 
                         setPageNumber(pageNumber+1)}>
-                        {"Nästa sida >"}
+                        <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
                     </button>
                 </div>
             </div>

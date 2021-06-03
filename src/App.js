@@ -51,9 +51,9 @@ function App() {
               <Link to="/shoppingcart"><IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} /></IconButton></Link>
             </Router>
           </div>
-          <a href="javascript:void(0);" class="burger-icon" onclick="myFunction()">
+          {/*<a href="javascript:void(0);" className="burger-icon" onclick="myFunction()">
           <IconButton aria-label="shop"><MenuIcon style={{ fill: '#000000' }} /></IconButton>
-          </a>
+          </a>*/}
         </header>
         <main>
           <div className="App">

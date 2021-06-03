@@ -69,60 +69,14 @@ main {
   transform: scale(1.1);
 }
 
-#nav-btn-favorites {
-  margin-left: 20px;
-  font-size: 18px;
-}
-#nav-btn-favorites:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
 .search-field {
   height: 28px;
   margin-left: 20px;
 }
 
-#nav-btn-login:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
-#nav-btn-register {
-  margin-left: 20px;
-  font-size: 18px;
-}
-
-#nav-btn-register:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
-#nav-btn-login{
-  margin-left: 60px;
-  font-size: 18px;
-}
-
-#nav-btn-login:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
-#nav-symbol-shopcart {
-  margin-bottom: -12px;
-  margin-left: 30px;
-  height: 34px;
-  width: 75px;
-}
-
-#nav-symbol-shopcart:hover {
-  color: white;
-  transform: scale(1.2);
-}
-
-.burger-icon {
+/*.burger-icon {
   display: none;
-}
+}*/
 
   .footer {
     display: flex;
@@ -141,25 +95,52 @@ main {
     font-size: 0.9em;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1200px) {
     .App-header {
       display: flex;
       flex-direction: column;
       background:linear-gradient(#7287f5, transparent);
       background-color: #c182f2;
-      padding: 10px;
       align-items: center;
       justify-content: center;
       font-size: calc(10px + 2vmin);
       margin-top: -50px;
+      margin-bottom: 2em;
       color: white;
       position: sticky;
       top: 0;
       z-index: 1;
     }
 
+    #nav-container {
+      width: 100vw;
+    }
+  }
+
+
+  @media only screen and (max-width: 800px) {
+    .App-header {
+      display: flex;
+      flex-direction: column;
+      background:linear-gradient(#7287f5, transparent);
+      background-color: #c182f2;
+      align-items: center;
+      justify-content: center;
+      font-size: calc(10px + 2vmin);
+      margin-top: -50px;
+      margin-bottom: 2em;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    #nav-container {
+      width: 100vw;
+    }
+
     .nav-button {
-      display: none;
+      margin-top: 3em;
     }
   
     #nav-btn-home {
@@ -186,10 +167,6 @@ main {
       font-size: 13px;
     }
 
-    #nav-btn-favorites {
-      margin-left: 2px;
-      font-size: 13px;
-    }
     .search-field {
       /*display: block;*/
       height: 18px;
@@ -197,28 +174,63 @@ main {
       margin-bottom: -50px;
     }
 
-    #nav-btn-login {
-      position: absolute;
-      left: 3%;
-      bottom: 10px;
-      font-size: 13px;
-    }
-
-    #nav-symbol-shopcart {
-      position: absolute;
-      bottom: 15px;
-      margin-bottom: -14px;
-      height: 28px;
-      width: 70px;
-    }
-
-    .burger-icon {
+    /*.burger-icon {
       display: block;
       position: absolute;
       left: 0;
       top: 28%;
       
       color: #000000;
+    }*/
+  
+  }
+
+  @media only screen and (max-width: 420px) {
+    .App-header {
+      display: flex;
+      flex-direction: column;
+      background:linear-gradient(#7287f5, transparent);
+      background-color: #c182f2;
+      align-items: center;
+      justify-content: center;
+      font-size: calc(10px + 2vmin);
+      margin-top: -50px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    #nav-container {
+      width: 100vw;
+    }
+
+    #nav-btn-home {
+      padding-bottom: 5%;
+      position: absolute;
+      font-size: 1.8em;
+      left: 26%;
+      top: 9%;
+    }
+
+    .nav-button {
+      margin-top: 5em;
+    }
+
+    .footer {
+      display: flex;
+      align-content: flex-start;
+      padding-top: 2%;
+      background: linear-gradient(#c182f2, transparent);
+      background-color: #7287f5;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2.5rem;
     }
   
+    .footer p {
+      padding-left: 1%;
+      font-size: 0.6em;
+    }
   }
