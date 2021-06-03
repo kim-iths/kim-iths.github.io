@@ -18,6 +18,7 @@ const FilmCategory = () => {
         }
     }
     useEffect(() => {
+        window.scrollTo(0, 0)
         loadCategory(categoryId)
     }, [pageNumber, categoryId])
 
@@ -37,11 +38,14 @@ const FilmCategory = () => {
         return (
             categoryList != [] ?
             <div key={index} className="all-categories">
+                <Link to={`/filminfo/${category.id}`} >
                 {category.poster_path ? 
                     <img src={`https://image.tmdb.org/t/p/w500${category.poster_path}`} className="category-poster" alt="" />
                 :
                 <img src="img/no-poster.png" alt="" />
             }
+
+                </Link>
                 <p>{category.title}</p>
                 <aside className="all-categories-heart"><IconButton aria-label="favorite"><FavoriteIcon style={{ backgroundColor:'#25252594', borderRadius: '20%', fill: '#ffffff' }} /></IconButton></aside> 
             </div>

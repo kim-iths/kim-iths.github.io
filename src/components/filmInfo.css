@@ -109,6 +109,12 @@ section {
     width: 166px;
 }
 
+.no-movies {
+    font-weight: normal;
+    font-size: 16pt;
+    text-align: center;
+}
+
 .column {
     padding: 12px;
     background-color: rgba(0, 0, 0, 0.25);

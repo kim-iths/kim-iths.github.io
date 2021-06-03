@@ -1,28 +1,38 @@
 import './filmInfo.css'
 import React, { Component, useEffect, useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import GetData from './GetData';
 
 const Filminfo = () => {
 
+    let params = useParams();
+
+    let movieId = 550
+
+    if ('id' in params) {
+        movieId = params.id;
+    }
+    
+    const [id, setId] = useState(movieId)
     const [title, setTitle] = useState("")
     const [info, setInfo] = useState({
         title: "name", 
-         year: "", 
-         playtime: 0, 
-         overview: "", 
-         bannerImage: "", 
-         cast: "", 
-         genres: "", 
-         similarMovies: []})
-    
-    useEffect(async () => {
-        const placeholderIdString = "550"
-        const url = "https://api.themoviedb.org/3/movie/" + placeholderIdString + "?api_key=86f237d170416093156de7affa43927e&language=en-US"
-    
-        const creditsUrl = "https://api.themoviedb.org/3/movie/" + placeholderIdString + "/credits?api_key=86f237d170416093156de7affa43927e&language=en-US"
+        year: "", 
+        playtime: 0, 
+        overview: "", 
+        bannerImage: "", 
+        cast: "", 
+        genres: "", 
+        similarMovies: []})
 
-        const similarUrl = "https://api.themoviedb.org/3/movie/" + placeholderIdString + "/similar?api_key=86f237d170416093156de7affa43927e&language=en-US&page=1"
+    useEffect(async () => {
+        window.scrollTo(0, 0)
+
+        const url = "https://api.themoviedb.org/3/movie/" + id + "?api_key=86f237d170416093156de7affa43927e&language=en-US"
+    
+        const creditsUrl = "https://api.themoviedb.org/3/movie/" + id + "/credits?api_key=86f237d170416093156de7affa43927e&language=en-US"
+
+        const similarUrl = "https://api.themoviedb.org/3/movie/" + id + "/similar?api_key=86f237d170416093156de7affa43927e&language=en-US&page=1"
 
         const data = await GetData(url)
         const creditsData = await GetData(creditsUrl)
@@ -44,23 +54,31 @@ const Filminfo = () => {
         let amountSimilarMovies = 10
 
         let elements = []
+        
+        if(similarMovies.length){
+            
+            for(let i = 0; i < amountSimilarMovies; i++){
 
-        for(let i = 0; i < amountSimilarMovies; i++){
+                let currentTitle = similarMovies[i].title
+                
+                let currentImage = similarMovies[i].poster_path
+                currentImage = "https://image.tmdb.org/t/p/w500" + currentImage
 
-            let currentTitle = similarMovies[i].title
-
-            let currentImage = similarMovies[i].poster_path
-            currentImage = "https://image.tmdb.org/t/p/w500" + currentImage
-
-            elements.push(
+                elements.push(
             <div className="similar-movie">
-                <img src={currentImage} alt={currentTitle} className="movie-poster"/>
+                <Link to={`/filminfo/${similarMovies[i].id}`} onClick={() => setId(similarMovies[i].id)}>
+                    <img src={currentImage} alt={currentTitle} className="movie-poster"/>
+                </Link>
                 <p>{currentTitle}</p>
             </div>)
         }
-
+    } else {
+        elements.push(
+                <p className="no-movies">Det finns inga liknande titlar.</p>)
+    }
+        
         //convert variables to their correct values
-
+        
         //cast -> "name, name, name..."
         
         let amountActors = 4
@@ -108,7 +126,7 @@ const Filminfo = () => {
             cast: castString, 
             genres: genresString, 
             similarMovies: elements})
-    }, [])
+    }, [id])
 
     return(
         <section>
@@ -142,11 +160,6 @@ const Filminfo = () => {
                 <p>Liknande filmer</p>
                 <div className="movie-row">
                     {info.similarMovies}
-                    {/* <div className="related-movie"></div>
-                    <div className="related-movie"></div>
-                    <div className="related-movie"></div>
-                    <div className="related-movie"></div>
-                    <div className="related-movie"></div> */}
                 </div>
             </div>
         </section>
