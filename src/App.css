@@ -25,13 +25,16 @@ main {
   position: sticky;
   top: 0;
   z-index: 1;
-  
+}
+
+.nav-home-button {
+  background-color: transparent;
+  border: transparent;
 }
 
 .nav-button {
   background-color: transparent;
   border: transparent;
-
 }
 
 #nav-btn-home {
@@ -80,20 +83,6 @@ main {
   margin-left: 20px;
 }
 
-#magnify-glass {
-  margin-bottom: -12px;
-  margin-left: 4px;
-  position: 60px;
-  height: 32px;
-  width: 34px;
-  border-radius:3px;
-}
-
-#magnify-glass:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
 #nav-btn-login:hover {
   color: white;
   transform: scale(1.1);
@@ -131,6 +120,10 @@ main {
   transform: scale(1.2);
 }
 
+.burger-icon {
+  display: none;
+}
+
   .footer {
     display: flex;
     align-content: flex-start;
@@ -141,9 +134,89 @@ main {
     bottom: 0;
     width: 100%;
     height: 2.5rem;
-    
   }
+
   .footer p {
     padding-left: 1%;
     font-size: 15px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .App-header {
+      display: flex;
+      flex-direction: column;
+      background:linear-gradient(#7287f5, transparent);
+      background-color: #c182f2;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+      font-size: calc(10px + 2vmin);
+      margin-top: -50px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .nav-button {
+      display: none;
+    }
+  
+    #nav-btn-home {
+      position: absolute;
+      justify-content: flex-start;
+      font-size: 18px;
+      left: 188px;
+      top: 9%;
+    }
+
+    #nav-btn-home:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+
+    #nav-btn-movies {
+      margin-top: 5%;
+      margin-left: 20px;
+      font-size: 13px;
+    }
+
+    #nav-btn-categories {
+      margin-left: 3%;
+      font-size: 13px;
+    }
+
+    #nav-btn-favorites {
+      margin-left: 2px;
+      font-size: 13px;
+    }
+    .search-field {
+      /*display: block;*/
+      height: 18px;
+      margin-bottom: -50px;
+    }
+
+    #nav-btn-login {
+      position: absolute;
+      left: 3%;
+      bottom: 10px;
+      font-size: 13px;
+    }
+
+    #nav-symbol-shopcart {
+      position: absolute;
+      bottom: 15px;
+      margin-bottom: -14px;
+      height: 28px;
+      width: 70px;
+    }
+
+    .burger-icon {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #000000;
+    }
+  
   }

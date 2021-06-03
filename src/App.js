@@ -18,6 +18,8 @@ import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 
@@ -40,17 +42,18 @@ function App() {
         <header className="App-header">
           <div className="nav-bar" id="nav-container">
             <Router basename={process.env.PUBLIC_URL}>
-              <Link to="/startScreen"><button className="nav-button" id="nav-btn-home">Movieblock</button></Link>
+              <Link to="/startScreen"><button className="nav-home-button" id="nav-btn-home">Movieblock</button></Link>
               <Link to="/filmCategory"><button className="nav-button" id="nav-btn-categories">Kategorier</button></Link>
               <Link to="/kidsmovies"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
               <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
-              <Link to="/favorites"><button className="nav-button" id="nav-btn-favorites">Favoriter</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
               <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
-              <Link to="/shoppingcart"><img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
-              <Link to="/login"><button className="nav-button" id="nav-btn-login">Logga in</button></Link>
+              <Link to="/shoppingcart"><IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} /></IconButton></Link>
             </Router>
           </div>
+          <a href="javascript:void(0);" class="burger-icon" onclick="myFunction()">
+          <IconButton aria-label="shop"><MenuIcon style={{ fill: '#000000' }} /></IconButton>
+          </a>
         </header>
         <main>
           <div className="App">
