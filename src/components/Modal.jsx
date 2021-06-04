@@ -7,13 +7,14 @@ import './modal.css'
 
 
 const MODAL_STYLES = {
+ 
     position:'fixed',
     top: '55%',
     left: '90%',
     height: '400px',
     width: '150px',
     transform: 'translate(-50%, -50%)',
-    backgroundColor:'#FFF',
+    backgroundColor:'grey',
     padding:'50px',
     zIndex: 1000
 
