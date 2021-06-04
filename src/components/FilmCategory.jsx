@@ -19,6 +19,9 @@ const FilmCategory = () => {
             setPageNumber(pageNumber-1)
         }
     }
+
+    {/*useEffect(() => {})*/}
+
     useEffect(() => {
         window.scrollTo(0, 0)
         loadCategory(categoryId)
