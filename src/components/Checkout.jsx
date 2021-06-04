@@ -8,8 +8,8 @@ const Checkout = () => {
 
     return (
 
-        <section className="checkout-content">
-            <div className="checkout-container">
+        <div className="checkout-content">
+            <section className="checkout-container">
             <h1 className="checkout-h1">Varukorg</h1>
 
             <div className="checkout-row">
@@ -33,8 +33,8 @@ const Checkout = () => {
 
                 
 
-            </div>
-        </section>
+            </section>
+        </div>
     )
 
 }

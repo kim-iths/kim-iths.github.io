@@ -10,36 +10,20 @@
     padding: 5% 10% 5% 10%;
 }
 .kids-categories-h1{
+    top: 0;
     left: 43%;
     position: absolute;
 }
 
 .kids-category-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 16px;
     align-items: center;
     justify-content: center;
 }
 
-.kids-category-button {
-    background-color: #b5bfe2;
-    border: transparent;
-    border-radius: 5px;
-    box-shadow: 0px 5px 5px;
-}
-
-.kids-category-button:hover {
-    background-color: #7c88b4;
-}
-
-.kids-category-button:active {
-    transform: translateY(-1px);
-    border-radius: 5px;
-    box-shadow: 0 5px 5px;
-}
-
-.kids-all-categories-container {
+.kids-categories-container {
     overflow: scroll;
     padding: 0% 20% 5% 20%;
     height: 500px;
@@ -84,13 +68,8 @@
     height: 250px;
 }
 
-.kids-categories-change-page-button-previous {
-    display: flex;
-    justify-content: center;
-}
-.kids-categories-change-page-button-next {
-    display: flex;
-    justify-content: center;
+.kids-categories-change-page {
+    margin-bottom: 2em;
 }
 
 .kids-category-change {
@@ -98,6 +77,8 @@
 }
 
 .kids-categories-change-button-previous {
+    align-self: center;
+    justify-self: center;
     left: 35%;
     top: 94%;
     position: absolute;
@@ -108,7 +89,8 @@
     font-weight: bold;
 }
 .kids-categories-change-button-next {
-    
+    align-self: center;
+    justify-self: center;
     left: 50%;
     top: 94%;
     position: absolute;
@@ -147,10 +129,28 @@
         justify-content: center;
         z-index: 0;
     }
-    .kids-categories-h1{
-        position: absolute;
-        left: 36%;
-      
 
+    .kids-categories-change-button-previous {
+        align-self: center;
+        justify-self: center;
+        left: 35%;
+        top: 94%;
+        padding: 0.5em;
+        background-color: transparent;
+        border: transparent;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    .kids-categories-change-button-next {
+        align-self: center;
+        justify-self: center;
+        left: 50%;
+        top: 94%;
+        position: absolute;
+        padding: 0.5em;
+        background-color: transparent;
+        border: transparent;
+        font-size: 1em;
+        font-weight: bold;
     }
 }

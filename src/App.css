@@ -16,8 +16,7 @@ main {
   background:linear-gradient(#7287f5, transparent);
   background-color: #c182f2;
   padding: 15px;
-  display: flex;
-  flex-direction: column;
+ 
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -25,15 +24,16 @@ main {
   position: sticky;
   top: 0;
   z-index: 1;
-  
+}
+
+.nav-home-button {
+  background-color: transparent;
+  border: transparent;
 }
 
 .nav-button {
-  
-  
   background-color: transparent;
   border: transparent;
-
 }
 
 #nav-btn-home {
@@ -68,74 +68,155 @@ main {
   transform: scale(1.1);
 }
 
-#nav-btn-favorites {
-  margin-left: 20px;
-  font-size: 18px;
-}
-#nav-btn-favorites:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
 .search-field {
   height: 28px;
   margin-left: 20px;
 }
 
-#magnify-glass {
-  margin-bottom: -12px;
-  margin-left: 4px;
-  position: 60px;
-  height: 32px;
-  width: 34px;
-  border-radius:3px;
-}
+/*.burger-icon {
+  display: none;
+}*/
 
-#magnify-glass:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
-
-#nav-btn-register {
-  margin-left: 20px;
-  font-size: 18px;
-}
-
-#nav-btn-register:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
-#nav-btn-login{
+.footer {
+  display: flex;
+  align-content: flex-start;
+  padding-top: 2%;
+  background: linear-gradient(#c182f2, transparent);
+  background-color: #7287f5;
   position: absolute;
-  top: 40%;
-  left: 83%;
-  margin-left: 60px;
-  font-size: 18px;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 }
 
-#nav-btn-login:hover {
-  color: white;
-  transform: scale(1.1);
+.footer p {
+  padding-left: 1%;
+  font-size: 0.9em;
 }
 
-#nav-symbol-shopcart {
-  position: absolute;
-  left: 80%;
-  top: 30%;
+@media only screen and (max-width: 1200px) {
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    background:linear-gradient(#7287f5, transparent);
+    background-color: #c182f2;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    margin-top: -50px;
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 
-
-  height: 34px;
-  width: 75px;
+  #nav-container {
+    width: 100vw;
+  }
 }
 
 
+@media only screen and (max-width: 800px) {
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    background:linear-gradient(#7287f5, transparent);
+    background-color: #c182f2;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    margin-top: -50px;
+    margin-bottom: 2em;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 
-#nav-symbol-shopcart:hover {
-  color: white;
-  transform: scale(1.2);
+  #nav-container {
+    width: 100vw;
+  }
+
+  .nav-button {
+    margin-top: 3em;
+  }
+  #nav-btn-home {
+    position: absolute;
+    font-size: 30px;
+    left: 35%;
+    top: 20%;
+  }
+
+  #nav-btn-home:hover {
+    color: white;
+    transform: scale(1.1);
+  }
+
+  #nav-btn-movies {
+    margin-top: 5%;
+    margin-left: 20px;
+    font-size: 13px;
+  }
+
+  #nav-btn-categories {
+    margin-left: 3%;
+    font-size: 13px;
+  }
+
+  .search-field {
+    /*display: block;*/
+    height: 18px;
+    margin-top: 10%;
+    margin-bottom: -50px;
+  }
+
+  /*.burger-icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 28%;
+    
+    color: #000000;
+  }*/
+
 }
+
+@media only screen and (max-width: 420px) {
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    background:linear-gradient(#7287f5, transparent);
+    background-color: #c182f2;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    margin-top: -50px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 6em;
+  }
+
+  #nav-container {
+    width: 100vw;
+  }
+
+  #nav-btn-home {
+    position: absolute;
+    font-size: 1.8em;
+    left: 26%;
+    top: 9%;
+  }
+
+  .search-field {
+    margin: 0em;
+    margin-bottom: 3em;
+  }
+
+  .nav-button {
+    padding-top: 3em;
+  }
 
   .footer {
     display: flex;
@@ -147,89 +228,10 @@ main {
     bottom: 0;
     width: 100%;
     height: 2.5rem;
-    
   }
+
   .footer p {
     padding-left: 1%;
-    font-size: 15px;
+    font-size: 0.6em;
   }
-  @media only screen and (max-width: 768px) {
-    .App-header {
-      position: absolute;
-      background:linear-gradient(#0064fabd, transparent);
-      background-color: #b672f5b2;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: calc(10px + 2vmin);
-      margin-top: -50px;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-      
-    }
-    
-  
-  #nav-btn-home {
-    position: absolute;
-    justify-content: flex-start;
-    font-size: 18px;
-    left: 188px;
-    top: 9%;
-  }
-  #nav-btn-home:hover {
-    color: white;
-    transform: scale(1.1);
-  }
-  #nav-btn-movies {
-    margin-top: 5%;
-    
-    margin-left: 20px;
-    font-size: 13px;
-  }
-  #nav-btn-categories {
-    margin-left: 3%;
-    font-size: 13px;
-    
-  }
-  #nav-btn-favorites {
-    margin-left: 2px;
-    font-size: 13px;
-  }
-  .search-field {
-    height: 18px;
-    
-    margin-bottom: -50px;
-  }
-  #magnify-glass {
-  
-    margin-bottom: -7px;
-    margin-left: 4px;
-    position:50px;
-    height: 22px;
-    width: 34px;
-    border-radius:3px;
-  }
-  #nav-btn-login{
-    position: absolute;
-    left: 80%;
-    bottom:10px;
-    font-size: 13px;
-    
-  }
-  #nav-symbol-shopcart {
-    position: absolute;
-    bottom: 15px;
-    left: 40%;
-    margin-bottom: -14px;
-    margin-right: -40px;
-    height: 28px;
-    width: 70px;
-  }
-  
-    
-  
-  }
+}
