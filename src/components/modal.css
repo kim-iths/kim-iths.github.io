@@ -1,21 +1,11 @@
 .close-cart{
-    background: transparent;
+    
     height: 3px;
     width: 5px;
 }
-#close-cart-btn{
-    position: absolute;
-    top: 8%;
-    width: 100px;
-    height: 40px;
-    font-size: 10px;
 
-}
 
-.checkout-link{
-    position: absolute;
-    top: 80%;
-}
+
 
 .nav-button {
     
@@ -32,8 +22,8 @@
   
   }
   #close-cart-btn{
-      height: 16px;
-      width: 45px;
+      height: 18px;
+      width: 50px;
       position: absolute;
       top: 2%;
       left: 38%;
