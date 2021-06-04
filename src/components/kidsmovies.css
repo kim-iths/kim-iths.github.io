@@ -131,7 +131,7 @@
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 736px) {
     .kids-category-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -146,5 +146,11 @@
         align-self: center;
         justify-content: center;
         z-index: 0;
+    }
+    .kids-categories-h1{
+        position: absolute;
+        left: 36%;
+      
+
     }
 }
