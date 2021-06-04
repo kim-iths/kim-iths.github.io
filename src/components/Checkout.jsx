@@ -9,18 +9,21 @@ import { actions } from '../features/cart';
 const Checkout = () => {
 
     const movies = useSelector(state => state.cart.movies);
+    const price = useSelector(state => state.cart.price);
     const total = useSelector(state => state.cart.total);
 
     const dispatch = useDispatch();
 
-    const removeItem = () => dispatch(actions.removeFromCart());
+    const removeItem = (title) => {
+        dispatch(actions.removeFromCart(title));
+    } 
 
     const cartElements = movies.map((movie, index) => (
         <div className="checkout-row" key={index}>
                 <img src={movie.image} alt={movie.title} />
                 <p>{movie.title}</p>
-                <div className="checkout-price">{movie.price}</div>
-                <aside><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
+                <div className="checkout-price">{price} kr</div>
+                <aside onClick={() => removeItem(movie.title)}><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
             </div>
     ))
 

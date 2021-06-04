@@ -1,9 +1,20 @@
 import './filmInfo.css'
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams } from "react-router-dom";
 import GetData from './GetData';
+import { useDispatch, useSelector } from 'react-redux';
+import { actions } from '../features/cart';
 
 const Filminfo = () => {
+
+    const status = useSelector(state => state.cart.status);
+
+    const dispatch = useDispatch();
+
+    const addItem = (image, title) => {
+        dispatch(actions.addToCart({image, title}));
+        // console.log("info", {image, title})
+    }
 
     let params = useParams();
 
@@ -14,7 +25,6 @@ const Filminfo = () => {
     }
     
     const [id, setId] = useState(movieId)
-    const [title, setTitle] = useState("")
     const [info, setInfo] = useState({
         title: "", 
         year: "", 
@@ -165,7 +175,7 @@ const Filminfo = () => {
             </div>
             <div className="buy">
                 <span>199 kr</span>
-                <button className="buy-button">Köp</button>
+                <button className="buy-button" onClick={() => addItem(info.bannerImage, info.title)}>Köp</button>
             </div>
             <div className="similar-movies">
                 <p>Liknande filmer</p>

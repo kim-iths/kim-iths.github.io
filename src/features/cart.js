@@ -13,15 +13,15 @@ const STATUS = {
 const initialState = {
     status: null,
     movies: [
-        { image: "img/black_panther.png", title: "Black Panther", price: 149 },
-        { image: "img/the_lego_movie.png", title: "The Lego Movie", price: 149 }
+        { image: "img/black_panther.png", title: "Black Panther"}
     ],
-    total: 198
+    price: 199,
+    total: 0
 }
 
 const reducer = createReducer(initialState, {
     [addToCart]: (state, action) => {
-        let found = state.find(cartItem => cartItem.movies.title === action.payload.title)
+        let found = state.movies.find(cartItem => cartItem.title === action.payload.title)
         if (found) {
             return {
                 ...state,
@@ -31,14 +31,14 @@ const reducer = createReducer(initialState, {
             return {
                 ...state,
                 status: STATUS.ADDED,
-                movie: [action.payload],
-                total: state.total + 149
+                movies: [...state.movies, action.payload.image, action.payload.title],
+                total: state.total + state.price
             };
         }
     },
 
     [removeFromCart]: (state, action) => (
-        state.filter(cartItem => cartItem.movies.title !== action.payload.title)
+        state.movies.filter(cartItem => cartItem.movies.title !== action.payload.title)
     )
 })
 
