@@ -66,8 +66,6 @@ const KidsMovies = () => {
                 </div>
             </div>
 
-            {/*<h3 className="all-movies-h3">Alla filmer</h3>*/}
-
             <div className="kids-categories-container">
                 <div className="kids-categories-grid">
                     {kidsmoviesCategoryList}
