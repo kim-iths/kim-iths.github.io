@@ -1,0 +1,48 @@
+.close-cart{
+    background: transparent;
+    height: 3px;
+    width: 5px;
+}
+#close-cart-btn{
+    position: absolute;
+    top: 8%;
+    width: 100px;
+    height: 40px;
+    font-size: 10px;
+
+}
+
+.checkout-link{
+    position: absolute;
+    top: 80%;
+}
+
+.nav-button {
+    
+    background-color: transparent;
+    border: transparent;
+  
+  }
+  #nav-button-favorites {
+      position: absolute;
+      top: 80%;
+  
+     background-color: transparent;
+    border: transparent;
+  
+  }
+  #close-cart-btn{
+      height: 16px;
+      width: 45px;
+      position: absolute;
+      top: 2%;
+      left: 38%;
+
+
+  }
+  #checkout-cart-btn{
+      position: absolute;
+      top: 94%;
+      left: 33%;
+
+  }

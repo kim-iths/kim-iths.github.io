@@ -18,6 +18,12 @@ import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import Modal from './components/Modal'
+import zIndex from '@material-ui/core/styles/zIndex';
+import React,{useState} from 'react'
+
+
+
 
 
 
@@ -32,8 +38,9 @@ function App() {
     appId: "1:149733430256:web:00863b11f06fddbf754335",
     measurementId: "G-TLZGPF5L59"
   };
-
+  const[isOpen, setIsOpen] = useState(false)
   return (
+    
 
     <div className="App">
       <div className="app-wrap">
@@ -47,7 +54,17 @@ function App() {
               <Link to="/favorites"><button className="nav-button" id="nav-btn-favorites">Favoriter</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
               <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
-              <Link to="/shoppingcart"><img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
+              <div><img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"onClick={() => setIsOpen(true)}></img></div>
+              <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                
+
+                </Modal>
+              
+
+
+              
+
+            
               <Link to="/login"><button className="nav-button" id="nav-btn-login">Logga in</button></Link>
             </Router>
           </div>
