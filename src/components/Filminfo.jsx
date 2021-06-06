@@ -174,7 +174,7 @@ const Filminfo = () => {
                 </div>
             </div>
             <div className="buy">
-                <span>199 kr</span>
+                <span>149 kr</span>
                 <button className="buy-button" onClick={() => addItem(info.bannerImage, info.title)}>Köp</button>
             </div>
             <div className="similar-movies">

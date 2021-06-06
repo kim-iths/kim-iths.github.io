@@ -17,7 +17,7 @@ const Checkout = () => {
     const removeItem = (title) => {
         dispatch(actions.removeFromCart(title));
     } 
-
+    
     const cartElements = movies.map((movie, index) => (
         <div className="checkout-row" key={index}>
                 <img src={movie.image} alt={movie.title} />
