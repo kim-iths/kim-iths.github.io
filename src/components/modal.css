@@ -22,17 +22,102 @@
   
   }
   #close-cart-btn{
-      height: 18px;
-      width: 50px;
+      
+      background-color: #B5BFE2;
+      font-size: 1.5em;
+      border: transparent;
+      height: 30px;
+      width: 60px;
       position: absolute;
       top: 2%;
       left: 38%;
+  }
+#close-cart-btn:hover{
+    color:#7287F5;
+    transform: scale(1.1);
+}
 
+
+  #modal-cart-btn{
+    font-size: 1em;
+    border: transparent;
+    background-color: #B5BFE2;
+    position: absolute;
+    top: 94%;
+    left: 33%;
 
   }
-  #checkout-cart-btn{
+  #modal-cart-btn:hover{
+      color: white;
+      transform: scale(1.1);
+  }
+  .modal-container{
+    position: absolute;
+    width: 250px;
+    height: 400px;
+    left: 0%;
+
+  }
+  .modal-h1{
+    font-size: 16px;
+    position: absolute;
+    left: 36%;
+    top: -3%;
+  }
+
+#movie-title2{
+  font-size: 12px;
+  position: absolute;
+    
+  top: 21%;
+  left: 1%
+  }
+  #modal-price1{
+    font-size: 11px;
+    position: absolute;
+    left: 70%;
+    top: 10%;
+   
+  }
+  #modal-price2{
+    font-size: 11px;
+    position: absolute;
+    left: 70%;
+    top: 24%;
+   
+  }
+  #movie-title1{
+    font-size: 12px;
+    position: absolute;
+    top: 7%;
+    left: 1%
+  }
+  .modal-finish-row{
+    position: absolute;
+    font-size: 13px;
+    top: 90%;
+    left: 33%;
+  }
+  @media only screen and (max-width: 736px) {
+ 
+
+    .modal-h1{
+      font-size: 14px;
       position: absolute;
-      top: 94%;
-      left: 33%;
+      left: 32%;
+      top: -3%;
+    }
+    #close-cart-btn{
+      
+      background-color: #B5BFE2;
+      font-size: 1.5em;
+      border: transparent;
+      height: 30px;
+      width: 60px;
+      position: absolute;
+      top: 2%;
+      left: 34%;
+  }
+  
 
   }

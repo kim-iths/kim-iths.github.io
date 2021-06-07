@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import { Link } from 'react-router-dom'
 import './modal.css'
+import IconButton from '@material-ui/core/IconButton';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 
 
@@ -9,12 +11,12 @@ import './modal.css'
 const MODAL_STYLES = {
  
     position:'fixed',
-    top: '55%',
-    left: '90%',
+    top: '45%',
+    left: '76.4%',
     height: '400px',
     width: '150px',
     transform: 'translate(-50%, -50%)',
-    backgroundColor:'grey',
+    backgroundColor:'#B5BFE2',
     padding:'50px',
     zIndex: 1000
 
@@ -32,22 +34,61 @@ const OVERLAY_STYLES = {
 
     
 
+    
+
 }
 
 
-export default function Modal({open, children, onClose}){
+export default function Modal({open, onClose}){
     if(!open) return null
     return ReactDom.createPortal(
         <>
         <div style={OVERLAY_STYLES} onClick={() => console.log('clicked')}/>
         <div style={MODAL_STYLES}>
-        <Link to="./shoppingcart"><button classname="checkout-cart" id="checkout-cart-btn" onClick={onClose}>Till kassan</button></Link>
-            <button classname="close-cart" id="close-cart-btn" onClick={onClose}>Stäng</button>
+        <Link to="./shoppingcart"><button classname="modal-cart" id="modal-cart-btn" onClick={onClose}>Till kassan</button></Link>
+            <button classname="close-cart" id="close-cart-btn" onClick={onClose}>&#10006;</button>
 
-            {children}
+            <div className="modal-content">
+            <section className="modal-container">
+            <h1 className="modal-h1">Varukorg</h1>
+
+            <div className="modal-row">
+            <div className="modal-title" id="movie-title1">
+                <p>Black Panther</p>
+            </div>
+                <div className="modal-price" id="modal-price1">199 kr</div>
+                <aside><IconButton aria-label="delete1"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
+            </div>
+
+            <div className="modal-row">
+                <div className="modal-title" id="movie-title2">
+                <p>The Lego Movie</p>
+
+                </div>
+                
+                <div className="modal-price" id="modal-price2">149 kr</div>
+                <aside><IconButton aria-label="delete2"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
+            </div>
+
+            <div className="modal-finish-row">
+                <p>Summa: 348 kr</p>
+            </div>
+
+                
+
+            </section>
+        </div>
+
+            
+
+            
             
            
         </div>
+        
+
+
+
         </>,
         document.getElementById('portal')
     )

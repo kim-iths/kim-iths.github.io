@@ -18,6 +18,8 @@ import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import MenuIcon from '@material-ui/icons/Menu';
 import Modal from './components/Modal'
 import zIndex from '@material-ui/core/styles/zIndex';
 import React,{useState} from 'react'
@@ -53,18 +55,8 @@ function App() {
               <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
               <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
-              <div><img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"onClick={() => setIsOpen(true)}></img></div>
-              <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                
-
-                </Modal>
-              
-
-
-              
-
-            
-              <Link to="/login"><button className="nav-button" id="nav-btn-login">Logga in</button></Link>
+              <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)}/></IconButton>
+              <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
             </Router>
           </div>
           {/*<a href="javascript:void(0);" className="burger-icon" onclick="myFunction()">

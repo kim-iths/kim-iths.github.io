@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import './kidsmovies.css'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const KidsMovies = () => {
 
@@ -78,13 +80,13 @@ const KidsMovies = () => {
                 <div className="kids-category-change">
                     <button className="kids-categories-change-button-previous" onClick={() => 
                         previousPage()}>
-                        {"< Föregående sida"}
+                       <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
                     </button>
                 </div>
                 <div className="kids-category-change">
                     <button className="kids-categories-change-button-next" onClick={() => 
                         setKidsPageNumber(kidspageNumber+1)}>
-                        {"Nästa sida >"}
+                        <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
                     </button>
                 </div>
             </div>
