@@ -26,7 +26,7 @@ const UpcomingMovies = () => {
 
     let loadUpcomingMovies = async () => {
         console.log('Kategori', currentPage);
-        let url = `https://api.themoviedb.org/3/movie/upcoming?api_key=86f237d170416093156de7affa43927e`;
+        let url = `https://api.themoviedb.org/3/movie/upcoming?api_key=86f237d170416093156de7affa43927e&sort_by=upcoming.desc&include_adult=false&include_video=false&page${currentPage}`;
         let data = await GetData(url);
         if(upcomingMovies != null) {
             setUpcomingMovies(
@@ -36,16 +36,16 @@ const UpcomingMovies = () => {
         console.log('results: ', upcomingMovies.results);
         console.log('loadCategory: ', upcomingMovies);
     }
-    let upcomingMoviesList = upcomingMovies.map((category, index) => {
+    let upcomingMoviesList = upcomingMovies.map((upcoming, index) => {
         return (
             upcomingMovies != [] ?
             <div key={index} className="kids-categories">
-                {category.poster_path ? 
-                    <img src={`https://image.tmdb.org/t/p/w500${category.poster_path}`} className="kids-category-poster" alt="" />
+                {upcoming.poster_path ? 
+                    <img src={`https://image.tmdb.org/t/p/w500${upcoming.poster_path}`} className="kids-category-poster" alt="" />
                 :
                 <img src="img/no-poster.png" alt="" />
             }
-                <p>{category.title}</p> 
+                <p>{upcoming.title}</p> 
             </div>
             :
             <p key={index}>No data</p>
