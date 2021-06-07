@@ -18,6 +18,10 @@ import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import React,{useState} from 'react'
+
+
+
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -34,8 +38,9 @@ function App() {
     appId: "1:149733430256:web:00863b11f06fddbf754335",
     measurementId: "G-TLZGPF5L59"
   };
-
+  const[isOpen, setIsOpen] = useState(false)
   return (
+    
 
     <div className="App">
       <div className="app-wrap">
@@ -74,9 +79,6 @@ function App() {
                 <Route path="/upcoming">
                   <UpcomingMovies />
                 </Route>
-                <Route path="/favorites">
-                  <Favorites />
-                </Route>
                 <Route path="/filminfo/:id">
                   <Filminfo />
                 </Route>
@@ -85,12 +87,6 @@ function App() {
                 </Route>
                 <Route path="/shoppingcart">
                   <Checkout/>
-                </Route>
-                <Route path="/login">
-                  <Login/>
-                </Route>
-                <Route path="/register">
-                  <Register />
                 </Route>
               </Switch>
             </Router>

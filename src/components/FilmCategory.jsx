@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 import GetData from './GetData'
 import IconButton from '@material-ui/core/IconButton';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
@@ -28,7 +27,7 @@ const FilmCategory = () => {
     }, [pageNumber, categoryId])
 
     let loadCategory = async (genreId) => {
-        console.log('Kategori', pageNumber);
+        /*console.log('Kategori', pageNumber);*/
         let url = `https://api.themoviedb.org/3/discover/movie?api_key=86f237d170416093156de7affa43927e&sort_by=vote_count.desc&include_adult=false&include_video=false&page=${pageNumber}&with_genres=${genreId}`;
         let categoryMovies = await GetData(url);
         if(categoryMovies != null) {
@@ -36,8 +35,8 @@ const FilmCategory = () => {
                 categoryMovies.results
             );
         }
-        console.log('results: ', categoryMovies.results);
-        console.log('loadCategory: ', categoryMovies);
+        /*console.log('results: ', categoryMovies.results);
+        console.log('loadCategory: ', categoryMovies);*/
     }
     let moviesCategoryList = categoryList.map((category, index) => {
         return (
@@ -51,8 +50,7 @@ const FilmCategory = () => {
             }
 
                 </Link>
-                <p>{category.title}</p>
-                <aside className="all-categories-heart"><IconButton aria-label="favorite"><FavoriteIcon style={{ backgroundColor:'#25252594', borderRadius: '20%', fill: '#ffffff' }} /></IconButton></aside> 
+                <p>{category.title}</p> 
             </div>
             :
             <p key={index}>No data</p>
@@ -105,8 +103,6 @@ const FilmCategory = () => {
                     </button>
                 </div>
             </div>
-
-            {/*<h3 className="all-movies-h3">Alla filmer</h3>*/}
 
             <div className="all-categories-container">
                 <div className="all-categories-grid">

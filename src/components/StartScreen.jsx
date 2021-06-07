@@ -71,7 +71,7 @@ const StartScreen = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="start-screen-buttons">
+                    <div className="change-page-buttons">
                         <div className="change-page-div">
                             <button className="change-page-button" onClick={previousPage}>
                                 {"< Föregående sida"}
