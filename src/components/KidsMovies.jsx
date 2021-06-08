@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import './kidsmovies.css'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const KidsMovies = () => {
 
@@ -37,11 +39,14 @@ const KidsMovies = () => {
         return (
             kidscategoryList != [] ?
             <div key={index} className="kids-categories">
+                <Link to={`/filminfo/${category.id}`}>
                 {category.poster_path ? 
                     <img src={`https://image.tmdb.org/t/p/w500${category.poster_path}`} className="kids-category-poster" alt="" />
                 :
                 <img src="img/no-poster.png" alt="" />
+                
             }
+                </Link>
                 <p>{category.title}</p>
                 <aside className="kids-categories-heart"><IconButton aria-label="favorite"><FavoriteIcon style={{ backgroundColor:'#25252594', borderRadius: '20%', fill: '#ffffff' }} /></IconButton></aside> 
             </div>
@@ -66,8 +71,6 @@ const KidsMovies = () => {
                 </div>
             </div>
 
-            {/*<h3 className="all-movies-h3">Alla filmer</h3>*/}
-
             <div className="kids-categories-container">
                 <div className="kids-categories-grid">
                     {kidsmoviesCategoryList}
@@ -77,13 +80,13 @@ const KidsMovies = () => {
                 <div className="kids-category-change">
                     <button className="kids-categories-change-button-previous" onClick={() => 
                         previousPage()}>
-                        {"< Föregående sida"}
+                       <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
                     </button>
                 </div>
                 <div className="kids-category-change">
                     <button className="kids-categories-change-button-next" onClick={() => 
                         setKidsPageNumber(kidspageNumber+1)}>
-                        {"Nästa sida >"}
+                        <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
                     </button>
                 </div>
             </div>

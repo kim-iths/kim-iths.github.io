@@ -212,6 +212,9 @@
     }
 
     .change-page-button {
-        font-size: 0.9em;
+        background-color: transparent;
+        border: transparent;
+        font-size: 0.8em;
+        font-weight: bold;
     }
 }
