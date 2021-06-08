@@ -71,8 +71,8 @@
 .kids-categories-change-button-previous {
     align-self: center;
     justify-self: center;
-    left: 35%;
-    top: 94%;
+    left: 45%;
+    top: 77%;
     position: absolute;
     padding: 0.5em;
     background-color: transparent;
@@ -80,25 +80,25 @@
     font-size: 1em;
     font-weight: bold;
 }
-.kids-categories-change-button-next {
-    align-self: center;
-    justify-self: center;
-    left: 50%;
-    top: 94%;
-    position: absolute;
-    padding: 0.5em;
-    background-color: transparent;
-    border: transparent;
-    font-size: 1em;
-    font-weight: bold;
-}
-
-
 .kids-categories-change-button-previous:hover {
     color: #7287F5;
     transform: scale(1.1);
 }
 
+
+
+.kids-categories-change-button-next {
+    align-self: center;
+    justify-self: center;
+    left: 51%;
+    top: 77%;
+    position: absolute;
+    padding: 0.5em;
+    background-color: transparent;
+    border: transparent;
+    font-size: 1em;
+    font-weight: bold;
+}
 .kids-categories-change-button-next:hover {
     color: #7287F5;
     transform: scale(1.1);
@@ -168,11 +168,18 @@
         z-index: 0;
     }
 
+    .kids-categories-h1 {
+        position: absolute;
+        left: 36%;
+        top: 1%;
+    }
+
     .change-page-button {
         align-self: center;
         justify-self: center;
-        left: 35%;
-        top: 94%;
+        left: 55%;
+        top: 82%;
+        position: absolute;
         padding: 0.5em;
         background-color: transparent;
         border: transparent;
