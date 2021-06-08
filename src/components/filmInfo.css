@@ -12,7 +12,7 @@ section {
 
 .background-wrapper {
     position: absolute;
-    height: 40vh;
+    height: inherit;
     overflow: hidden;
     width: 100%;
 }
@@ -26,7 +26,7 @@ section {
 }
 
 .banner-image {
-    height: 40vh;
+    height: inherit;
     z-index: 0;
     display: flex;
     object-fit: contain;
@@ -64,7 +64,7 @@ section {
 }
 
 .column {
-    overflow: scroll;
+    overflow-y: auto;
     padding: 12px;
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 12px;
@@ -129,12 +129,18 @@ section {
 }
 
 @media only screen and (max-width: 768px) {
+
+    .column {
+        height: auto;
+    }
+
     .movie-info-content{
         grid-template-columns: 1fr;
-        grid-template-rows: 2fr 2fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr;
+        height: auto;
     }
     .movie-banner {
-        height: 20vh;
+        height: 30vh;
     }
 
     .movie-name {
