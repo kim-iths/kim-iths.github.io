@@ -3,14 +3,22 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from "react-router-dom";
 import GetData from './GetData';
 import { useDispatch, useSelector } from 'react-redux';
-import { actions } from '../features/cart';
+import { actions, STATUS } from '../features/cart';
+import { useAlert } from 'react-alert'
 
 const Filminfo = () => {
 
     const status = useSelector(state => state.cart.status);
 
     const dispatch = useDispatch();
+    const alert = useAlert()
 
+    // if (status === STATUS.ADDED) {  
+    //     alert.show("Filmen är tillagd i varukorgen!");   
+    // } else if (status === STATUS.EXIST) {
+    //     alert.show("Filmen finns redan i varukorgen!");
+    // }
+    
     const addItem = (image, title) => {
         dispatch(actions.addToCart({image, title}));
         // console.log("info", {image, title})

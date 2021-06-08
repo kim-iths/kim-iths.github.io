@@ -39,6 +39,7 @@ const reducer = createReducer(initialState, {
         let found = state.movies.filter(cartItem => cartItem.title !== action.payload)
         return {
             ...state,
+            status: null,
             movies: found,
             total: state.total - state.price
         }

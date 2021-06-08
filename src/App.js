@@ -1,10 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, HashRouter as Router, Link, Switch } from "react-router-dom";
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/analytics";
 import StartScreen from './components/StartScreen';
 import Filminfo from './components/Filminfo';
 import Login from './components/Login';
@@ -23,16 +18,6 @@ import SearchIcon from '@material-ui/icons/Search';
 
 function App() {
 
-  var firebaseConfig = {
-    apiKey: "AIzaSyCzeIBnMI6pKUlgD6WuQ7Aq2gfOBJH5diE",
-    authDomain: "movieblock-ef82a.firebaseapp.com",
-    projectId: "movieblock-ef82a",
-    storageBucket: "movieblock-ef82a.appspot.com",
-    messagingSenderId: "149733430256",
-    appId: "1:149733430256:web:00863b11f06fddbf754335",
-    measurementId: "G-TLZGPF5L59"
-  };
-
   return (
 
     <div className="App">
@@ -47,7 +32,12 @@ function App() {
               <Link to="/favorites"><button className="nav-button" id="nav-btn-favorites">Favoriter</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
               <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
-              <Link to="/shoppingcart"><img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img></Link>
+              <Link to="/shoppingcart">
+                <div className="header-shopingcart">
+                  <img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img>
+                  <div className="header-counter">0</div>
+                </div>
+              </Link>
               <Link to="/login"><button className="nav-button" id="nav-btn-login">Logga in</button></Link>
             </Router>
           </div>
@@ -81,10 +71,10 @@ function App() {
                   <SearchMovies />
                 </Route>
                 <Route path="/shoppingcart">
-                  <Checkout/>
+                  <Checkout />
                 </Route>
                 <Route path="/login">
-                  <Login/>
+                  <Login />
                 </Route>
                 <Route path="/register">
                   <Register />
@@ -92,17 +82,6 @@ function App() {
               </Switch>
             </Router>
           </div>
-
-
-
-          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-
-          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-
-          <script>
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-          </script>
         </main>
       </div>
       <footer>
