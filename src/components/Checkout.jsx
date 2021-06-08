@@ -26,12 +26,24 @@ const Checkout = () => {
                 <aside><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
             </div>
 
+
+            <div id="error"></div>
+
+            <form id="form" action="/" method="GET">
+            <div classname="input">
+                <label for="email">e-mail </label>
+                <input id="emailInput" email="email" type="text" required></input>
+                </div>
+            <button type="submit">Submit</button>
+            
+            </form>
+
+
+
             <div className="checkout-finish-row">
                 <p>Summa: 348 kr</p>
                 <aside><button className="checkout-pay">Betala</button></aside>
             </div>
-
-                
 
             </section>
         </div>

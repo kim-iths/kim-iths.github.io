@@ -69,6 +69,8 @@
         padding-left: 20%;
      }
 
+  
+
     .checkout-pay {
         background-color: #000000;
         color: #ffffff;
@@ -79,4 +81,5 @@
         width: 5em;
         align-self: auto;
     }
+
 }
