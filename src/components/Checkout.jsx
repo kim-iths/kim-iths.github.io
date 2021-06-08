@@ -25,7 +25,7 @@ const Checkout = () => {
                 <div className="checkout-price">{price} kr</div>
                 <aside onClick={() => removeItem(movie.title)}><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
             </div>
-    ))
+    ));
 
     return (
 

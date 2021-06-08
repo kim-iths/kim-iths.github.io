@@ -2,9 +2,6 @@ import './App.css';
 import { Route, HashRouter as Router, Link, Switch } from "react-router-dom";
 import StartScreen from './components/StartScreen';
 import Filminfo from './components/Filminfo';
-import Login from './components/Login';
-import Register from './components/Register';
-import Shoppingcart from './components/Shoppingcart';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
 import Favorites from './components/Favorites';
@@ -18,18 +15,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Modal from './components/Modal'
 import zIndex from '@material-ui/core/styles/zIndex';
 import React, { useState } from 'react'
-
-
-
-
-
+import { useSelector } from 'react-redux';
 
 function App() {
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const count = useSelector(state => state.cart.count);
 
   return (
-
 
     <div className="App">
       <div className="app-wrap">
@@ -42,10 +35,10 @@ function App() {
               <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
               <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
-              <div className="header-shopingcart">
+              <div className="header-shoppingcart">
                 <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)} /></IconButton>
                 <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
-                <div className="header-counter">0</div>
+                <div className="header-counter" hidden={count===0}>{count}</div>
               </div>
             </Router>
           </div>
