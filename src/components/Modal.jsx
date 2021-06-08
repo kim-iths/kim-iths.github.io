@@ -12,7 +12,7 @@ const MODAL_STYLES = {
  
     position:'fixed',
     top: '45%',
-    left: '76.4%',
+    left: '72.2%',
     height: '400px',
     width: '150px',
     transform: 'translate(-50%, -50%)',
@@ -52,30 +52,30 @@ export default function Modal({open, onClose}){
             <section className="modal-container">
             <h1 className="modal-h1">Varukorg</h1>
 
+            
+            <div className="modal-column">
             <div className="modal-row">
             <div className="modal-title" id="movie-title1">
-                <p>Black Panther</p>
+                <p>Black Panther:</p>
             </div>
-                <div className="modal-price" id="modal-price1">199 kr</div>
-                <aside><IconButton aria-label="delete1"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
+                <div className="modal-price" id="modal-price1"><p>199 kr</p></div>
+                <aside className="delete-button"><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
             </div>
 
             <div className="modal-row">
                 <div className="modal-title" id="movie-title2">
-                <p>The Lego Movie</p>
+                <p>The Lego Movie:</p>
 
                 </div>
                 
-                <div className="modal-price" id="modal-price2">149 kr</div>
-                <aside><IconButton aria-label="delete2"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
+                <div className="modal-price" id="modal-price2"><p>149 kr</p></div>
+                <aside className="delete-button"><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
+            </div>
             </div>
 
             <div className="modal-finish-row">
                 <p>Summa: 348 kr</p>
             </div>
-
-                
-
             </section>
         </div>
 
