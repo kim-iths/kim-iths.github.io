@@ -13,34 +13,45 @@ import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import MenuIcon from '@material-ui/icons/Menu';
+import Modal from './components/Modal'
+import zIndex from '@material-ui/core/styles/zIndex';
+import React, { useState } from 'react'
+
+
+
 
 
 
 function App() {
 
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
+
 
     <div className="App">
       <div className="app-wrap">
         <header className="App-header">
           <div className="nav-bar" id="nav-container">
             <Router basename={process.env.PUBLIC_URL}>
-              <Link to="/startScreen"><button className="nav-button" id="nav-btn-home">Movieblock</button></Link>
+              <Link to="/startScreen"><button className="nav-home-button" id="nav-btn-home">Movieblock</button></Link>
               <Link to="/filmCategory"><button className="nav-button" id="nav-btn-categories">Kategorier</button></Link>
               <Link to="/kidsmovies"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
               <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
-              <Link to="/favorites"><button className="nav-button" id="nav-btn-favorites">Favoriter</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
               <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
-              <Link to="/shoppingcart">
-                <div className="header-shopingcart">
-                  <img className="nav-img" id="nav-symbol-shopcart" src="assets/shopping-cart-symbol.png"></img>
-                  <div className="header-counter">0</div>
-                </div>
-              </Link>
-              <Link to="/login"><button className="nav-button" id="nav-btn-login">Logga in</button></Link>
+              <div className="header-shopingcart">
+                <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)} /></IconButton>
+                <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
+                <div className="header-counter">0</div>
+              </div>
             </Router>
           </div>
+          {/*<a href="javascript:void(0);" className="burger-icon" onclick="myFunction()">
+          <IconButton aria-label="shop"><MenuIcon style={{ fill: '#000000' }} /></IconButton>
+          </a>*/}
         </header>
         <main>
           <div className="App">
@@ -72,12 +83,6 @@ function App() {
                 </Route>
                 <Route path="/shoppingcart">
                   <Checkout />
-                </Route>
-                <Route path="/login">
-                  <Login />
-                </Route>
-                <Route path="/register">
-                  <Register />
                 </Route>
               </Switch>
             </Router>

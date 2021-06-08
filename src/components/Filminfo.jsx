@@ -32,6 +32,7 @@ const Filminfo = () => {
         movieId = params.id;
     }
     
+    const [loaded, setLoaded] = useState(false)
     const [id, setId] = useState(movieId)
     const [info, setInfo] = useState({
         title: "", 
@@ -44,6 +45,7 @@ const Filminfo = () => {
         similarMovies: []})
 
     useEffect(async () => {
+        setLoaded(false)
         window.scrollTo(0, 0)
 
         const url = "https://api.themoviedb.org/3/movie/" + id + "?api_key=86f237d170416093156de7affa43927e&language=en-US"
@@ -155,15 +157,19 @@ const Filminfo = () => {
             cast: castString, 
             genres: genresString, 
             similarMovies: elements})
+
+
+            setLoaded(true)
+
     }, [id])
 
     return(
         <section>
-            <div className="movie-banner">
+            <div className={"movie-banner" + (loaded ? " transition" : "")}>
                 <div className="background-wrapper">
-                    <img className="banner-image-background" src={info.bannerImage} alt="movie banner background" />
+                    <img className="banner-image-background" src={info.bannerImage} alt={info.title + " background"} />
                 </div>
-                <img className="banner-image" src={info.bannerImage} alt="movie banner" />
+                <img className="banner-image" src={info.bannerImage} alt={info.title} />
                 <span className="movie-name">{info.title}</span>
                 <span className="movie-year-time">{info.year} / {info.playtime}</span>
             </div>
