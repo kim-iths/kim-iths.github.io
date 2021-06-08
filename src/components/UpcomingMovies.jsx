@@ -25,8 +25,8 @@ const UpcomingMovies = () => {
     }, [currentPage, totalPages])
 
     let loadUpcomingMovies = async () => {
-        console.log('Kategori', currentPage);
-        let url = `https://api.themoviedb.org/3/movie/upcoming?api_key=86f237d170416093156de7affa43927e&sort_by=upcoming.desc&include_adult=false&include_video=false&page${currentPage}`;
+        console.log('Sida', currentPage);
+        let url = `https://api.themoviedb.org/3/movie/upcoming?api_key=86f237d170416093156de7affa43927e&sort_by=popular.desc&include_adult=false&include_video=false&page=${currentPage}`;
         let data = await GetData(url);
         if(upcomingMovies != null) {
             setUpcomingMovies(
