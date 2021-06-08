@@ -7,31 +7,19 @@ import "firebase/firestore";
 import "firebase/analytics";
 import StartScreen from './components/StartScreen';
 import Filminfo from './components/Filminfo';
-import Login from './components/Login';
-import Register from './components/Register';
 import Shoppingcart from './components/Shoppingcart';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
-import Favorites from './components/Favorites';
 import SearchMovies from './components/SearchMovies';
 import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
-import React,{useState} from 'react'
-
-
-
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import MenuIcon from '@material-ui/icons/Menu';
 import Modal from './components/Modal'
 import zIndex from '@material-ui/core/styles/zIndex';
-import React,{useState} from 'react'
-
-
-
-
-
+import React, {useState} from 'react'
 
 function App() {
 
