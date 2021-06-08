@@ -22,10 +22,10 @@ function Modal({ open, onClose }) {
 
     const modalElements = movies.map((movie, index) => (
         <div className="modal-row">
-            <div className="modal-title" id="movie-title1">
+            <div className="modal-title">
                 <p>{movie.title}</p>
             </div>
-            <div className="modal-price" id="modal-price1"><p>149 kr</p></div>
+            <div className="modal-price"><p>149 kr</p></div>
             <aside className="delete-button" onClick={() => removeItem(movie.title)}><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
         </div>
     ));

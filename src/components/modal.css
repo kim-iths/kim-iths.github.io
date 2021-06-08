@@ -20,6 +20,24 @@
   z-index: 1000;
 }
 
+.delete-button {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1em;
+}
+
+.modal-container {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  left: 0%;
+}
+
+.modal-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .modal-h1-div {
   margin-bottom: 3em;
 }
@@ -31,117 +49,84 @@
   top: 1%;
 }
 
-.close-cart{
-  height: 3px;
-  width: 5px;
-}
-
-.delete-button{
+.modal-row {
   display: flex;
   flex-direction: row;
-  margin-left: 1em;
+  width: 100%; 
 }
 
-  #close-cart-btn{
-      
-      background-color: #B5BFE2;
-      font-size: 1.5em;
-      border: transparent;
-      height: 30px;
-      width: 60px;
-      position: absolute;
-      top: 2%;
-      left: 0%;
-  }
-
-#close-cart-btn:hover{
-    color:#7287F5;
-    transform: scale(1.1);
-}
-
-  #modal-cart-btn {
-    font-size: 1em;
-    font-weight: bolder;
-    border: transparent;
-    background-color: #B5BFE2;
-    position: absolute;
-    top: 94%;
-    left: 33%;
-  }
-
-  #modal-cart-btn:hover {
-      color: white;
-      transform: scale(1.1);
-  }
-
-  .modal-container {
-    position: absolute;
-    width: 100%;
-    height: 400px;
-    left: 0%;
-
-  }
-  
-
-#movie-title2 {
+.movie-title {
   padding-top: 2%;
   padding-left: 1em;
   font-size: 12px;
 }
 
-  #modal-price1 {
-    padding-top: 2%;
-    margin-left: 4em;
-    font-size: 12px;
+.modal-price {
+  padding-top: 2%;
+  margin-left: 4em;
+  font-size: 12px;
 }
 
-  #modal-price2 {
-    padding-top: 2%;
-    margin-left: 3em;
-    font-size: 12px;
+.close-cart {
+  height: 3px;
+  width: 5px;
 }
 
-  #movie-title1 {
-    padding-top: 2%;
-    padding-left: 1em;
-    font-size: 12px;
+#close-cart-btn {    
+  background-color: #B5BFE2;
+  font-size: 1.5em;
+  border: transparent;
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  top: 2%;
+  left: 0%;
 }
 
-  .modal-finish-row {
-    position: absolute;
-    font-size: 13px;
-    top: 90%;
-    right: 8%;
+#close-cart-btn:hover {
+  color:#7287F5;
+  transform: scale(1.1);
 }
 
-  .modal-column {
-    display: flex;
-    flex-direction: column;
+#modal-cart-btn {
+  font-size: 1em;
+  font-weight: bolder;
+  border: transparent;
+  background-color: #B5BFE2;
+  position: absolute;
+  top: 94%;
+  left: 33%;
 }
 
-  .modal-row {
-    display: flex;
-    flex-direction: row;
-    width: 100%; 
-  }
+#modal-cart-btn:hover {
+  color: white;
+  transform: scale(1.1);
+}  
+
+.modal-finish-row {
+  position: absolute;
+  font-size: 13px;
+  top: 90%;
+  right: 8%;  
+}
  
-  @media only screen and (max-width: 1200px) {
-    .modal-styles {
-      top: 27%;
-      left: 85%;
-    }
+@media only screen and (max-width: 1200px) {
+  .modal-styles {
+    top: 27%;
+    left: 85%;
   }
+}  
 
-  @media only screen and (max-width: 800px) {
-    .modal-styles {
-      top: 32%;
-      left: 78%;
-    }
+@media only screen and (max-width: 800px) {
+  .modal-styles {
+    top: 32%;
+    left: 78%;
   }
+}  
 
-  @media only screen and (max-width: 420px) {
-    .modal-styles {
-      top: 55%;
-      left: 60%;
-    }
+@media only screen and (max-width: 420px) {
+  .modal-styles {
+    top: 55%;
+    left: 60%;
   }
+}
