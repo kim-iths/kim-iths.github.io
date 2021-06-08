@@ -130,13 +130,17 @@ section {
 
 @media only screen and (max-width: 768px) {
 
+    .column {
+        height: auto;
+    }
+
     .movie-info-content{
         grid-template-columns: 1fr;
-        grid-template-rows: 2fr 2fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr;
         height: auto;
     }
     .movie-banner {
-        height: 25vh;
+        height: 30vh;
     }
 
     .movie-name {
