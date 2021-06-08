@@ -20,6 +20,12 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import MenuIcon from '@material-ui/icons/Menu';
+import Modal from './components/Modal'
+import zIndex from '@material-ui/core/styles/zIndex';
+import React,{useState} from 'react'
+
+
+
 
 
 
@@ -34,8 +40,9 @@ function App() {
     appId: "1:149733430256:web:00863b11f06fddbf754335",
     measurementId: "G-TLZGPF5L59"
   };
-
+  const[isOpen, setIsOpen] = useState(false)
   return (
+    
 
     <div className="App">
       <div className="app-wrap">
@@ -48,7 +55,8 @@ function App() {
               <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
               <input type="text" className="search-field" placeholder="Sök"></input>
               <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
-              <Link to="/shoppingcart"><IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} /></IconButton></Link>
+              <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)}/></IconButton>
+              <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
             </Router>
           </div>
           {/*<a href="javascript:void(0);" className="burger-icon" onclick="myFunction()">

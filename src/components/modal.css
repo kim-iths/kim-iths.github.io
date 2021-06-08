@@ -1,0 +1,108 @@
+.close-cart{
+    
+    height: 3px;
+    width: 5px;
+}
+
+
+
+.delete-button{
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+
+  #close-cart-btn{
+      
+      background-color: #B5BFE2;
+      font-size: 1.5em;
+      border: transparent;
+      height: 30px;
+      width: 60px;
+      position: absolute;
+      top: 2%;
+      left: 38%;
+  }
+#close-cart-btn:hover{
+    color:#7287F5;
+    transform: scale(1.1);
+}
+
+
+  #modal-cart-btn{
+    font-size: 1em;
+    border: transparent;
+    background-color: #B5BFE2;
+    position: absolute;
+    top: 94%;
+    left: 33%;
+
+  }
+  #modal-cart-btn:hover{
+      color: white;
+      transform: scale(1.1);
+  }
+  .modal-container{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    left: 0%;
+
+  }
+  .modal-h1{
+    font-size: 16px;
+    position: absolute;
+    left: 36%;
+    top: -3%;
+  }
+
+#movie-title2{
+  padding-top: 2%;
+  padding-left: 1em;
+  font-size: 12px;
+  }
+  #modal-price1{
+    padding-top: 2%;
+    margin-left: 4em;
+    font-size: 12px;
+   
+   
+   
+  }
+  #modal-price2{
+    padding-top: 2%;
+    margin-left: 3em;
+    font-size: 12px;
+   
+  }
+  #movie-title1{
+    padding-top: 2%;
+    padding-left: 1em;
+    font-size: 12px;
+    
+  
+  }
+  .modal-finish-row{
+    position: absolute;
+    font-size: 13px;
+    top: 90%;
+    left: 33%;
+  }
+
+  .modal-column{
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-row{
+    margin-top: 2em;
+    
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+  }
+  .MuiIconButton-root{
+    padding: 0%;
+  }
+ 

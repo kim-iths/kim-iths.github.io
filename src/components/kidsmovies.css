@@ -10,8 +10,8 @@
     padding: 5% 10% 5% 10%;
 }
 .kids-categories-h1{
-    top: 0;
-    left: 43%;
+
+    left: 46%;
     position: absolute;
 }
 
@@ -79,8 +79,8 @@
 .kids-categories-change-button-previous {
     align-self: center;
     justify-self: center;
-    left: 35%;
-    top: 94%;
+    left: 45%;
+    top: 77%;
     position: absolute;
     padding: 0.5em;
     background-color: transparent;
@@ -88,32 +88,35 @@
     font-size: 1em;
     font-weight: bold;
 }
-.kids-categories-change-button-next {
-    align-self: center;
-    justify-self: center;
-    left: 50%;
-    top: 94%;
-    position: absolute;
-    padding: 0.5em;
-    background-color: transparent;
-    border: transparent;
-    font-size: 1em;
-    font-weight: bold;
-}
-
-
 .kids-categories-change-button-previous:hover {
     color: #7287F5;
     transform: scale(1.1);
 }
 
+
+
+.kids-categories-change-button-next {
+    align-self: center;
+    justify-self: center;
+    left: 51%;
+    top: 77%;
+    position: absolute;
+    padding: 0.5em;
+    background-color: transparent;
+    border: transparent;
+    font-size: 1em;
+    font-weight: bold;
+}
 .kids-categories-change-button-next:hover {
     color: #7287F5;
     transform: scale(1.1);
 }
 
 
-@media only screen and (max-width: 768px) {
+
+
+
+@media only screen and (max-width: 736px) {
     .kids-category-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -129,23 +132,19 @@
         justify-content: center;
         z-index: 0;
     }
+    .kids-categories-h1{
+        position: absolute;
+        left: 36%;
+        top: 1%;
 
-    .kids-categories-change-button-previous {
-        align-self: center;
-        justify-self: center;
-        left: 35%;
-        top: 94%;
-        padding: 0.5em;
-        background-color: transparent;
-        border: transparent;
-        font-size: 1em;
-        font-weight: bold;
     }
+
+
     .kids-categories-change-button-next {
         align-self: center;
         justify-self: center;
-        left: 50%;
-        top: 94%;
+        left: 55%;
+        top: 82%;
         position: absolute;
         padding: 0.5em;
         background-color: transparent;
@@ -153,4 +152,21 @@
         font-size: 1em;
         font-weight: bold;
     }
+
+
+
+    .kids-categories-change-button-previous {
+        align-self: center;
+        justify-self: center;
+        left: 30%;
+        top: 82%;
+        position: absolute;
+        padding: 0.5em;
+        background-color: transparent;
+        border: transparent;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+  
 }
