@@ -1,11 +1,10 @@
-import './startScreen.css';
-import './kidsmovies.css'
+// import './startScreen.css';
+import './similarPages.css';
 import { useState, useEffect } from 'react';
 import GetData from './GetData';
 import { Link } from "react-router-dom";
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import './kidsmovies.css'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
@@ -37,21 +36,19 @@ const KidsMovies = () => {
         console.log('results: ', kidscategoryMovies.results);
         console.log('loadCategory: ', kidscategoryMovies);
     }
+
     let kidsmoviesCategoryList = kidscategoryList.map((category, index) => {
         return (
             kidscategoryList != [] ?
-            <div key={index} className="kids-categories">
+            <div key={index} className="pages-categories">
                 <Link to={`/filminfo/${category.id}`}>
                 {category.poster_path ? 
-                    <img src={`https://image.tmdb.org/t/p/w500${category.poster_path}`} className="kids-category-poster" alt="" />
+                    <img src={`https://image.tmdb.org/t/p/w500${category.poster_path}`} className="pages-poster" alt="" />
                 :
                 <img src="img/no-poster.png" alt="" />
-                
             }
-                <p>{category.title}</p> 
                 </Link>
-                <p>{category.title}</p>
-                <aside className="kids-categories-heart"><IconButton aria-label="favorite"><FavoriteIcon style={{ backgroundColor:'#25252594', borderRadius: '20%', fill: '#ffffff' }} /></IconButton></aside> 
+                <p>{category.title}</p> 
             </div>
             :
             <p key={index}>No data</p>
@@ -59,33 +56,32 @@ const KidsMovies = () => {
         })
 
     return (
-        <section className="kids-category-content">
-            <div className="kids-movie-category">
-                <h1 className="kids-categories-h1">Barnfilmer</h1>
+        <section className="pages-content">
+            <div className="pages-category">
+                <h1 className="pages-h1">Barnfilmer</h1>
 
-                <div className="kids-category-grid">
-                    <button className="kids-category-button" onClick={() => {setKidsPageNumber(1); setKidsCategoryId(10751)}}></button>
+                <div className="pages-grid">
+                    <button className="pages-button" onClick={() => {setKidsPageNumber(1); setKidsCategoryId(10751)}}></button>
                 </div>
             </div>
 
-            <div className="kids-categories-container">
-                <div className="kids-categories-grid">
+            <div className="pages-grid-container">
+                <div className="pages-grid">
                     {kidsmoviesCategoryList}
                 </div>
             </div>
             <div className="change-page-buttons">
                 <div className="change-page-div">
-                    <button className="change-page-button" onClick={() => 
+                    <div className="change-page-button" onClick={() => 
                         previousPage()}>
                         <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
-                       <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
-                    </button>
+                    </div>
                 </div>
                 <div className="change-page-div">
-                    <button className="change-page-button" onClick={() => 
+                    <div className="change-page-button" onClick={() => 
                         setKidsPageNumber(kidspageNumber+1)}>
                         <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
-                    </button>
+                    </div>
                 </div>
             </div>
         </section>

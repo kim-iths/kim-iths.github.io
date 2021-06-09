@@ -1,4 +1,5 @@
-import './filmCategory.css'
+import './filmCategory.css';
+import './similarPages.css';
 import React, { Component, useState } from 'react'
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
@@ -48,7 +49,6 @@ const FilmCategory = () => {
                 :
                 <img src="img/no-poster.png" alt="" />
             }
-
                 </Link>
                 <p>{category.title}</p> 
             </div>
@@ -58,11 +58,11 @@ const FilmCategory = () => {
         })
 
     return (
-        <section className="category-content">
+        <div className="category-content">
 
-            <div className="movie-category">
+            <div className="categories-buttons">
 
-                <h1 className="categories-h1">Kategorier</h1>
+                <h1 className="pages-h1">Kategorier</h1>
 
                 <div className="category-grid">
                     <button className="category-button" onClick={() => {setPageNumber(1); setCategoryId(28)}}>
@@ -103,27 +103,28 @@ const FilmCategory = () => {
                     </button>
                 </div>
             </div>
-
-            <div className="all-categories-container">
-                <div className="all-categories-grid">
-                    {moviesCategoryList}
+            <section className="all-categories-content">
+                <div className="all-categories-container">
+                    <div className="all-categories-grid">
+                        {moviesCategoryList}
+                    </div>
                 </div>
-            </div>
-            <div className="categories-change-page">
-                <div className="category-change">
-                    <button className="categories-change-button"  onClick={() => 
-                        previousPage()}>
-                        <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
-                    </button>
+                <div className="categories-change-page">
+                    <div className="category-change">
+                        <button className="categories-change-button"  onClick={() => 
+                            previousPage()}>
+                            <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
+                        </button>
+                    </div>
+                    <div className="category-change">
+                        <button className="categories-change-button" onClick={() => 
+                            setPageNumber(pageNumber+1)}>
+                            <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
+                        </button>
+                    </div>
                 </div>
-                <div className="category-change">
-                    <button className="categories-change-button" onClick={() => 
-                        setPageNumber(pageNumber+1)}>
-                        <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
-                    </button>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     )
 }
 

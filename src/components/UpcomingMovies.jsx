@@ -1,5 +1,5 @@
-import './startScreen.css';
-import './kidsmovies.css'
+// import './startScreen.css';
+import './similarPages.css';
 import { useState, useEffect } from 'react';
 import GetData from './GetData';
 import { Link } from "react-router-dom";
@@ -39,12 +39,14 @@ const UpcomingMovies = () => {
     let upcomingMoviesList = upcomingMovies.map((upcoming, index) => {
         return (
             upcomingMovies != [] ?
-            <div key={index} className="kids-categories">
+            <div key={index} className="pages-categories">
+                <Link to={`/filminfo/${upcoming.id}`}>
                 {upcoming.poster_path ? 
-                    <img src={`https://image.tmdb.org/t/p/w500${upcoming.poster_path}`} className="kids-category-poster" alt="" />
+                    <img src={`https://image.tmdb.org/t/p/w500${upcoming.poster_path}`} className="pages-poster" alt="" />
                 :
                 <img src="img/no-poster.png" alt="" />
             }
+                </Link>
                 <p>{upcoming.title}</p> 
             </div>
             :
@@ -53,41 +55,33 @@ const UpcomingMovies = () => {
         })
 
     return (
-        <section className="kids-category-content">
-
-            <div className="kids-movie-category">
-
-                <h1 className="kids-categories-h1">Kommande filmer</h1>
-
-                <div className="kids-category-grid">
-                    <button className="kids-category-button" onClick={() => {setCurrentPage(1); setTotalPages()}}>
-                        
-                    </button>
-   
-                   
+        <div className="pages-content">
+            <div className="pages-category">
+                <h1 className="pages-h1">Kommande filmer</h1>
+                <div className="pages-grid">
+                    <button className="pages-button" onClick={() => {setCurrentPage(1); setTotalPages()}}></button>
                 </div>
             </div>
-
-            <div className="kids-categories-container">
-                <div className="kids-categories-grid">
-                    {upcomingMoviesList}
-                </div>
-            </div>
-            <div className="change-page-buttons">
-                <div className="change-page-div">
-                    <div className="change-page-button" onClick={() => 
-                        previousPage()}>
-                        <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
+                <div className="pages-grid-container">
+                    <div className="pages-grid">
+                        {upcomingMoviesList}
                     </div>
                 </div>
-                <div className="change-page-div">
-                    <div className="change-page-button" onClick={() => 
-                        setCurrentPage(currentPage+1)}>
-                        <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
+                <div className="change-page-buttons">
+                    <div className="change-page-div">
+                        <div className="change-page-button" onClick={() => 
+                            previousPage()}>
+                            <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
+                        </div>
+                    </div>
+                    <div className="change-page-div">
+                        <div className="change-page-button" onClick={() => 
+                            setCurrentPage(currentPage+1)}>
+                            <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+        </div>
     )
 }
 
