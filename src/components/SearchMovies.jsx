@@ -38,10 +38,12 @@ const SearchMovies = () => {
         movies.forEach((e, i) => {
 
             let currentPoster = e.poster_path
+            
             if(currentPoster != null){
                 currentPoster = "https://image.tmdb.org/t/p/w500" + e.poster_path
             } else {
                 //when there is no poster image for a movie
+                currentPoster = "img/no_image.png"
             }
 
             let currentTitle = e.title
@@ -72,75 +74,6 @@ const SearchMovies = () => {
                 </div>
             </div>
         </section>
-        // <div className="startscreen-wrap">
-        //     <section id="popular-movies">
-        //         <h2 className="title-popular-movies">Sökresultat: Black Panther</h2>
-        //         <div className="grids-popular-movies">
-        //             <Link to="/filminfo">
-        //                 <div className="popular-movies-div">
-        //                     <img src="img/black_panther.png" alt="title" />
-        //                     <p>Black Panther</p>
-        //                     <aside className="movie-heart">&#x2665;</aside>
-        //                 </div>
-        //             </Link>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/the_lego_movie.png" alt="title" />
-        //                 <p>The Lego Movie</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/black_panther.png" alt="title" />
-        //                 <p>Black Panther</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/the_lego_movie.png" alt="title" />
-        //                 <p>The Lego Movie</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/black_panther.png" alt="title" />
-        //                 <p>Black Panther</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/the_lego_movie.png" alt="title" />
-        //                 <p>The Lego Movie</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/black_panther.png" alt="title" />
-        //                 <p>Black Panther</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/the_lego_movie.png" alt="title" />
-        //                 <p>The Lego Movie</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/black_panther.png" alt="title" />
-        //                 <p>Black Panther</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/the_lego_movie.png" alt="title" />
-        //                 <p>The Lego Movie</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/black_panther.png" alt="title" />
-        //                 <p>Black Panther</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //             <div className="popular-movies-div">
-        //                 <img src="img/the_lego_movie.png" alt="title" />
-        //                 <p>The Lego Movie</p>
-        //                 <aside className="movie-heart">&#x2665;</aside>
-        //             </div>
-        //         </div>
-        //     </section>
-        // </div>
     )
 }
 
