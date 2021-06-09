@@ -45,7 +45,7 @@ const FilmCategory = () => {
             <div key={index} className="all-categories">
                 <Link to={`/filminfo/${category.id}`} >
                 {category.poster_path ? 
-                    <img src={`https://image.tmdb.org/t/p/w500${category.poster_path}`} className="category-poster" alt="" />
+                    <img src={`https://image.tmdb.org/t/p/w500${category.poster_path}`} className="category-poster" alt="poster" />
                 :
                 <img src="img/no-poster.png" alt="" />
             }
