@@ -3,10 +3,6 @@ import { useState, useEffect } from 'react';
 import GetData from './GetData';
 import { Link, useParams } from "react-router-dom";
 
-
-
-//useparams
-//get correct query
 //working pages
 
 const SearchMovies = () => {
