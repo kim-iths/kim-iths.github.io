@@ -138,7 +138,6 @@ section {
     text-align: center;
 }
 
-
 .bold {
     font-weight: bold;
 }
@@ -161,4 +160,11 @@ section {
     .movie-name {
         font-size: 22pt;
     }
+}
+
+/* Popup window */
+
+.mm-popup__overlay {
+    z-index: 1;
+    position: absolute;
 }
