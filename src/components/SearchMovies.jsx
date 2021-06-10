@@ -5,7 +5,6 @@ import { Link, useParams } from "react-router-dom";
 
 
 
-//working images and titles
 //useparams
 //get correct query
 //working pages
@@ -19,6 +18,8 @@ const SearchMovies = () => {
     if ('query' in params) {
         queryText = params.query
     }
+
+    console.log(queryText)
 
     const [query, setQuery] = useState(queryText)
     const [page, setPage] = useState(1)
@@ -46,20 +47,20 @@ const SearchMovies = () => {
                 currentPoster = "img/no_image.png"
             }
 
-            let currentTitle = e.title
-
             movieElements.push(
                 <div className="movie">
-                    <img className="movie-poster" src={currentPoster} alt={currentTitle} />
-                    <p>{currentTitle}</p>
+                    <Link to={`/filminfo/${e.id}`} >
+                        <img className="movie-poster" src={currentPoster} alt={e.title} />
+                    </Link>
+                    <p>{e.title}</p>
                 </div>
-            )
+            )            
         });
-
-
-
-
-
+        if(!movieElements.length){
+            // movieElements.push(<p>Inga resultat :(</p>)
+            let el = "Din sökning gav inga resultat :("
+            document.querySelector('.query').innerText = el 
+        }
         
         setSearch(movieElements)
     }, [page])
@@ -68,7 +69,7 @@ const SearchMovies = () => {
 
         <section>
             <div className="search-container">
-                <p className="query">Search results for {query}</p>
+                <p className="query">Sökresultat: {query}</p>
                 <div className="search-grid">
                     {search}
                 </div>

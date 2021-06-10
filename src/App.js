@@ -23,6 +23,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Modal from './components/Modal'
 import zIndex from '@material-ui/core/styles/zIndex';
 import React,{useState} from 'react'
+import { Search } from '@material-ui/icons';
 
 
 
@@ -40,7 +41,13 @@ function App() {
     appId: "1:149733430256:web:00863b11f06fddbf754335",
     measurementId: "G-TLZGPF5L59"
   };
-  const[isOpen, setIsOpen] = useState(false)
+  const [query, setQuery] = useState("")
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleSearch(event){
+    setQuery(event.target.value)
+  }
+
   return (
     
 
@@ -53,8 +60,8 @@ function App() {
               <Link to="/filmCategory"><button className="nav-button" id="nav-btn-categories">Kategorier</button></Link>
               <Link to="/kidsmovies"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
               <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
-              <input type="text" className="search-field" placeholder="Sök"></input>
-              <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
+              <input id="search" type="text" className="search-field" placeholder="Sök" onChange={handleSearch}></input>
+              <Link to={query != "" ? "/search/" + query : ""}><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
               <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)}/></IconButton>
               <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
             </Router>
@@ -88,7 +95,7 @@ function App() {
                 <Route path="/filminfo/:id">
                   <Filminfo />
                 </Route>
-                <Route path="/search">
+                <Route path="/search/:query">
                   <SearchMovies />
                 </Route>
                 <Route path="/shoppingcart">
