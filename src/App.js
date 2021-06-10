@@ -46,6 +46,7 @@ function App() {
 
   function handleSearch(event){
     setQuery(event.target.value)
+    console.log("handle")
   }
 
   return (

@@ -27,6 +27,8 @@ const SearchMovies = () => {
 
     useEffect(async () => {
         window.scrollTo(0, 0)
+
+        document.querySelector('#search').value = ""
         let url = "https://api.themoviedb.org/3/search/movie?api_key=86f237d170416093156de7affa43927e&language=en-US&"
         + "query=" + query + "&page=" + page + "&include_adult=false"
         let response = await GetData(url)
