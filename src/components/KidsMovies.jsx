@@ -76,15 +76,15 @@ const KidsMovies = () => {
                     {kidsmoviesCategoryList}
                 </div>
             </div>
-            <div className="-kids-categories-change-page">
-                <div className="kids-category-change">
-                    <button className="kids-categories-change-button-previous" onClick={() => 
+            <div className="change-page-buttons">
+                <div className="change-page-div">
+                    <button className="change-page-button" onClick={() => 
                         previousPage()}>
                        <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
                     </button>
                 </div>
-                <div className="kids-category-change">
-                    <button className="kids-categories-change-button-next" onClick={() => 
+                <div className="change-page-div">
+                    <button className="change-page-button" onClick={() => 
                         setKidsPageNumber(kidspageNumber+1)}>
                         <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
                     </button>
