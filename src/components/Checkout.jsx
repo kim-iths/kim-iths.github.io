@@ -32,14 +32,7 @@ const Checkout = () => {
             
             
 
-            <form>
-            <div>
-                <label id="email-input">Email</label>
-                <input type='text' id="text-field"required/>
-            </div>
-            <button type="submit" id="submit-btn">Submit</button>
-            </form>
-
+      
 
 
             
