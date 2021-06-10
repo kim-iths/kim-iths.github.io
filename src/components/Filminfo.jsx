@@ -86,6 +86,10 @@ const Filminfo = () => {
 
         if (similarMovies.length) {
 
+            if(amountSimilarMovies > similarMovies.length){
+                amountSimilarMovies = similarMovies.length
+            }
+
             for (let i = 0; i < amountSimilarMovies; i++) {
 
                 let currentTitle = similarMovies[i].title
