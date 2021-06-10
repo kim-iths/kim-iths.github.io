@@ -43,7 +43,36 @@
     margin-left: 20%;
 }
 
-@media only screen and (max-width: 768px) {
+/* Email validation */
+
+.email-container {
+    padding: 5em;
+  }
+  
+  .email-input {
+    width: 25em;
+    padding: 5px 10px;
+  }
+  
+  .message {
+    margin-top: 1em;
+    font-size: 1em; 
+  }
+  
+  .success {
+    color: blue;
+  }
+  
+  .error {
+    color: red;
+  }
+
+  .checkout-pay.disable {
+      border: lightgray;
+      background-color: lightgray;
+  }
+
+@media only screen and (max-width: 800px) {
     .checkout-row {
         display: flex;
         flex-direction: row;
@@ -79,3 +108,19 @@
         align-self: auto;
     }
 }
+
+@media only screen and (max-width: 420px) {
+/* Email validation */
+    .email-container {
+    padding: 20px 10px;
+  }
+  
+  .email-input {
+    width: 90%;
+    padding: 5px 10px;
+  }
+  
+  .message {
+    font-size: 0.8em; 
+  }
+} 

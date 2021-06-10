@@ -8,6 +8,7 @@ import Favorites from './components/Favorites';
 import SearchMovies from './components/SearchMovies';
 import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
+import Receipt from './components/Receipt'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
@@ -75,9 +76,6 @@ function App() {
                 <Route path="/upcoming">
                   <UpcomingMovies />
                 </Route>
-                <Route path="/favorites">
-                  <Favorites />
-                </Route>
                 <Route path="/filminfo/:id">
                   <Filminfo />
                 </Route>
@@ -86,6 +84,9 @@ function App() {
                 </Route>
                 <Route path="/shoppingcart">
                   <Checkout />
+                </Route>
+                <Route path="/receipt">
+                  <Receipt />
                 </Route>
               </Switch>
             </Router>
