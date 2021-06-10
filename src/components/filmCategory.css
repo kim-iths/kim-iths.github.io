@@ -66,6 +66,7 @@
 }
 
 .all-categories-heart {
+    visibility: hidden;
     position: absolute;
     top: 2%;
     right: 2%;

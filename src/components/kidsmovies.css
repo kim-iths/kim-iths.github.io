@@ -51,7 +51,7 @@
     flex-direction: column;
     position: relative;
     text-align: center;
-    background-color: #ffffff94;
+    background-color: transparent;
     height: 350px;
     width: 200px;
 }
