@@ -67,9 +67,9 @@
 }
 
 .popular-movies-container {
-    overflow: scroll;
-    padding: 0% 20% 5% 20%;
-    height: 25em;
+    /* overflow: scroll; */
+    /* padding: 0% 20% 5% 20%; */
+    /* height: 25em; */
 }
 
 /* Hides scrollbar for Chrome, Safari and Opera */

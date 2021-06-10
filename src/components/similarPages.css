@@ -42,15 +42,9 @@
 }
 
 .pages-grid-container {
-    overflow: scroll;
     padding: 0% 20% 5% 20%;
-    height: 500px;
-    /* Hides scrollbar for Internet Explorer, Edge and Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer and Edge */
-    scrollbar-width: none;  /* Firefox */
 }
 
-/* Hides scrollbar for Chrome, Safari and Opera */
 .pages-grid-container::-webkit-scrollbar {
     display: none;
 }

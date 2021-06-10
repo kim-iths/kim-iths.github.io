@@ -56,15 +56,10 @@
 .all-categories-container {
     display: flex;
     justify-content: center;
-    overflow: scroll;
-    /* padding: 0% 20% 5% 10%; */
-    height: 25em;
-    /* Hides scrollbar for Internet Explorer, Edge and Firefox */
     -ms-overflow-style: none;  /* Internet Explorer and Edge */
     scrollbar-width: none;  /* Firefox */
 }
 
-/* Hides scrollbar for Chrome, Safari and Opera */
 .all-categories-container::-webkit-scrollbar {
     display: none;
 }
@@ -130,9 +125,7 @@
     }
 
     .all-categories-container {
-        overflow: scroll;
         padding: 0% 20% 5% 20%;
-        height: 500px;
     }
 
     .all-categories-grid {
