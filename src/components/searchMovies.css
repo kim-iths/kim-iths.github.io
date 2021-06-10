@@ -1,0 +1,49 @@
+.query {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-top: 3em;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-items: center;
+}
+
+
+.search-grid {
+    padding-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(5, 11em);
+    grid-gap: 1.5em;
+}
+
+.movie {
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    font-size: 12pt;
+}
+
+.movie-poster {
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 1200px){
+    .search-grid {
+        grid-template-columns: repeat(3, 11em);
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .search-grid {
+        grid-template-columns: repeat(2, 11em);
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .search-grid {
+        grid-template-columns: repeat(1, 11em);
+    }
+}
