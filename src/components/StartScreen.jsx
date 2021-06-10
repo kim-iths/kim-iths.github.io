@@ -65,7 +65,7 @@ const StartScreen = () => {
                                         <img src={`https://image.tmdb.org/t/p/w500${popularMovie.poster_path}`} alt={popularMovie.title} />
                                     </Link>
                                     <p>{popularMovie.title}</p>
-                                    <aside className="movie-heart">&#x2665;</aside>
+                                   
                                 </div>
                             ))}
                         </div>

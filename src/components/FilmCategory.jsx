@@ -52,7 +52,7 @@ const FilmCategory = () => {
 
                 </Link>
                 <p>{category.title}</p>
-                <aside className="all-categories-heart"><IconButton aria-label="favorite"><FavoriteIcon style={{ backgroundColor:'#25252594', borderRadius: '20%', fill: '#ffffff' }} /></IconButton></aside> 
+                
             </div>
             :
             <p key={index}>No data</p>

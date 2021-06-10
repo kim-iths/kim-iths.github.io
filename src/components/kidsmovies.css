@@ -40,7 +40,7 @@
 .kids-categories-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 16px;
+    grid-gap: 0%;
     align-items: center;
     justify-content: center;
     
@@ -51,7 +51,7 @@
     flex-direction: column;
     position: relative;
     text-align: center;
-    background-color: #ffffff94;
+    background-color: transparent;
     height: 350px;
     width: 200px;
 }
@@ -68,50 +68,16 @@
     height: 250px;
 }
 
-.kids-categories-change-page {
-    margin-bottom: 2em;
+
+.change-page-buttons {
+    top: 65%;
+    display: flex;
+    justify-content: center;
 }
 
-.kids-category-change {
+.change-page-div {
     padding: 1em;
 }
-
-.kids-categories-change-button-previous {
-    align-self: center;
-    justify-self: center;
-    left: 45%;
-    top: 77%;
-    position: absolute;
-    padding: 0.5em;
-    background-color: transparent;
-    border: transparent;
-    font-size: 1em;
-    font-weight: bold;
-}
-.kids-categories-change-button-previous:hover {
-    color: #7287F5;
-    transform: scale(1.1);
-}
-
-
-
-.kids-categories-change-button-next {
-    align-self: center;
-    justify-self: center;
-    left: 51%;
-    top: 77%;
-    position: absolute;
-    padding: 0.5em;
-    background-color: transparent;
-    border: transparent;
-    font-size: 1em;
-    font-weight: bold;
-}
-.kids-categories-change-button-next:hover {
-    color: #7287F5;
-    transform: scale(1.1);
-}
-
 
 
 
@@ -140,33 +106,13 @@
     }
 
 
-    .kids-categories-change-button-next {
-        align-self: center;
-        justify-self: center;
-        left: 55%;
-        top: 82%;
-        position: absolute;
-        padding: 0.5em;
-        background-color: transparent;
-        border: transparent;
-        font-size: 1em;
-        font-weight: bold;
+    .change-page-buttons {
+        display: flex;
+        justify-content: center;
     }
-
-
-
-    .kids-categories-change-button-previous {
-        align-self: center;
-        justify-self: center;
-        left: 30%;
-        top: 82%;
-        position: absolute;
-        padding: 0.5em;
-        background-color: transparent;
-        border: transparent;
-        font-size: 1em;
-        font-weight: bold;
+    
+    .change-page-div {
+        padding: 1em;
     }
-
   
 }

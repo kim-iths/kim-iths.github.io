@@ -16,14 +16,14 @@ import Modal from './components/Modal'
 import zIndex from '@material-ui/core/styles/zIndex';
 import React,{useState} from 'react'
 import { Search } from '@material-ui/icons';
-import React, { useState } from 'react'
+
 import { useSelector } from 'react-redux';
 
 function App() {
 
   const [query, setQuery] = useState("")
   const [isOpen, setIsOpen] = useState(false)
-  const [isOpen, setIsOpen] = useState(false);
+ 
   const count = useSelector(state => state.cart.count);
 
   function handleSearch(event) {
