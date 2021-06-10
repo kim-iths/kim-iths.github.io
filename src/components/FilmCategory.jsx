@@ -1,5 +1,5 @@
 import './filmCategory.css';
-import './similarPages.css';
+// import './similarPages.css';
 import React, { Component, useState } from 'react'
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
@@ -36,8 +36,8 @@ const FilmCategory = () => {
                 categoryMovies.results
             );
         }
-        /*console.log('results: ', categoryMovies.results);
-        console.log('loadCategory: ', categoryMovies);*/
+        console.log('results: ', categoryMovies.results);
+        console.log('loadCategory: ', categoryMovies);
     }
     let moviesCategoryList = categoryList.map((category, index) => {
         return (

@@ -78,7 +78,7 @@
 .all-categories-grid {
     display: grid;
     grid-template-columns: repeat(5, 11em);
-    grid-gap: 1.5em;
+    grid-gap: 16px;
     align-items: center;
     justify-items: center;
 }
