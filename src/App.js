@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, HashRouter as Router, Link, Switch } from "react-router-dom";
 import StartScreen from './components/StartScreen';
@@ -9,19 +8,25 @@ import FilmCategory from './components/FilmCategory';
 import SearchMovies from './components/SearchMovies';
 import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
+import Receipt from './components/Receipt'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import MenuIcon from '@material-ui/icons/Menu';
 import Modal from './components/Modal'
-import zIndex from '@material-ui/core/styles/zIndex';
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 
 function App() {
 
-  const[isOpen, setIsOpen] = useState(false)
+  const [query, setQuery] = useState("")
+  const [isOpen, setIsOpen] = useState(false);
+  const count = useSelector(state => state.cart.count);
+
+  function handleSearch(event) {
+    setQuery(event.target.value)
+  }
+
   return (
-    
 
     <div className="App">
       <div className="app-wrap">
@@ -32,10 +37,13 @@ function App() {
               <Link to="/filmCategory"><button className="nav-button" id="nav-btn-categories">Kategorier</button></Link>
               <Link to="/kidsmovies"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
               <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
-              <input type="text" className="search-field" placeholder="Sök"></input>
-              <Link to="/search"><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
-              <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)}/></IconButton>
-              <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
+              <input id="search" type="text" className="search-field" placeholder="Sök" onChange={handleSearch}></input>
+              <Link to={query != "" ? "/search/" + query : ""}><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
+              <div className="header-shoppingcart">
+                <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)} /></IconButton>
+                <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
+                <div className="header-counter" hidden={count===0}>{count}</div>
+              </div>
             </Router>
           </div>
         </header>
@@ -61,26 +69,18 @@ function App() {
                 <Route path="/filminfo/:id">
                   <Filminfo />
                 </Route>
-                <Route path="/search">
+                <Route path="/search/:query">
                   <SearchMovies />
                 </Route>
                 <Route path="/shoppingcart">
-                  <Checkout/>
+                  <Checkout />
+                </Route>
+                <Route path="/receipt">
+                  <Receipt />
                 </Route>
               </Switch>
             </Router>
           </div>
-
-
-
-          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-
-          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-
-          <script>
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-          </script>
         </main>
       </div>
       <footer>

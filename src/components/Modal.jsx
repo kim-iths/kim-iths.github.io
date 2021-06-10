@@ -4,93 +4,56 @@ import { Link } from 'react-router-dom'
 import './modal.css'
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import { useDispatch, useSelector } from 'react-redux';
+import { actions } from '../features/cart';
 
 
+function Modal({ open, onClose }) {
 
+    const movies = useSelector(state => state.cart.movies);
+    const price = useSelector(state => state.cart.price);
+    const total = useSelector(state => state.cart.total);
 
-const MODAL_STYLES = {
+    const dispatch = useDispatch();
 
-    position: 'fixed',
-    top: '45%',
-    left: '72.2%',
-    height: '400px',
-    width: '150px',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: '#B5BFE2',
-    padding: '50px',
-    zIndex: 1000
+    const removeItem = (title) => {
+        dispatch(actions.removeFromCart(title));
+    } 
 
+    const modalElements = movies.map((movie, index) => (
+        <div className="modal-row" key={index}>
+            <div className="modal-title">
+                <p>{movie.title}</p>
+            </div>
+            <div className="modal-price"><p>{price} kr</p></div>
+            <aside className="delete-button" onClick={() => removeItem(movie.title)}><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
+        </div>
+    ));
 
-}
-
-const OVERLAY_STYLES = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'rgba(0, 0, 0, .7)',
-    zIndex: 1000
-
-
-
-
-
-}
-
-
-export default function Modal({ open, onClose }) {
     if (!open) return null
     return ReactDom.createPortal(
         <>
-            <div style={OVERLAY_STYLES} onClick={() => console.log('clicked')} />
-            <div style={MODAL_STYLES}>
-                <Link to="./shoppingcart"><button classname="modal-cart" id="modal-cart-btn" onClick={onClose}>Till kassan</button></Link>
+            <div className="overlay-styles" onClick={() => console.log('clicked')} />
+            <div className="modal-styles">
+                <Link to="../shoppingcart"><button classname="modal-cart" id="modal-cart-btn" onClick={onClose}>Till kassan</button></Link>
                 <button classname="close-cart" id="close-cart-btn" onClick={onClose}>&#10006;</button>
 
                 <div className="modal-content">
                     <section className="modal-container">
-                        <h1 className="modal-h1">Varukorg</h1>
-
-
                         <div className="modal-column">
-                            <div className="modal-row">
-                                <div className="modal-title" id="movie-title1">
-                                    <p>Black Panther:</p>
-                                </div>
-                                <div className="modal-price" id="modal-price1"><p>199 kr</p></div>
-                                <aside className="delete-button"><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
-                            </div>
-
-                            <div className="modal-row">
-                                <div className="modal-title" id="movie-title2">
-                                    <p>The Lego Movie:</p>
-
-                                </div>
-
-                                <div className="modal-price" id="modal-price2"><p>149 kr</p></div>
-                                <aside className="delete-button"><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
-                            </div>
+                            <div className="modal-h1-div"><h1 className="modal-h1">Varukorg</h1></div>
+                            {modalElements}
                         </div>
 
                         <div className="modal-finish-row">
-                            <p>Summa: 348 kr</p>
+                            <p>Summa: {total} kr</p>
                         </div>
                     </section>
                 </div>
-
-
-
-
-
-
             </div>
-
-
-
-
         </>,
         document.getElementById('portal')
     )
 }
 
+export default Modal;
