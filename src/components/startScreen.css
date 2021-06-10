@@ -147,7 +147,7 @@
         justify-content: center;
         display: grid;
         grid-gap: 1.5em;
-        grid-template-columns: repeat(4, 11em);
+        grid-template-columns: repeat(3, 11em);
     }
 }
 

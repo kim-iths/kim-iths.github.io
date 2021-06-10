@@ -130,7 +130,7 @@
 
     .all-categories-grid {
         display: grid;
-        grid-template-columns: repeat(5, 11em);
+        grid-template-columns: repeat(3, 11em);
         grid-gap: 1.5em;
         align-items: center;
         justify-items: center;
@@ -149,10 +149,11 @@
     }
 
     .all-categories-grid {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 11em);
+        grid-gap: 1.5em;
+        align-items: center;
+        justify-items: center;
         z-index: 0;
     }
 }
