@@ -10,9 +10,9 @@
     padding: 5% 10% 5% 10%;
 }
 .kids-categories-h1{
-
-    left: 46%;
     position: absolute;
+
+    left: 45%;
 }
 
 .kids-category-grid {
@@ -80,7 +80,11 @@
 }
 
 
-
+@media only screen and (max-width: 1200px){
+    .kids-categories-h1 {
+        font-size: 1.2em;
+    }
+}
 
 @media only screen and (max-width: 736px) {
     .kids-category-grid {
@@ -100,7 +104,7 @@
     }
     .kids-categories-h1{
         position: absolute;
-        left: 36%;
+        left: 33%;
         top: 1%;
 
     }
