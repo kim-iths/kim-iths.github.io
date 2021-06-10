@@ -67,9 +67,9 @@
 }
 
 .popular-movies-container {
-    overflow: scroll;
-    padding: 0% 20% 5% 20%;
-    height: 500px;
+    /* overflow: scroll; */
+    /* padding: 0% 20% 5% 20%; */
+    /* height: 25em; */
 }
 
 /* Hides scrollbar for Chrome, Safari and Opera */
@@ -103,15 +103,7 @@
     width: 100%;
 }
 
-.movie-heart {
-    position: absolute;
-    top: 1.5%;
-    right: 2%;
-    font-size: 1.5em;
-    color: white;
-}
-
-.start-screen-buttons {
+.change-page-buttons {
     display: flex;
     justify-content: center;
 }
@@ -155,7 +147,7 @@
         justify-content: center;
         display: grid;
         grid-gap: 1.5em;
-        grid-template-columns: repeat(4, 11em);
+        grid-template-columns: repeat(3, 11em);
     }
 }
 

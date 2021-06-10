@@ -1,9 +1,12 @@
 import './startScreen.css';
+import './similarPages.css';
 import { Carousel } from '3d-react-carousal';
 import { useState, useEffect } from 'react';
 import GetData from './GetData';
 import { Link } from "react-router-dom";
-
+import IconButton from '@material-ui/core/IconButton';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const StartScreen = () => {
 
@@ -39,9 +42,8 @@ const StartScreen = () => {
             <div key={index} className="movie-slide-div">
                 <Link to={`/filminfo/${newMovie.id}`} style={{ textDecoration: 'none' }}>
                     <img src={`https://image.tmdb.org/t/p/original${newMovie.backdrop_path}`} alt={newMovie.title} />
-            <p className="movie-slide-title">{newMovie.title}</p>
-            <aside className="movie-slide-heart">&#x2665;</aside>
-            </Link>
+                    <p className="movie-slide-title">{newMovie.title}</p>
+                </Link>
             </div>
         ));
         setSlides(slide);
@@ -52,11 +54,11 @@ const StartScreen = () => {
         return (
             <div className="startscreen-wrap">
                 <section id="movie-slider">
-                    <h2 className="title-new-movies">Nya filmer</h2>
+                    <h2 className="pages-h1">Nya filmer</h2>
                     <Carousel slides={slides} autoplay={true} interval={5000} />
                 </section>
                 <section id="popular-movies">
-                    <h3 className="title-popular-movies">Populära filmer</h3>
+                    <h3 className="pages-h1">Populära filmer</h3>
                     <div className="popular-movies-container">
                         <div className="grids-popular-movies">
                             {popularMovies.map((popularMovie, index) => (
@@ -65,21 +67,22 @@ const StartScreen = () => {
                                         <img src={`https://image.tmdb.org/t/p/w500${popularMovie.poster_path}`} alt={popularMovie.title} />
                                     </Link>
                                     <p>{popularMovie.title}</p>
-                                    <aside className="movie-heart">&#x2665;</aside>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className="start-screen-buttons">
+                    <div className="change-page-buttons">
                         <div className="change-page-div">
-                            <button className="change-page-button" onClick={previousPage}>
-                                {"< Föregående sida"}
+                            <button className="change-page-button" onClick={() =>
+                                previousPage()}>
+                                <IconButton aria-label="arrowback"><ArrowBackIcon style={{ fill: '#000000' }} /></IconButton>
                             </button>
                         </div>
                         <div className="change-page-div">
-                            <button className="change-page-button" onClick={nextPage}>
-                                {"Nästa sida >"}
-                            </button>
+                            <div className="categories-change-button" onClick={() =>
+                                nextPage(currentPage + 1)}>
+                                <IconButton aria-label="arrowforward"><ArrowForwardIcon style={{ fill: '#000000' }} /></IconButton>
+                            </div>
                         </div>
                     </div>
                 </section>

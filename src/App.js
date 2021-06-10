@@ -25,8 +25,6 @@ function App() {
     setQuery(event.target.value)
   }
 
- 
-
   return (
 
     <div className="App">
@@ -47,9 +45,6 @@ function App() {
               </div>
             </Router>
           </div>
-          {/*<a href="javascript:void(0);" className="burger-icon" onclick="myFunction()">
-          <IconButton aria-label="shop"><MenuIcon style={{ fill: '#000000' }} /></IconButton>
-          </a>*/}
         </header>
         <main>
           <div className="App">

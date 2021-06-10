@@ -21,10 +21,15 @@ const SearchMovies = () => {
     const [page, setPage] = useState(1)
     const [search, setSearch] = useState([])
 
+    if(query != queryText){
+        setQuery(queryText)
+    }
+
     useEffect(async () => {
         window.scrollTo(0, 0)
 
         document.querySelector('#search').value = ""
+        
         let url = "https://api.themoviedb.org/3/search/movie?api_key=86f237d170416093156de7affa43927e&language=en-US&"
         + "query=" + query + "&page=" + page + "&include_adult=false"
         let response = await GetData(url)
@@ -42,7 +47,7 @@ const SearchMovies = () => {
                 currentPoster = "https://image.tmdb.org/t/p/w500" + e.poster_path
             } else {
                 //when there is no poster image for a movie
-                currentPoster = "img/no_image.png"
+                currentPoster = "img/no-poster.png"
             }
 
             movieElements.push(
@@ -61,7 +66,7 @@ const SearchMovies = () => {
         }
         
         setSearch(movieElements)
-    }, [page])
+    }, [page, query])
 
     return (
 
