@@ -9,6 +9,8 @@ import { useAlert } from 'react-alert';
 const Filminfo = () => {
 
     const status = useSelector(state => state.cart.status);
+    const price = useSelector(state => state.cart.price);
+
     const [buttonPressed, setButtonPressed] = useState(false);
 
     const dispatch = useDispatch();
@@ -198,7 +200,7 @@ const Filminfo = () => {
                 </div>
             </div>
             <div className="buy">
-                <span>149 kr</span>
+                <span>{price} kr</span>
                 <button className="buy-button" onClick={() => {addItem(info.bannerImage, info.title); setButtonPressed(!buttonPressed)}}>Köp</button>
             </div>
             <div className="similar-movies">
