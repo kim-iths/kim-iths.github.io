@@ -16,7 +16,6 @@ main {
   background:linear-gradient(#7287f5, transparent);
   background-color: #c182f2;
   padding: 15px;
- 
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -69,9 +68,31 @@ main {
 }
 
 .search-field {
+  width: 15em;
   height: 28px;
   margin-left: 20px;
 }
+
+.header-shoppingcart {
+  position: absolute;
+  width: 2em;
+  top: 15%;
+  right: 8%;
+}
+
+.header-counter {
+  width: 1.1em;
+  height: fit-content;
+  font-size: 40%;
+  color: black;
+  background-color: #EF722C;
+  border-radius: 5em;
+  right: 2%;
+  position: absolute;
+  top: 13px;
+  right: 7px;
+}
+
 
 /*.burger-icon {
   display: none;
@@ -113,8 +134,16 @@ main {
   #nav-container {
     width: 100vw;
   }
-}
 
+  .header-shoppingcart {
+    right: 5%;
+  }
+
+  .header-counter {
+    top: 11px;
+    right: 7px;
+  }
+}
 
 @media only screen and (max-width: 800px) {
   .App-header {
@@ -171,6 +200,15 @@ main {
     margin-bottom: -50px;
   }
 
+  .header-shoppingcart {
+    top: 55%;
+  }
+
+  .header-counter {
+    top: 13px;
+    right: 3px;
+  }
+  
   /*.burger-icon {
     display: block;
     position: absolute;
@@ -219,6 +257,16 @@ main {
     padding-top: 3em;
   }
 
+  .header-shoppingcart {
+    top: 55%;
+    right: 5%;
+  }
+
+  .header-counter {
+    top: 15px;
+    right: -5px;
+  }
+  
   .footer {
     display: flex;
     align-content: flex-start;
@@ -234,5 +282,8 @@ main {
   .footer p {
     padding-left: 1%;
     font-size: 0.6em;
+    margin-block-start: 2em;
+    margin-block-end: 0em;
+    height: fit-content;
   }
 }

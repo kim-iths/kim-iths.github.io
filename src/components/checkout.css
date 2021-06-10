@@ -1,6 +1,6 @@
 .checkout-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #eae7f1;
     width: 100%;
     padding-bottom: 10%;
@@ -18,8 +18,7 @@
 }
 
 .checkout-row img {
-    height: 60%;
-    width: 60%;
+    width: 80%;
     object-fit: contain;
 }
 

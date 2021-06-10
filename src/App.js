@@ -1,15 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, HashRouter as Router, Link, Switch } from "react-router-dom";
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/analytics";
 import StartScreen from './components/StartScreen';
 import Filminfo from './components/Filminfo';
-import Login from './components/Login';
-import Register from './components/Register';
-import Shoppingcart from './components/Shoppingcart';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
 import Favorites from './components/Favorites';
@@ -24,33 +16,23 @@ import Modal from './components/Modal'
 import zIndex from '@material-ui/core/styles/zIndex';
 import React,{useState} from 'react'
 import { Search } from '@material-ui/icons';
-
-
-
-
-
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 
 function App() {
 
-  var firebaseConfig = {
-    apiKey: "AIzaSyCzeIBnMI6pKUlgD6WuQ7Aq2gfOBJH5diE",
-    authDomain: "movieblock-ef82a.firebaseapp.com",
-    projectId: "movieblock-ef82a",
-    storageBucket: "movieblock-ef82a.appspot.com",
-    messagingSenderId: "149733430256",
-    appId: "1:149733430256:web:00863b11f06fddbf754335",
-    measurementId: "G-TLZGPF5L59"
-  };
   const [query, setQuery] = useState("")
   const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const count = useSelector(state => state.cart.count);
 
-  function handleSearch(event){
+  function handleSearch(event) {
     setQuery(event.target.value)
-    console.log("handle")
   }
 
+ 
+
   return (
-    
 
     <div className="App">
       <div className="app-wrap">
@@ -63,8 +45,11 @@ function App() {
               <Link to="/upcoming"><button className="nav-button" id="nav-btn-movies">Kommande</button></Link>
               <input id="search" type="text" className="search-field" placeholder="Sök" onChange={handleSearch}></input>
               <Link to={query != "" ? "/search/" + query : ""}><IconButton aria-label="search"><SearchIcon style={{ fill: '#000000' }} /></IconButton></Link>
-              <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)}/></IconButton>
-              <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
+              <div className="header-shoppingcart">
+                <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)} /></IconButton>
+                <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
+                <div className="header-counter" hidden={count===0}>{count}</div>
+              </div>
             </Router>
           </div>
           {/*<a href="javascript:void(0);" className="burger-icon" onclick="myFunction()">
@@ -100,28 +85,11 @@ function App() {
                   <SearchMovies />
                 </Route>
                 <Route path="/shoppingcart">
-                  <Checkout/>
-                </Route>
-                <Route path="/login">
-                  <Login/>
-                </Route>
-                <Route path="/register">
-                  <Register />
+                  <Checkout />
                 </Route>
               </Switch>
             </Router>
           </div>
-
-
-
-          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-
-          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-
-          <script>
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-          </script>
         </main>
       </div>
       <footer>
