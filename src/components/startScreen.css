@@ -104,6 +104,7 @@
 }
 
 .movie-heart {
+    visibility: hidden;
     position: absolute;
     top: 1.5%;
     right: 2%;
