@@ -1,6 +1,5 @@
 // import './startScreen.css';
 import './similarPages.css';
-import './upcomingMovies.css';
 import { useState, useEffect } from 'react';
 import GetData from './GetData';
 import { Link } from "react-router-dom";
