@@ -31,7 +31,7 @@ function App() {
       <div className="app-wrap">
         <header className="App-header">
           <div className="nav-bar" id="nav-container">
-            <Router basename={process.env.PUBLIC_URL}>
+            <Router>
               <Link to="/startScreen"><button className="nav-home-button" id="nav-btn-home">Movieblock</button></Link>
               <Link to="/filmCategory"><button className="nav-button" id="nav-btn-categories">Kategorier</button></Link>
               <Link to="/kidsmovies"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
@@ -48,7 +48,6 @@ function App() {
         </header>
         <main>
           <div className="App">
-            <Router>
               <Switch>
                 <Route exact path="/">
                   <StartScreen />
@@ -78,7 +77,6 @@ function App() {
                   <Receipt />
                 </Route>
               </Switch>
-            </Router>
           </div>
         </main>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter as Router } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -25,7 +26,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
     <AlertProvider template={AlertTemplate} {...options}>
+    <Router>
     <App />
+    </Router>
     </AlertProvider>
     </Provider>
   </React.StrictMode>,
