@@ -4,7 +4,6 @@ import StartScreen from './components/StartScreen';
 import Filminfo from './components/Filminfo';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
-import Favorites from './components/Favorites';
 import SearchMovies from './components/SearchMovies';
 import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
@@ -12,18 +11,13 @@ import Receipt from './components/Receipt'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import MenuIcon from '@material-ui/icons/Menu';
 import Modal from './components/Modal'
-import zIndex from '@material-ui/core/styles/zIndex';
-import React,{useState} from 'react'
-import { Search } from '@material-ui/icons';
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 
 function App() {
 
   const [query, setQuery] = useState("")
-  const [isOpen, setIsOpen] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
   const count = useSelector(state => state.cart.count);
 
