@@ -35,13 +35,6 @@
     padding-right: 0.5em;
 }
 
-.movie-slide-heart {
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    font-size: 2em;
-    color: white;
-}
 
 .react-3d-carousel img {
     width: 100%;
@@ -103,13 +96,6 @@
     width: 100%;
 }
 
-.movie-heart {
-    position: absolute;
-    top: 1.5%;
-    right: 2%;
-    font-size: 1.5em;
-    color: white;
-}
 
 .start-screen-buttons {
     display: flex;

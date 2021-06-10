@@ -56,13 +56,6 @@
     width: 200px;
 }
 
-.kids-categories-heart {
-    visibility: hidden;
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    font-size: 2em;
-}
 
 .kids-category-poster {
     height: 250px;

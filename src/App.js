@@ -4,7 +4,6 @@ import StartScreen from './components/StartScreen';
 import Filminfo from './components/Filminfo';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
-import Favorites from './components/Favorites';
 import SearchMovies from './components/SearchMovies';
 import UpcomingMovies from './components/UpcomingMovies';
 import KidsMovies from './components/KidsMovies'
@@ -75,9 +74,7 @@ function App() {
                 <Route path="/upcoming">
                   <UpcomingMovies />
                 </Route>
-                <Route path="/favorites">
-                  <Favorites />
-                </Route>
+      
                 <Route path="/filminfo/:id">
                   <Filminfo />
                 </Route>

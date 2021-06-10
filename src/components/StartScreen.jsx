@@ -40,7 +40,7 @@ const StartScreen = () => {
                 <Link to={`/filminfo/${newMovie.id}`} style={{ textDecoration: 'none' }}>
                     <img src={`https://image.tmdb.org/t/p/original${newMovie.backdrop_path}`} alt={newMovie.title} />
             <p className="movie-slide-title">{newMovie.title}</p>
-            <aside className="movie-slide-heart">&#x2665;</aside>
+           
             </Link>
             </div>
         ));
