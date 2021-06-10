@@ -70,6 +70,11 @@
 
 .kids-categories-change-page {
     margin-bottom: 2em;
+    padding: 0.5em;
+    background-color: transparent;
+    border: transparent;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .kids-category-change {
@@ -79,7 +84,7 @@
 .kids-categories-change-button-previous {
     align-self: center;
     justify-self: center;
-    left: 45%;
+    left: 44%;
     top: 77%;
     position: absolute;
     padding: 0.5em;
