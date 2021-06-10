@@ -2,8 +2,9 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
 
 const addToCart = createAction("add to cart");
 const removeFromCart = createAction("remove from cart");
+const resetCount = createAction("reset count")
 
-const actions = { addToCart, removeFromCart };
+const actions = { addToCart, removeFromCart, resetCount };
 
 const STATUS = {
     ADDED: "movie is now added in cart",
@@ -15,7 +16,8 @@ const initialState = {
     movies: [],
     count: 0,
     price: 149,
-    total: 0
+    total: 0,
+    email: ""
 }
 
 const reducer = createReducer(initialState, {
@@ -46,6 +48,14 @@ const reducer = createReducer(initialState, {
             movies: found,
             count: state.count - 1,
             total: state.total - state.price
+        }
+    },
+
+    [resetCount]: (state, action) => {
+        return {
+            ...state,
+            count: 0,
+            email: action.payload
         }
     }
 })

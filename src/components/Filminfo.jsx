@@ -16,16 +16,20 @@ const Filminfo = () => {
     const dispatch = useDispatch();
     const alert = useAlert()
 
-    useEffect (() => {
+    useEffect(() => {
         showAlert();
-    },[status, buttonPressed])
+    }, [buttonPressed])
 
     function showAlert() {
-        if (status === STATUS.ADDED) {
-            alert.show("Filmen är tillagd!");
-        } else if (status === STATUS.EXIST) {
-            alert.show("Filmen finns redan i varukorgen!");
+
+        if (buttonPressed) {
+            if (status === STATUS.ADDED) {
+                alert.show("Filmen är tillagd!");
+            } else if (status === STATUS.EXIST) {
+                alert.show("Filmen finns redan i varukorgen!");
+            }
         }
+        setButtonPressed(false);
     }
 
     const addItem = (image, title) => {
@@ -170,7 +174,6 @@ const Filminfo = () => {
             similarMovies: elements
         })
 
-
         setLoaded(true)
 
     }, [id])
@@ -201,7 +204,7 @@ const Filminfo = () => {
             </div>
             <div className="buy">
                 <span>{price} kr</span>
-                <button className="buy-button" onClick={() => {addItem(info.bannerImage, info.title); setButtonPressed(!buttonPressed)}}>Köp</button>
+                <button className="buy-button" onClick={() => { addItem(info.bannerImage, info.title); setButtonPressed(true) }}>Köp</button>
             </div>
             <div className="similar-movies">
                 <p>Liknande filmer</p>

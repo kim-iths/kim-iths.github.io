@@ -1,5 +1,5 @@
 import './checkout.css'
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
@@ -19,6 +19,10 @@ const Checkout = () => {
         dispatch(actions.removeFromCart(title));
     }
 
+    const resetCount = (email) => {
+        dispatch(actions.resetCount(email));
+    }
+
     const cartElements = movies.map((movie, index) => (
         <div className="checkout-row" key={index}>
             <img src={movie.image} alt={movie.title} />
@@ -32,21 +36,22 @@ const Checkout = () => {
     const [isValid, setIsValid] = useState(false);
     const [message, setMessage] = useState("");
     const [disableButton, setDisableButton] = useState(true);
+    const [email, setEmail] = useState("");
 
     const emailRegex = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-
+    
     const validateEmail = (event) => {
         const email = event.target.value;
         if (emailRegex.test(email)) {
             setIsValid(true);
             setMessage('Valid email');
             setDisableButton(false);
+            setEmail(email);
         } else {
             setIsValid(false);
             setMessage('Please enter a valid email');
             setDisableButton(true);
         }
-        return email
     };
 
     return (
@@ -71,7 +76,7 @@ const Checkout = () => {
 
                 <div className="checkout-finish-row">
                     <p>Summa: {total} kr</p>
-                    <aside><Link to="/receipt"><button className={"checkout-pay" + (disableButton ? " disable" : "")} disabled={disableButton}>Betala</button></Link></aside>
+                    <aside><Link to="/receipt"><button className={"checkout-pay" + (disableButton ? " disable" : "")} disabled={disableButton} onClick={()=>resetCount(email)}>Betala</button></Link></aside>
                 </div>
 
             </section>

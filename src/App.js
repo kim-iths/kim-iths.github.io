@@ -66,9 +66,6 @@ function App() {
                 <Route path="/upcoming">
                   <UpcomingMovies />
                 </Route>
-                <Route path="/favorites">
-                  <Favorites />
-                </Route>
                 <Route path="/filminfo/:id">
                   <Filminfo />
                 </Route>

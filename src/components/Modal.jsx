@@ -21,11 +21,11 @@ function Modal({ open, onClose }) {
     } 
 
     const modalElements = movies.map((movie, index) => (
-        <div className="modal-row">
+        <div className="modal-row" key={index}>
             <div className="modal-title">
                 <p>{movie.title}</p>
             </div>
-            <div className="modal-price"><p>149 kr</p></div>
+            <div className="modal-price"><p>{price} kr</p></div>
             <aside className="delete-button" onClick={() => removeItem(movie.title)}><IconButton aria-label="delete"><DeleteForeverIcon style={{ fill: '#000000' }} /></IconButton></aside>
         </div>
     ));
@@ -35,7 +35,7 @@ function Modal({ open, onClose }) {
         <>
             <div className="overlay-styles" onClick={() => console.log('clicked')} />
             <div className="modal-styles">
-                <Link to="./shoppingcart"><button classname="modal-cart" id="modal-cart-btn" onClick={onClose}>Till kassan</button></Link>
+                <Link to="../shoppingcart"><button classname="modal-cart" id="modal-cart-btn" onClick={onClose}>Till kassan</button></Link>
                 <button classname="close-cart" id="close-cart-btn" onClick={onClose}>&#10006;</button>
 
                 <div className="modal-content">
