@@ -10,8 +10,8 @@
 
 .modal-styles {
   position: fixed;
-  top: 46%;
-  left: 72.2%;
+  top: 16.7em;
+  right: 0em;
   height: 400px;
   width: 180px;
   transform: translate(-50%, -50%);
@@ -55,7 +55,7 @@
   width: 100%; 
 }
 
-.movie-title {
+.modal-title p {
   padding-top: 2%;
   padding-left: 1em;
   font-size: 12px;
@@ -79,8 +79,8 @@
   height: 30px;
   width: 60px;
   position: absolute;
-  top: 2%;
-  left: 0%;
+  top: 0.8%;
+  left: 1%;
 }
 
 #close-cart-btn:hover {
@@ -94,8 +94,8 @@
   border: transparent;
   background-color: #B5BFE2;
   position: absolute;
-  top: 94%;
-  left: 33%;
+  top: 92.5%;
+  left: 30%;
 }
 
 #modal-cart-btn:hover {
@@ -112,21 +112,29 @@
  
 @media only screen and (max-width: 1200px) {
   .modal-styles {
-    top: 27%;
-    left: 85%;
+    top: 16.7em;
+    right: 0em;
   }
 }  
 
 @media only screen and (max-width: 800px) {
   .modal-styles {
-    top: 32%;
-    left: 78%;
+    top: 19.5em;
+    right: 0em;
   }
 }  
 
 @media only screen and (max-width: 420px) {
   .modal-styles {
-    top: 55%;
+    top: 12em;
     left: 60%;
+    height: 19.5em;
+    width: 6em;
+  }
+
+  #modal-cart-btn {
+    bottom: 0.2em;
+    left: 3.8em;
+    font-size: 0.8em;
   }
 }

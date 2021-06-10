@@ -56,12 +56,6 @@
 .all-categories-container {
     display: flex;
     justify-content: center;
-    -ms-overflow-style: none;  /* Internet Explorer and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-.all-categories-container::-webkit-scrollbar {
-    display: none;
 }
 
 .all-categories-grid {
@@ -73,7 +67,8 @@
 }
 
 .all-categories-grid img {
-    height: 15em;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 

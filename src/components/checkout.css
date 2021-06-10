@@ -18,7 +18,7 @@
 }
 
 .checkout-row img {
-    width: 80%;
+    width: 20em;
     object-fit: contain;
 }
 
@@ -51,7 +51,7 @@
   
   .email-input {
     width: 25em;
-    padding: 5px 10px;
+    padding: 0.8em 1em;
   }
   
   .message {
@@ -116,8 +116,7 @@
   }
   
   .email-input {
-    width: 90%;
-    padding: 5px 10px;
+    width: 15em;
   }
   
   .message {
