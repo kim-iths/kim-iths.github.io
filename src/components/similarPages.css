@@ -5,6 +5,7 @@
     text-align: center;
     height: 350px;
     width: 200px;
+    margin: 1.5em;
 }
 
 .pages-poster {
@@ -26,9 +27,15 @@
 .pages-grid {
     display: flex;
     flex-direction: column;
-    width: 100%;   height: 80%;
+    width: 100%;   
+    height: 80%;
     object-fit: cover;
-} 
+}
+
+.pages-grid img {
+    height: 15em;
+    object-fit: contain;
+}
 
 .pages-button{
     visibility: hidden;

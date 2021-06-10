@@ -1,10 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, HashRouter as Router, Link, Switch } from "react-router-dom";
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/analytics";
 import StartScreen from './components/StartScreen';
 import Filminfo from './components/Filminfo';
 import Shoppingcart from './components/Shoppingcart';
@@ -23,15 +19,6 @@ import React, {useState} from 'react'
 
 function App() {
 
-  var firebaseConfig = {
-    apiKey: "AIzaSyCzeIBnMI6pKUlgD6WuQ7Aq2gfOBJH5diE",
-    authDomain: "movieblock-ef82a.firebaseapp.com",
-    projectId: "movieblock-ef82a",
-    storageBucket: "movieblock-ef82a.appspot.com",
-    messagingSenderId: "149733430256",
-    appId: "1:149733430256:web:00863b11f06fddbf754335",
-    measurementId: "G-TLZGPF5L59"
-  };
   const[isOpen, setIsOpen] = useState(false)
   return (
     
@@ -51,9 +38,6 @@ function App() {
               <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
             </Router>
           </div>
-          {/*<a href="javascript:void(0);" className="burger-icon" onclick="myFunction()">
-          <IconButton aria-label="shop"><MenuIcon style={{ fill: '#000000' }} /></IconButton>
-          </a>*/}
         </header>
         <main>
           <div className="App">

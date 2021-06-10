@@ -1,4 +1,4 @@
-// import './startScreen.css';
+import './startScreen.css';
 import './similarPages.css';
 import { useState, useEffect } from 'react';
 import GetData from './GetData';
