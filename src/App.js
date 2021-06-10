@@ -2,7 +2,6 @@ import './App.css';
 import { Route, HashRouter as Router, Link, Switch } from "react-router-dom";
 import StartScreen from './components/StartScreen';
 import Filminfo from './components/Filminfo';
-import Shoppingcart from './components/Shoppingcart';
 import Checkout from './components/Checkout';
 import FilmCategory from './components/FilmCategory';
 import SearchMovies from './components/SearchMovies';
