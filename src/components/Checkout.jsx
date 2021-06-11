@@ -44,12 +44,12 @@ const Checkout = () => {
         const email = event.target.value;
         if (emailRegex.test(email)) {
             setIsValid(true);
-            setMessage('Valid email');
+            setMessage('Giltig e-post');
             setDisableButton(false);
             setEmail(email);
         } else {
             setIsValid(false);
-            setMessage('Please enter a valid email');
+            setMessage('Vänligen skriv in en giltig e-post');
             setDisableButton(true);
         }
     };
@@ -65,7 +65,7 @@ const Checkout = () => {
 
                 <div className="email-container">
                     <input type="email"
-                        placeholder="Enter your email"
+                        placeholder="Skriv in din e-post"
                         className="email-input"
                         onChange={validateEmail}
                     />

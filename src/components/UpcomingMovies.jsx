@@ -58,9 +58,6 @@ const UpcomingMovies = () => {
         <div className="pages-content">
             <div className="pages-category">
                 <h1 className="pages-h1">Kommande filmer</h1>
-                <div className="pages-grid">
-                    <button className="pages-button" onClick={() => {setCurrentPage(1); setTotalPages()}}></button>
-                </div>
             </div>
                 <div className="pages-grid-container">
                     <div className="pages-grid">

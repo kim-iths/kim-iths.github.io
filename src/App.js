@@ -28,7 +28,7 @@ function App() {
   return (
 
     <div className="App">
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div className="app-wrap">
           <header className="App-header">
             <div className="nav-bar" id="nav-container">
@@ -47,7 +47,6 @@ function App() {
           </header>
           <main>
             <div className="App">
-
               <Switch>
                 <Route exact path="/">
                   <StartScreen />
@@ -77,7 +76,6 @@ function App() {
                   <Receipt />
                 </Route>
               </Switch>
-
             </div>
           </main>
         </div>
