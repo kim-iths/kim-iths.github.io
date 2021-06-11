@@ -26,9 +26,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
     <AlertProvider template={AlertTemplate} {...options}>
-    <Router>
     <App />
-    </Router>
     </AlertProvider>
     </Provider>
   </React.StrictMode>,

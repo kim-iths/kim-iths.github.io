@@ -64,7 +64,6 @@ const KidsMovies = () => {
                     <button className="pages-button" onClick={() => {setKidsPageNumber(1); setKidsCategoryId(10751)}}></button>
                 </div>
             </div>
-
             <div className="pages-grid-container">
                 <div className="pages-grid">
                     {kidsmoviesCategoryList}

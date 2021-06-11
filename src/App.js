@@ -28,10 +28,10 @@ function App() {
   return (
 
     <div className="App">
-      <div className="app-wrap">
-        <header className="App-header">
-          <div className="nav-bar" id="nav-container">
-            <Router>
+      <Router>
+        <div className="app-wrap">
+          <header className="App-header">
+            <div className="nav-bar" id="nav-container">
               <Link to="/startScreen"><button className="nav-home-button" id="nav-btn-home">Movieblock</button></Link>
               <Link to="/filmCategory"><button className="nav-button" id="nav-btn-categories">Kategorier</button></Link>
               <Link to="/kidsmovies"><button className="nav-button" id="nav-btn-movies">Barnfilmer</button></Link>
@@ -41,13 +41,12 @@ function App() {
               <div className="header-shoppingcart">
                 <IconButton aria-label="shop"><ShoppingBasketIcon style={{ fill: '#000000' }} onClick={() => setIsOpen(true)} /></IconButton>
                 <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
-                <div className="header-counter" hidden={count===0}>{count}</div>
+                <div className="header-counter" hidden={count === 0}>{count}</div>
               </div>
-            </Router>
-          </div>
-        </header>
-        <main>
-          <div className="App">
+            </div>
+          </header>
+          <main>
+            <div className="App">
               <Switch>
                 <Route exact path="/">
                   <StartScreen />
@@ -77,9 +76,10 @@ function App() {
                   <Receipt />
                 </Route>
               </Switch>
-          </div>
-        </main>
-      </div>
+            </div>
+          </main>
+        </div>
+      </Router>
       <footer>
         <div className="footer">
           <p> © Movieblock AB 2021 support@movieblock.se</p>
